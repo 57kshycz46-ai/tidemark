@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="robots" content="noindex">
+<meta name="referrer" content="no-referrer">
+<title>Booking request · Tidemark</title>
+<style>
+  :root { --bg:#F4F7F8; --card:#FFFFFF; --sunken:#E9EFF2; --ink:#0E1A26; --soft:#5E6E7A; --line:rgba(14,26,38,.10);
+          --accent:#0B8C8C; --accent2:#2F6FEB; --shadow:0 18px 50px -24px rgba(11,37,64,.35); }
+  @media (prefers-color-scheme: dark) {
+    :root { --bg:#0A1118; --card:#131D27; --sunken:#0F1820; --ink:#EAF2F5; --soft:#9AAAB5; --line:rgba(234,242,245,.10);
+            --accent:#3CCFC4; --accent2:#6C9BFF; --shadow:0 18px 50px -24px rgba(0,0,0,.8); }
+  }
+  * { box-sizing:border-box; }
+  body { margin:0; min-height:100vh; display:grid; place-items:center; padding:24px 16px;
+         background:radial-gradient(1200px 600px at 10% -10%, color-mix(in srgb, var(--accent) 22%, transparent), transparent),
+                    radial-gradient(900px 500px at 110% 110%, color-mix(in srgb, var(--accent2) 20%, transparent), transparent), var(--bg);
+         color:var(--ink); font:16px/1.5 -apple-system, BlinkMacSystemFont, "Segoe UI", system-ui, sans-serif; }
+  .card { width:100%; max-width:460px; background:var(--card); border:1px solid var(--line); border-radius:28px; box-shadow:var(--shadow);
+          padding:28px; text-align:center; }
+  .avatar { width:72px; height:72px; margin:0 auto 14px; border-radius:50%; display:grid; place-items:center; color:#fff;
+            background:linear-gradient(135deg, var(--accent), var(--accent2)); font:700 30px/1 ui-serif, "New York", Georgia, serif; }
+  .eyebrow { text-transform:uppercase; letter-spacing:.14em; font-size:12px; font-weight:800; color:var(--accent); }
+  h1 { font:700 28px/1.2 ui-serif, "New York", Georgia, serif; margin:6px 0 4px; }
+  .when { font-weight:700; font-size:18px; margin:14px 0 2px; }
+  .soft { color:var(--soft); }
+  blockquote { margin:16px 0 0; padding:12px 16px; background:var(--sunken); border-radius:14px; font-style:italic; text-align:left; }
+  .btn { all:unset; cursor:pointer; display:block; margin-top:22px; padding:15px 22px; border-radius:999px; font-weight:700; color:#fff;
+         background:linear-gradient(135deg, var(--accent), var(--accent2)); box-shadow:0 10px 26px -12px var(--accent); }
+  .btn:focus-visible { outline:3px solid var(--accent); outline-offset:3px; }
+  .small { font-size:13px; color:var(--soft); margin-top:16px; }
+  a { color:var(--accent); }
+</style>
+</head>
+<body>
+<div class="card" id="card">
+  <div class="avatar" id="avatar" aria-hidden="true">·</div>
+  <div class="eyebrow">Booking request</div>
+  <h1 id="title">…</h1>
+  <div class="soft" id="who"></div>
+  <div class="when" id="when"></div>
+  <div class="soft" id="len"></div>
+  <div id="note"></div>
+  <a class="btn" id="open" href="#">Open in Tidemark</a>
+  <p class="small">Open this on the iPhone, iPad or Mac where you use Tidemark. You'll see any clashes before adding it.</p>
+</div>
+<script>
+(() => {
+  const $ = (id) => document.getElementById(id);
+  const token = location.hash.slice(1);
+  let req;
+  try {
+    let s = token.replace(/-/g, '+').replace(/_/g, '/');
+    while (s.length % 4) s += '=';
+    const bin = atob(s);
+    req = JSON.parse(new TextDecoder().decode(Uint8Array.from(bin, c => c.charCodeAt(0))));
+    if (!req || !req.s || !req.d) throw new Error('bad');
+  } catch (e) {
+    $('card').innerHTML = '<h1>Link incomplete</h1><p class="soft">Ask the sender to share the booking request again.</p>';
+    return;
+  }
+  const guest = (req.n || 'Guest').slice(0, 80);
+  const start = new Date(req.s * 60000), end = new Date((req.s + req.d) * 60000);
+  const t = new Intl.DateTimeFormat(undefined, { hour: 'numeric', minute: '2-digit' });
+  $('avatar').textContent = guest.charAt(0).toUpperCase();
+  $('title').textContent = req.t || 'Meeting';
+  $('who').textContent = `${guest} would like to meet${req.e ? ' · ' + req.e : ''}`;
+  $('when').textContent = start.toLocaleDateString(undefined, { weekday: 'long', month: 'long', day: 'numeric' });
+  $('len').textContent = `${t.format(start)} – ${t.format(end)} · ${req.d} min`;
+  if (req.m) { const q = document.createElement('blockquote'); q.textContent = req.m; $('note').appendChild(q); }
+  $('open').href = 'tidemark://book?r=' + encodeURIComponent(token);
+  document.title = `${guest} · ${req.t || 'Meeting'}`;
+})();
+</script>
+</body>
+</html>

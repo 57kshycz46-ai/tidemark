@@ -1,0 +1,332 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="robots" content="noindex">
+<meta name="referrer" content="no-referrer">
+<title>Book a time · Tidemark</title>
+<style>
+  :root {
+    --bg:#F4F7F8; --card:#FFFFFF; --sunken:#E9EFF2; --ink:#0E1A26; --soft:#5E6E7A; --line:rgba(14,26,38,.10);
+    --accent:#0B8C8C; --accent2:#2F6FEB; --coral:#FF6B57; --shadow:0 18px 50px -24px rgba(11,37,64,.35);
+  }
+  @media (prefers-color-scheme: dark) {
+    :root { --bg:#0A1118; --card:#131D27; --sunken:#0F1820; --ink:#EAF2F5; --soft:#9AAAB5; --line:rgba(234,242,245,.10);
+            --accent:#3CCFC4; --accent2:#6C9BFF; --shadow:0 18px 50px -24px rgba(0,0,0,.8); }
+  }
+  * { box-sizing:border-box; }
+  html { -webkit-text-size-adjust:100%; }
+  body { margin:0; background:var(--bg); color:var(--ink); font:16px/1.5 -apple-system, BlinkMacSystemFont, "Segoe UI", system-ui, sans-serif; }
+  .hero { position:relative; overflow:hidden; color:#fff; padding:48px 20px 96px;
+          background:linear-gradient(135deg, var(--accent) 0%, var(--accent2) 100%); }
+  .hero svg { position:absolute; left:0; right:0; bottom:-2px; width:100%; height:90px; }
+  .wrap { max-width:880px; margin:0 auto; position:relative; }
+  .host { display:flex; align-items:center; gap:16px; }
+  .avatar { width:60px; height:60px; border-radius:50%; display:grid; place-items:center; flex:none;
+            background:rgba(255,255,255,.2); font:700 26px/1 ui-serif, "New York", Georgia, serif; backdrop-filter:blur(6px); }
+  .eyebrow { text-transform:uppercase; letter-spacing:.14em; font-size:12px; font-weight:800; opacity:.85; }
+  h1 { font:700 clamp(28px, 5vw, 40px)/1.12 ui-serif, "New York", Georgia, serif; margin:2px 0 0; }
+  .chips { display:flex; flex-wrap:wrap; gap:8px; margin-top:18px; }
+  .chip { display:inline-flex; align-items:center; gap:6px; padding:6px 12px; border-radius:999px; background:rgba(255,255,255,.18);
+          font-size:14px; font-weight:600; }
+  main { max-width:880px; margin:-64px auto 0; padding:0 16px 64px; position:relative; }
+  .card { background:var(--card); border-radius:26px; box-shadow:var(--shadow); padding:22px; border:1px solid var(--line); }
+  .grid { display:grid; grid-template-columns: 300px 1fr; gap:22px; }
+  @media (max-width: 720px) { .grid { grid-template-columns: 1fr; } }
+  h2 { font:700 19px/1.3 ui-serif, "New York", Georgia, serif; margin:0 0 12px; }
+  .days { display:flex; flex-direction:column; gap:8px; }
+  @media (max-width: 720px) { .days { flex-direction:row; overflow-x:auto; padding-bottom:6px; scroll-snap-type:x mandatory; } }
+  .day { all:unset; cursor:pointer; display:flex; align-items:center; gap:14px; padding:10px 14px; border-radius:16px;
+         background:var(--sunken); scroll-snap-align:start; flex:none; transition:transform .15s, background .15s; }
+  .day:hover { transform:translateY(-1px); }
+  .day:focus-visible, .slot:focus-visible, .btn:focus-visible { outline:3px solid var(--accent); outline-offset:2px; }
+  .day .num { font:700 26px/1 ui-serif, "New York", Georgia, serif; min-width:34px; text-align:center; }
+  .day .wd { font-size:12px; font-weight:800; letter-spacing:.08em; text-transform:uppercase; color:var(--soft); }
+  .day .cnt { font-size:13px; color:var(--soft); }
+  .day[aria-pressed="true"] { background:linear-gradient(135deg, var(--accent), var(--accent2)); color:#fff; }
+  .day[aria-pressed="true"] .wd, .day[aria-pressed="true"] .cnt { color:rgba(255,255,255,.85); }
+  .slots { display:grid; grid-template-columns:repeat(auto-fill, minmax(118px, 1fr)); gap:10px; }
+  .slot { all:unset; cursor:pointer; text-align:center; padding:12px 8px; border-radius:14px; font-weight:700; font-variant-numeric:tabular-nums;
+          color:var(--accent); border:1.5px solid color-mix(in srgb, var(--accent) 40%, transparent);
+          background:color-mix(in srgb, var(--accent) 9%, transparent); transition:all .15s; }
+  .slot:hover { background:color-mix(in srgb, var(--accent) 18%, transparent); }
+  .slot[aria-pressed="true"] { background:var(--accent); color:#fff; border-color:var(--accent); }
+  .tz { color:var(--soft); font-size:13px; margin:14px 0 0; }
+  form { display:none; margin-top:22px; padding-top:22px; border-top:1px solid var(--line); }
+  form.show { display:block; animation:rise .25s ease-out; }
+  @keyframes rise { from { opacity:0; transform:translateY(8px); } to { opacity:1; transform:none; } }
+  .picked { font:600 17px/1.4 ui-serif, "New York", Georgia, serif; margin:0 0 14px; }
+  label { display:block; font-size:13px; font-weight:700; color:var(--soft); margin:12px 0 6px; }
+  input, textarea { width:100%; font:inherit; color:var(--ink); background:var(--sunken); border:1.5px solid transparent;
+                    border-radius:12px; padding:12px 14px; outline:none; }
+  input:focus, textarea:focus { border-color:var(--accent); }
+  textarea { min-height:84px; resize:vertical; }
+  .btn { all:unset; cursor:pointer; display:inline-flex; align-items:center; justify-content:center; gap:8px; padding:14px 22px;
+         border-radius:999px; font-weight:700; text-align:center; }
+  .primary { color:#fff; background:linear-gradient(135deg, var(--accent), var(--accent2)); box-shadow:0 10px 26px -12px var(--accent); }
+  .secondary { color:var(--ink); background:var(--sunken); }
+  .actions { display:flex; flex-wrap:wrap; gap:10px; margin-top:18px; }
+  .done { display:none; text-align:center; padding:12px 6px 4px; }
+  .done.show { display:block; animation:rise .3s ease-out; }
+  .tick { width:64px; height:64px; margin:0 auto 10px; border-radius:50%; display:grid; place-items:center; color:#fff; font-size:32px;
+          background:linear-gradient(135deg, var(--accent), var(--accent2)); }
+  .done h2 { font-size:24px; }
+  .done .actions { justify-content:center; }
+  .empty { text-align:center; padding:28px 10px; color:var(--soft); }
+  .note { color:var(--soft); font-size:13px; margin-top:14px; }
+  footer { text-align:center; color:var(--soft); font-size:13px; margin-top:26px; }
+  footer a { color:var(--accent); text-decoration:none; font-weight:600; }
+  .err { color:var(--coral); font-size:14px; margin-top:8px; display:none; }
+</style>
+</head>
+<body>
+<header class="hero">
+  <div class="wrap">
+    <div class="host">
+      <div class="avatar" id="avatar" aria-hidden="true">·</div>
+      <div>
+        <div class="eyebrow">Book a time with</div>
+        <h1 id="host">…</h1>
+      </div>
+    </div>
+    <div class="chips">
+      <span class="chip" id="chip-title">Meeting</span>
+      <span class="chip" id="chip-len">30 min</span>
+      <span class="chip" id="chip-tz">Your time zone</span>
+    </div>
+  </div>
+  <svg viewBox="0 0 1440 90" preserveAspectRatio="none" aria-hidden="true">
+    <path d="M0,40 C240,90 480,0 720,36 C960,72 1200,10 1440,44 L1440,90 L0,90 Z" fill="var(--bg)"/>
+    <path d="M0,58 C260,20 520,90 760,52 C1000,14 1220,70 1440,40" fill="none" stroke="rgba(255,255,255,.18)" stroke-width="10"/>
+  </svg>
+</header>
+
+<main>
+  <section class="card" id="picker" aria-live="polite">
+    <div class="grid">
+      <div>
+        <h2>Pick a day</h2>
+        <div class="days" id="days" role="group" aria-label="Days"></div>
+      </div>
+      <div>
+        <h2 id="slots-title">Available times</h2>
+        <div class="slots" id="slots" role="group" aria-label="Times"></div>
+        <p class="tz" id="tz-note"></p>
+      </div>
+    </div>
+
+    <form id="form" novalidate>
+      <p class="picked" id="picked"></p>
+      <label for="name">Your name</label>
+      <input id="name" name="name" autocomplete="name" required maxlength="80">
+      <label for="email">Your email <span style="font-weight:500">(optional)</span></label>
+      <input id="email" name="email" type="email" autocomplete="email" maxlength="120">
+      <label for="msg">Anything to share? <span style="font-weight:500">(optional)</span></label>
+      <textarea id="msg" name="msg" maxlength="400"></textarea>
+      <p class="err" id="err">Please add your name.</p>
+      <div class="actions">
+        <button class="btn primary" type="submit">Request this time</button>
+      </div>
+    </form>
+
+    <div class="done" id="done">
+      <div class="tick" aria-hidden="true">✓</div>
+      <h2>Almost there!</h2>
+      <p id="done-text"></p>
+      <div class="actions" id="send-actions"></div>
+      <p class="note">Your request goes to <span id="host2"></span>, who adds it to their calendar with one tap.</p>
+    </div>
+  </section>
+  <footer>Scheduling by <a href="./">Tidemark</a> · No account needed · <a href="privacy.html">Privacy</a></footer>
+</main>
+
+<script>
+(() => {
+  const $ = (id) => document.getElementById(id);
+  const b64d = (s) => {
+    s = s.replace(/-/g, '+').replace(/_/g, '/');
+    while (s.length % 4) s += '=';
+    const bin = atob(s);
+    return new TextDecoder().decode(Uint8Array.from(bin, c => c.charCodeAt(0)));
+  };
+  const b64e = (str) => {
+    let bin = '';
+    new TextEncoder().encode(str).forEach(b => bin += String.fromCharCode(b));
+    return btoa(bin).replace(/\+/g, '-').replace(/\//g, '_').replace(/=+$/, '');
+  };
+
+  let offer;
+  try {
+    offer = JSON.parse(b64d(location.hash.slice(1)));
+    if (!offer || !Array.isArray(offer.w) || !offer.d) throw new Error('bad');
+  } catch (e) {
+    $('host').textContent = 'This link looks incomplete';
+    $('picker').innerHTML = '<div class="empty">Ask for a fresh booking link and open it again.</div>';
+    return;
+  }
+
+  const host = (offer.n || 'Someone').slice(0, 80);
+  const title = (offer.t || 'Meeting').slice(0, 80);
+  const minutes = Math.max(5, Math.min(480, offer.d | 0));
+  const guestTZ = Intl.DateTimeFormat().resolvedOptions().timeZone;
+  document.title = `Book ${title} with ${host}`;
+  $('host').textContent = host;
+  $('host2').textContent = host;
+  $('avatar').textContent = host.trim().charAt(0).toUpperCase() || '·';
+  $('chip-title').textContent = '📅 ' + title;
+  $('chip-len').textContent = '⏱ ' + (minutes < 60 ? `${minutes} min` : `${minutes / 60} hr`);
+  $('chip-tz').textContent = '🌍 ' + guestTZ.replace(/_/g, ' ');
+  if (offer.z && offer.z !== guestTZ) {
+    $('tz-note').textContent = `Times are in your time zone (${guestTZ.replace(/_/g, ' ')}). ${host} is in ${offer.z.replace(/_/g, ' ')}.`;
+  } else {
+    $('tz-note').textContent = `Times are in ${guestTZ.replace(/_/g, ' ')}.`;
+  }
+
+  // Same grid as the app: 15-minute steps for short meetings, otherwise 30.
+  const step = (minutes <= 15 ? 15 : 30) * 60000;
+  const length = minutes * 60000;
+  const soon = Date.now() + 15 * 60000;
+  const slots = [];
+  for (const pair of offer.w) {
+    if (!Array.isArray(pair) || pair.length !== 2) continue;
+    const ws = pair[0] * 60000, we = pair[1] * 60000;
+    for (let t = Math.ceil(ws / step) * step; t + length <= we; t += step) {
+      if (t > soon) slots.push(t);
+    }
+  }
+  slots.sort((a, b) => a - b);
+
+  if (!slots.length) {
+    $('picker').innerHTML = `<div class="empty"><h2>No times left</h2>This link has expired or every time has been taken. Ask ${escapeHTML(host)} for a new one.</div>`;
+    return;
+  }
+
+  const dayKey = (t) => new Date(t).toLocaleDateString('en-CA');
+  const byDay = new Map();
+  for (const t of slots) {
+    const k = dayKey(t);
+    if (!byDay.has(k)) byDay.set(k, []);
+    byDay.get(k).push(t);
+  }
+
+  const fmtTime = new Intl.DateTimeFormat(undefined, { hour: 'numeric', minute: '2-digit' });
+  const fmtLong = new Intl.DateTimeFormat(undefined, { weekday: 'long', month: 'long', day: 'numeric' });
+  let chosen = null;
+
+  function escapeHTML(s) { const d = document.createElement('div'); d.textContent = s; return d.innerHTML; }
+
+  function renderDays(selectedKey) {
+    const box = $('days');
+    box.innerHTML = '';
+    for (const [k, list] of byDay) {
+      const d = new Date(list[0]);
+      const b = document.createElement('button');
+      b.type = 'button';
+      b.className = 'day';
+      b.setAttribute('aria-pressed', String(k === selectedKey));
+      b.innerHTML = `<span class="num"></span><span><span class="wd"></span><br><span class="cnt"></span></span>`;
+      b.querySelector('.num').textContent = d.getDate();
+      b.querySelector('.wd').textContent = d.toLocaleDateString(undefined, { weekday: 'long' }) + ' · ' + d.toLocaleDateString(undefined, { month: 'short' });
+      b.querySelector('.cnt').textContent = `${list.length} time${list.length === 1 ? '' : 's'}`;
+      b.addEventListener('click', () => { renderDays(k); renderSlots(k); });
+      box.appendChild(b);
+    }
+  }
+
+  function renderSlots(k) {
+    const list = byDay.get(k);
+    $('slots-title').textContent = fmtLong.format(new Date(list[0]));
+    const box = $('slots');
+    box.innerHTML = '';
+    for (const t of list) {
+      const b = document.createElement('button');
+      b.type = 'button';
+      b.className = 'slot';
+      b.textContent = fmtTime.format(new Date(t));
+      b.setAttribute('aria-pressed', String(t === chosen));
+      b.addEventListener('click', () => pick(t));
+      box.appendChild(b);
+    }
+  }
+
+  function pick(t) {
+    chosen = t;
+    renderSlots(dayKey(t));
+    $('picked').textContent = `${title} · ${fmtLong.format(new Date(t))}, ${fmtTime.format(new Date(t))} – ${fmtTime.format(new Date(t + length))}`;
+    $('form').classList.add('show');
+    $('name').focus({ preventScroll: true });
+    $('form').scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+  }
+
+  const first = byDay.keys().next().value;
+  renderDays(first);
+  renderSlots(first);
+
+  $('form').addEventListener('submit', (ev) => {
+    ev.preventDefault();
+    const name = $('name').value.trim();
+    if (!name) { $('err').style.display = 'block'; $('name').focus(); return; }
+    $('err').style.display = 'none';
+    const email = $('email').value.trim();
+    const msg = $('msg').value.trim();
+    const req = { v: 1, t: title, s: Math.round(chosen / 60000), d: minutes, n: name, h: host };
+    if (email) req.e = email;
+    if (msg) req.m = msg;
+    const confirmURL = new URL('confirm.html#' + b64e(JSON.stringify(req)), location.href).href;
+    const when = `${fmtLong.format(new Date(chosen))} at ${fmtTime.format(new Date(chosen))} (${guestTZ.replace(/_/g, ' ')})`;
+    const text = `Hi ${host}, I'd like to book "${title}" on ${when}.${msg ? '\n\n' + msg : ''}\n\nAdd it to your calendar: ${confirmURL}\n\n— ${name}`;
+
+    $('form').classList.remove('show');
+    document.querySelector('#picker .grid').style.display = 'none';
+    $('done-text').textContent = `Send your request for ${when} to ${host}.`;
+    const actions = $('send-actions');
+    actions.innerHTML = '';
+    const add = (label, cls, fn, href) => {
+      const el = document.createElement(href ? 'a' : 'button');
+      el.className = 'btn ' + cls;
+      el.textContent = label;
+      if (href) el.href = href; else { el.type = 'button'; el.addEventListener('click', fn); }
+      actions.appendChild(el);
+      return el;
+    };
+    if (offer.e) {
+      add(`Email ${host}`, 'primary', null,
+          `mailto:${encodeURIComponent(offer.e)}?subject=${encodeURIComponent(`Booking request: ${title} — ${when}`)}&body=${encodeURIComponent(text)}`);
+    }
+    if (navigator.share) {
+      add(offer.e ? 'Send another way' : `Send to ${host}`, offer.e ? 'secondary' : 'primary',
+          () => navigator.share({ title: `Booking request: ${title}`, text }).catch(() => {}));
+    }
+    const copyBtn = add('Copy request', 'secondary', async () => {
+      try { await navigator.clipboard.writeText(text); copyBtn.textContent = 'Copied ✓'; }
+      catch { prompt('Copy this and send it:', text); }
+    });
+    add('Add to my calendar', 'secondary', () => downloadICS(req));
+    $('done').classList.add('show');
+    $('done').scrollIntoView({ behavior: 'smooth', block: 'center' });
+  });
+
+  function downloadICS(req) {
+    const stamp = (t) => new Date(t).toISOString().replace(/[-:]/g, '').replace(/\.\d{3}/, '');
+    const esc = (s) => String(s).replace(/[\\;,]/g, m => '\\' + m).replace(/\n/g, '\\n');
+    const start = req.s * 60000;
+    const ics = [
+      'BEGIN:VCALENDAR', 'VERSION:2.0', 'PRODID:-//Tidemark//Booking//EN', 'BEGIN:VEVENT',
+      `UID:${req.s}-${Math.random().toString(36).slice(2)}@tidemark`, `DTSTAMP:${stamp(Date.now())}`,
+      `DTSTART:${stamp(start)}`, `DTEND:${stamp(start + req.d * 60000)}`,
+      `SUMMARY:${esc(`${req.t} with ${host}`)}`, 'STATUS:TENTATIVE',
+      `DESCRIPTION:${esc(`Requested through Tidemark. Waiting for ${host} to confirm.`)}`,
+      'END:VEVENT', 'END:VCALENDAR'
+    ].join('\r\n');
+    const a = document.createElement('a');
+    a.href = URL.createObjectURL(new Blob([ics], { type: 'text/calendar' }));
+    a.download = `${req.t.replace(/[^\w ]+/g, '').trim() || 'meeting'}.ics`;
+    document.body.appendChild(a);
+    a.click();
+    setTimeout(() => { URL.revokeObjectURL(a.href); a.remove(); }, 1000);
+  }
+})();
+</script>
+</body>
+</html>
