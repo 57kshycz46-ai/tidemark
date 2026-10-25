@@ -31,7 +31,8 @@
 <h2>Weather</h2>
 <p>If weather is turned on, your device asks Apple Weather for the forecast at your approximate location (or the home address you entered). These requests are handled by Apple under <a href="https://www.apple.com/legal/privacy/">Apple's privacy policy</a>; the forecast is kept on your devices and is never sent to us.</p>
 <h2>Booking links</h2>
-<p>When you share a booking link, the open times you chose (and the name, meeting title and optional email you entered) are encoded inside the link itself, after the “#”. Web browsers never send that part of a link to any server, including ours. A guest's request travels back to you the same way, inside a link they send you by email or message. Your calendar is never shared, and there is no booking server.</p>
+<p>When you share a booking link, the open times you chose (and the name, meeting title and optional email you entered) are encoded inside the link itself, after the “#”. Web browsers never send that part of a link to any server, including ours. Your calendar is never shared.</p>
+<p>When a guest books, their request (the time, their name, and the email and note they choose to add) is encrypted in their browser with a key that only your devices hold, and passed to your devices through ntfy.sh, an open-source message relay, which keeps it for up to 12 hours. The relay, and we, can't read it. Tidemark on your devices decrypts it and adds the meeting to your calendar. If the relay can't be reached, the guest can send you the request by email or message instead.</p>
 <h2>Sync between your devices</h2>
 <p>Tidemark's own settings, such as hidden calendars, feed links, templates and travel preferences, sync between your devices through your private iCloud account, which is controlled by you and Apple. The Apple Watch app communicates directly with your iPhone.</p>
 <h2>Calendar feeds</h2>

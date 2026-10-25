@@ -135,7 +135,7 @@
       <h2>Almost there!</h2>
       <p id="done-text"></p>
       <div class="actions" id="send-actions"></div>
-      <p class="note">Your request goes to <span id="host2"></span>, who adds it to their calendar with one tap.</p>
+      <p class="note" id="done-note">Your request goes to <span id="host2"></span>, who adds it to their calendar with one tap.</p>
     </div>
   </section>
   <footer>Scheduling by <a href="./">Tidemark</a> · No account needed · <a href="privacy.html">Privacy</a></footer>
@@ -155,6 +155,36 @@
     new TextEncoder().encode(str).forEach(b => bin += String.fromCharCode(b));
     return btoa(bin).replace(/\+/g, '-').replace(/\//g, '_').replace(/=+$/, '');
   };
+
+  // Booking relay: the request is sealed in this browser with the host's public key (P-256 ECDH, HKDF-SHA256,
+  // AES-GCM) and dropped on their private ntfy.sh channel, which can't read it. Tidemark on their devices opens it
+  // and adds it to their calendar.
+  const bytes = (s) => { s = s.replace(/-/g, '+').replace(/_/g, '/'); while (s.length % 4) s += '='; return Uint8Array.from(atob(s), c => c.charCodeAt(0)); };
+  const b64eBytes = (u8) => { let bin = ''; u8.forEach(b => bin += String.fromCharCode(b)); return btoa(bin).replace(/\+/g, '-').replace(/\//g, '_').replace(/=+$/, ''); };
+  const join = (...parts) => { const out = new Uint8Array(parts.reduce((n, p) => n + p.length, 0)); let i = 0; for (const p of parts) { out.set(p, i); i += p.length; } return out; };
+  async function seal(obj, hostKey) {
+    const subtle = crypto.subtle;
+    const hostRaw = bytes(hostKey);
+    const host = await subtle.importKey('raw', hostRaw, { name: 'ECDH', namedCurve: 'P-256' }, false, []);
+    const eph = await subtle.generateKey({ name: 'ECDH', namedCurve: 'P-256' }, true, ['deriveBits']);
+    const ephRaw = new Uint8Array(await subtle.exportKey('raw', eph.publicKey));
+    const shared = await subtle.deriveBits({ name: 'ECDH', public: host }, eph.privateKey, 256);
+    const hkdf = await subtle.importKey('raw', shared, 'HKDF', false, ['deriveKey']);
+    const key = await subtle.deriveKey({ name: 'HKDF', hash: 'SHA-256', salt: new TextEncoder().encode('tidemark-booking-v1'), info: join(ephRaw, hostRaw) },
+                                       hkdf, { name: 'AES-GCM', length: 256 }, false, ['encrypt']);
+    const iv = crypto.getRandomValues(new Uint8Array(12));
+    const sealed = new Uint8Array(await subtle.encrypt({ name: 'AES-GCM', iv }, key, new TextEncoder().encode(JSON.stringify(obj))));
+    return 'tmb1:' + b64eBytes(join(ephRaw, iv, sealed));
+  }
+  async function deliver(req) {
+    if (!offer.r || !offer.k || !/^[-_A-Za-z0-9]{6,64}$/.test(offer.r) || !(window.crypto && crypto.subtle)) return false;
+    try {
+      const body = await seal(req, offer.k);
+      const res = await fetch('https://ntfy.sh/' + offer.r, { method: 'POST', body });
+      return res.ok;
+    } catch (e) { return false; }
+  }
+  window.__tidemarkSeal = seal; // for testing
 
   let offer;
   try {
@@ -259,11 +289,16 @@
     $('form').scrollIntoView({ behavior: 'smooth', block: 'nearest' });
   }
 
+  if (offer.r && offer.k) {
+    const submit = $('form').querySelector('button[type="submit"]');
+    if (submit) submit.textContent = 'Book this time';
+  }
+
   const first = byDay.keys().next().value;
   renderDays(first);
   renderSlots(first);
 
-  $('form').addEventListener('submit', (ev) => {
+  $('form').addEventListener('submit', async (ev) => {
     ev.preventDefault();
     const name = $('name').value.trim();
     if (!name) { $('err').style.display = 'block'; $('name').focus(); return; }
@@ -277,9 +312,13 @@
     const when = `${fmtLong.format(new Date(chosen))} at ${fmtTime.format(new Date(chosen))} (${guestTZ.replace(/_/g, ' ')})`;
     const text = `Hi ${host}, I'd like to book "${title}" on ${when}.${msg ? '\n\n' + msg : ''}\n\nAdd it to your calendar: ${confirmURL}\n\n— ${name}`;
 
+    const submit = $('form').querySelector('button[type="submit"]');
+    const submitLabel = submit ? submit.textContent : '';
+    if (submit) { submit.disabled = true; submit.textContent = 'Booking…'; }
+    const delivered = await deliver(req);
+    if (submit) { submit.disabled = false; submit.textContent = submitLabel; }
     $('form').classList.remove('show');
     document.querySelector('#picker .grid').style.display = 'none';
-    $('done-text').textContent = `Send your request for ${when} to ${host}.`;
     const actions = $('send-actions');
     actions.innerHTML = '';
     const add = (label, cls, fn, href) => {
@@ -290,6 +329,17 @@
       actions.appendChild(el);
       return el;
     };
+    if (delivered) {
+      // Straight onto the host's calendar: nothing for the guest to send.
+      document.querySelector('#done h2') && (document.querySelector('#done h2').textContent = "You're booked");
+      $('done-text').textContent = `${title} on ${when} is on ${host}'s calendar. Add it to yours too:`;
+      $('done-note').textContent = `${host} gets a notification from Tidemark. Nothing else to send.`;
+      add('Add to my calendar', 'primary', () => downloadICS(req));
+      $('done').classList.add('show');
+      $('done').scrollIntoView({ behavior: 'smooth', block: 'center' });
+      return;
+    }
+    $('done-text').textContent = `Send your request for ${when} to ${host}.`;
     if (offer.e) {
       add(`Email ${host}`, 'primary', null,
           `mailto:${encodeURIComponent(offer.e)}?subject=${encodeURIComponent(`Booking request: ${title} — ${when}`)}&body=${encodeURIComponent(text)}`);
