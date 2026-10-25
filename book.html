@@ -87,6 +87,11 @@
              font-size:13px; color:var(--soft); word-break:break-all; text-align:left; }
   .linkbox span { flex:1; }
   .danger { color:var(--coral); background:var(--sunken); }
+  .answer { display:inline-flex; align-items:center; gap:6px; margin-top:12px; padding:8px 14px; border-radius:999px; font-weight:700; font-size:14px; }
+  .answer.wait { background:var(--sunken); color:var(--soft); }
+  .answer.yes { background:color-mix(in srgb, var(--accent) 16%, transparent); color:var(--accent); }
+  .answer.no { background:color-mix(in srgb, var(--coral) 16%, transparent); color:var(--coral); }
+  .bell { margin-top:12px; padding:10px 16px; font-size:14px; }
 </style>
 </head>
 <body>
@@ -120,7 +125,9 @@
       <button class="btn primary" type="button" id="manage-change">Change time or details</button>
       <button class="btn danger" type="button" id="manage-cancel">Cancel booking</button>
     </div>
+    <div class="answer wait" id="manage-answer" hidden></div>
     <p class="note" id="manage-status"></p>
+    <button class="btn secondary bell" type="button" id="manage-notify" hidden>🔔 Notify me when they answer</button>
   </section>
   <section class="card" id="picker" aria-live="polite">
     <div class="grid">
@@ -208,8 +215,8 @@
   }
   window.__tidemarkSeal = seal; // for testing
 
-  // "#<offer>" or, from a guest's own "change or cancel" link, "#<offer>.<booking id>".
-  const [token, linkedBooking] = location.hash.slice(1).split('.');
+  // "#<offer>" or, from a guest's own "change or cancel" link, "#<offer>.<booking id>[.<reply channel>.<key>.<secret>]".
+  const [token, linkedBooking, linkG, linkPub, linkD] = location.hash.slice(1).split('.');
   let offer;
   try {
     offer = JSON.parse(b64d(token));
@@ -319,19 +326,71 @@
   }
 
   // The guest's own bookings with this host, remembered in this browser (and reachable from their private link).
+  // Each one has its own reply channel and key: the host's answer comes back sealed for this page alone.
   const relay = !!(offer.r && offer.k);
   const store = {
     all() { try { return JSON.parse(localStorage.getItem('tidemark-bookings') || '{}'); } catch { return {}; } },
-    save(b, req) { try { const a = this.all(); a[b] = { req, token, r: offer.r }; localStorage.setItem('tidemark-bookings', JSON.stringify(a)); } catch {} },
+    get(b) { return this.all()[b] || null; },
+    save(b, req, extra) {
+      try {
+        const a = this.all();
+        a[b] = Object.assign({}, a[b] || {}, { req, token, r: offer.r }, extra || {});
+        localStorage.setItem('tidemark-bookings', JSON.stringify(a));
+      } catch {}
+    },
     drop(b) { try { const a = this.all(); delete a[b]; localStorage.setItem('tidemark-bookings', JSON.stringify(a)); } catch {} },
   };
   const newID = () => b64eBytes(crypto.getRandomValues(new Uint8Array(9)));
-  const manageURL = (b) => location.origin + location.pathname + '#' + token + '.' + b;
+  // The private link carries the reply channel and key too, so the answer shows on any device it's opened on.
+  const manageURL = (b) => {
+    const rec = store.get(b);
+    const reply = rec && rec.g && rec.gkPub && rec.gkPriv ? '.' + [rec.g, rec.gkPub, rec.gkPriv.d].join('.') : '';
+    return location.origin + location.pathname + '#' + token + '.' + b + reply;
+  };
   let current = null;   // { b, req } being managed
   let editing = false;
+
+  async function replyChannel(b) {
+    const have = b && store.get(b);
+    if (have && have.g && have.gkPub && have.gkPriv) return { g: have.g, gkPub: have.gkPub, gkPriv: have.gkPriv };
+    if (!(window.crypto && crypto.subtle)) return null;
+    try {
+      const kp = await crypto.subtle.generateKey({ name: 'ECDH', namedCurve: 'P-256' }, true, ['deriveBits']);
+      const pub = new Uint8Array(await crypto.subtle.exportKey('raw', kp.publicKey));
+      const priv = await crypto.subtle.exportKey('jwk', kp.privateKey);
+      return { g: 'tm-r-' + b64eBytes(crypto.getRandomValues(new Uint8Array(12))), gkPub: b64eBytes(pub), gkPriv: priv };
+    } catch { return null; }
+  }
+
+  // Opens the host's sealed answer with this booking's key (the same scheme the host's own requests use).
+  async function openReply(sealed, rec) {
+    if (!sealed || !sealed.startsWith('tmb1:') || !rec.gkPriv || !rec.gkPub) return null;
+    try {
+      const subtle = crypto.subtle;
+      const data = bytes(sealed.slice(5));
+      if (data.length < 65 + 12 + 16) return null;
+      const ephRaw = data.slice(0, 65), iv = data.slice(65, 77), ct = data.slice(77);
+      const priv = await subtle.importKey('jwk', rec.gkPriv, { name: 'ECDH', namedCurve: 'P-256' }, false, ['deriveBits']);
+      const eph = await subtle.importKey('raw', ephRaw, { name: 'ECDH', namedCurve: 'P-256' }, false, []);
+      const shared = await subtle.deriveBits({ name: 'ECDH', public: eph }, priv, 256);
+      const hkdf = await subtle.importKey('raw', shared, 'HKDF', false, ['deriveKey']);
+      const key = await subtle.deriveKey({ name: 'HKDF', hash: 'SHA-256', salt: new TextEncoder().encode('tidemark-booking-v1'), info: join(ephRaw, bytes(rec.gkPub)) },
+                                         hkdf, { name: 'AES-GCM', length: 256 }, false, ['decrypt']);
+      return JSON.parse(new TextDecoder().decode(await subtle.decrypt({ name: 'AES-GCM', iv }, key, ct)));
+    } catch { return null; }
+  }
+
   function findCurrent() {
     const all = store.all();
-    if (linkedBooking) return { b: linkedBooking, req: all[linkedBooking]?.req || null };
+    if (linkedBooking) {
+      // From the private link: the reply key may come with it (another device, or cleared browser data).
+      if (linkG && linkPub && linkD && !all[linkedBooking]?.gkPriv) {
+        const pub = bytes(linkPub);
+        const jwk = { kty: 'EC', crv: 'P-256', x: b64eBytes(pub.slice(1, 33)), y: b64eBytes(pub.slice(33, 65)), d: linkD, ext: true };
+        store.save(linkedBooking, all[linkedBooking]?.req || null, { g: linkG, gkPub: linkPub, gkPriv: jwk });
+      }
+      return { b: linkedBooking, req: store.get(linkedBooking)?.req || null };
+    }
     const mine = Object.entries(all).filter(([, v]) => v.r === offer.r && v.req && v.req.s * 60000 > Date.now())
       .sort((a, b) => a[1].req.s - b[1].req.s);
     return mine.length ? { b: mine[0][0], req: mine[0][1].req } : null;
@@ -340,14 +399,112 @@
     const t = req.s * 60000;
     return `${fmtLong.format(new Date(t))}, ${fmtTime.format(new Date(t))} – ${fmtTime.format(new Date(t + req.d * 60000))}`;
   }
+
+  // The answer to the request as it stands now (an answer to an earlier version doesn't count).
+  function currentAnswer(rec) {
+    const a = rec && rec.answer;
+    if (!a) return null;
+    if (rec.req && (a.q !== rec.req.s || (a.ql || '') !== (rec.req.l || ''))) return null;
+    return a;
+  }
+
   function showManage() {
     current = relay ? findCurrent() : null;
     $('manage').hidden = !current;
     if (!current) return;
-    $('manage-when').textContent = current.req ? `${title} · ${describe(current.req)}` : `${title} with ${host}`;
-    $('manage-meta').textContent = current.req ? [current.req.l, current.req.n].filter(Boolean).join(' · ') : 'Pick a new time below, or cancel.';
+    const rec = store.get(current.b);
+    const ans = currentAnswer(rec);
+    const when = ans && ans.a === 'no' && ans.c ? describe(ans) : current.req ? describe(current.req) : ans ? describe(ans) : null;
+    $('manage-when').textContent = when ? `${title} · ${when}` : `${title} with ${host}`;
+    const place = ans && ans.a === 'no' && ans.c ? ans.l : current.req?.l;
+    $('manage-meta').textContent = [place, current.req?.n].filter(Boolean).join(' · ') || 'Pick a new time below, or cancel.';
     $('manage-status').textContent = '';
+    const badge = $('manage-answer');
+    badge.hidden = !(rec && rec.g);
+    let kind = 'wait', text = `Waiting for ${host} to confirm`;
+    if (ans && ans.a === 'yes') { kind = 'yes'; text = ans.c ? `${host} accepted your change` : `Confirmed — it's on ${host}'s calendar`; }
+    if (ans && ans.a === 'no') { kind = 'no'; text = ans.c ? `${host} couldn't make the new time — the original time stands` : `${host} can't make this time — pick another below`; }
+    badge.className = 'answer ' + kind;
+    badge.textContent = (kind === 'yes' ? '✓ ' : kind === 'no' ? '✕ ' : '⏳ ') + text;
+    const declinedNew = ans && ans.a === 'no' && !ans.c;
+    $('manage-change').hidden = declinedNew;
+    $('manage-cancel').hidden = declinedNew;
+    if (declinedNew) {
+      // Nothing booked: straight back to picking a time (a new request).
+      editing = false;
+      document.querySelector('#picker .grid').style.display = '';
+      $('picker').style.display = '';
+    }
+    // The card from sending the request says what happened once there's an answer.
+    if (ans && $('done').classList.contains('show')) {
+      const h2 = document.querySelector('#done h2');
+      if (kind === 'yes') {
+        h2.textContent = 'Confirmed';
+        $('done-text').textContent = `${title} on ${describe(ans)}${ans.l ? ' at ' + ans.l : ''} is on ${host}'s calendar.`;
+      } else if (ans.c) {
+        h2.textContent = 'Original time stands';
+        $('done-text').textContent = `${host} couldn't make the new time. You're still booked for ${describe(ans)}${ans.l ? ' at ' + ans.l : ''}.`;
+      } else {
+        h2.textContent = 'Not this time';
+        $('done-text').textContent = `${host} can't make ${describe(ans)}. Pick another time above.`;
+        // Nothing booked: nothing to add to a calendar or come back to.
+        $('send-actions').innerHTML = '';
+        $('manage-link').innerHTML = '';
+      }
+      $('done-note').textContent = '';
+      document.querySelector('#done .tick').textContent = kind === 'yes' ? '✓' : '✕';
+    }
+    const bell = $('manage-notify');
+    bell.hidden = !('Notification' in window) || Notification.permission !== 'default' || kind !== 'wait' || !(rec && rec.g);
+    watch();
   }
+
+  // Looks for the host's answer now, every 20 seconds while the page is open, and when it comes back into view.
+  let watching = null;
+  async function checkAnswer() {
+    const b = current && current.b;
+    const rec = b && store.get(b);
+    if (!rec || !rec.g || !rec.gkPriv) return;
+    try {
+      const res = await fetch('https://ntfy.sh/' + rec.g + '/json?poll=1&since=all', { cache: 'no-store' });
+      if (!res.ok) return;
+      let latest = null;
+      for (const line of (await res.text()).split('\n')) {
+        let m; try { m = JSON.parse(line); } catch { continue; }
+        if (m.event !== 'message' || !m.message) continue;
+        const r = await openReply(m.message, rec);
+        if (r && r.b === b && (!latest || m.time >= latest.time)) latest = Object.assign(r, { time: m.time });
+      }
+      if (!latest) return;
+      const before = currentAnswer(rec);
+      store.save(b, rec.req, { answer: latest });
+      const now = currentAnswer(store.get(b));
+      if (now && (!before || before.a !== now.a || before.time !== now.time)) {
+        if (before === null || before.a !== now.a) notifyAnswer(now);
+        showManage();
+      }
+    } catch {}
+  }
+  function watch() {
+    clearInterval(watching);
+    const rec = current && store.get(current.b);
+    if (!rec || !rec.g) return;
+    checkAnswer();
+    watching = setInterval(checkAnswer, 20000);
+  }
+  document.addEventListener('visibilitychange', () => { if (!document.hidden) checkAnswer(); });
+
+  function notifyAnswer(a) {
+    if (!('Notification' in window) || Notification.permission !== 'granted') return;
+    const t = a.a === 'yes' ? (a.c ? `${host} accepted your change` : `${host} confirmed ${title}`)
+                            : (a.c ? `${host} kept the original time` : `${host} can't make that time`);
+    try { new Notification(t, { body: describe(a), tag: 'tidemark-' + a.b }); } catch {}
+  }
+  $('manage-notify').addEventListener('click', async () => {
+    try { await Notification.requestPermission(); } catch {}
+    showManage();
+  });
+
   $('manage-change').addEventListener('click', () => {
     editing = true;
     const r = current?.req;
@@ -366,11 +523,14 @@
     const ok = await deliver(req);
     $('manage-cancel').disabled = false;
     if (ok) {
+      clearInterval(watching);
       store.drop(current.b);
       $('manage-when').textContent = 'Cancelled';
-      $('manage-meta').textContent = `${host} has been told, and it's off their calendar.`;
+      $('manage-meta').textContent = `${host} has been told.`;
+      $('manage-answer').hidden = true;
+      $('manage-notify').hidden = true;
       document.querySelectorAll('#manage .actions .btn').forEach(b => b.hidden = true);
-      // The "You're booked" card from earlier no longer applies, and there's nothing left to pick.
+      // The "Request sent" card from earlier no longer applies, and there's nothing left to pick.
       $('done').classList.remove('show');
       $('form').classList.remove('show');
       $('picker').style.display = 'none';
@@ -396,9 +556,13 @@
     if (email) req.e = email;
     if (msg) req.m = msg;
     if (where) req.l = where;
+    let channel = null;
     if (relay) {
       req.b = editing && current ? current.b : newID();
       if (editing && current) req.k = 'edit';
+      // Where the host's answer comes back to.
+      channel = await replyChannel(req.b);
+      if (channel) { req.g = channel.g; req.gk = channel.gkPub; }
     }
     const confirmURL = new URL('confirm.html#' + b64e(JSON.stringify(req)), location.href).href;
     const when = `${fmtLong.format(new Date(chosen))} at ${fmtTime.format(new Date(chosen))} (${guestTZ.replace(/_/g, ' ')})`;
@@ -422,15 +586,23 @@
       return el;
     };
     if (delivered) {
-      // Straight onto the host's calendar: nothing for the guest to send.
-      store.save(req.b, req);
+      // With the host now: they accept or decline, and the answer shows here.
+      store.save(req.b, req, Object.assign({ answer: null }, channel || {}));
       const changed = req.k === 'edit';
       editing = false;
       showManage();
-      document.querySelector('#done h2') && (document.querySelector('#done h2').textContent = changed ? 'Booking updated' : "You're booked");
-      $('done-text').textContent = `${title} on ${when}${where ? ' at ' + where : ''} is on ${host}'s calendar. Add it to yours too:`;
-      $('done-note').textContent = `${host} gets a notification from Tidemark and will confirm. Nothing else to send.`;
-      add('Add to my calendar', 'primary', () => downloadICS(req));
+      document.querySelector('#done h2') && (document.querySelector('#done h2').textContent = changed ? 'Change requested' : 'Request sent');
+      document.querySelector('#done .tick').textContent = '✓';
+      $('done-text').textContent = `${title} on ${when}${where ? ' at ' + where : ''}. ${host} will confirm, and you'll see the answer here.`;
+      $('done-note').textContent = `${host} gets a notification from Tidemark and accepts or declines. Nothing else to send.`;
+      if ('Notification' in window && Notification.permission === 'default' && channel) {
+        const bell = add('Notify me when they answer', 'primary', async () => {
+          try { await Notification.requestPermission(); } catch {}
+          bell.textContent = Notification.permission === 'granted' ? "We'll let you know ✓" : 'Notifications are off';
+          showManage();
+        });
+      }
+      add('Add to my calendar', 'secondary', () => downloadICS(req));
       // A private link to come back and change or cancel (this browser also remembers it).
       const link = manageURL(req.b);
       const box = document.createElement('div');
