@@ -78,6 +78,15 @@
   footer { text-align:center; color:var(--soft); font-size:13px; margin-top:26px; }
   footer a { color:var(--accent); text-decoration:none; font-weight:600; }
   .err { color:var(--coral); font-size:14px; margin-top:8px; display:none; }
+  [hidden] { display:none !important; }
+  .manage h2 { margin:0 0 4px; }
+  .manage .when { font-size:18px; font-weight:700; margin:2px 0; }
+  .manage .meta { color:var(--soft); font-size:14px; }
+  .manage .actions { margin-top:14px; }
+  .linkbox { display:flex; gap:8px; align-items:center; margin-top:14px; background:var(--sunken); border-radius:12px; padding:10px 12px;
+             font-size:13px; color:var(--soft); word-break:break-all; text-align:left; }
+  .linkbox span { flex:1; }
+  .danger { color:var(--coral); background:var(--sunken); }
 </style>
 </head>
 <body>
@@ -103,6 +112,16 @@
 </header>
 
 <main>
+  <section class="card manage" id="manage" hidden aria-live="polite">
+    <div class="eyebrow" style="color:var(--accent)">Your booking</div>
+    <div class="when" id="manage-when"></div>
+    <div class="meta" id="manage-meta"></div>
+    <div class="actions">
+      <button class="btn primary" type="button" id="manage-change">Change time or details</button>
+      <button class="btn danger" type="button" id="manage-cancel">Cancel booking</button>
+    </div>
+    <p class="note" id="manage-status"></p>
+  </section>
   <section class="card" id="picker" aria-live="polite">
     <div class="grid">
       <div>
@@ -122,6 +141,8 @@
       <input id="name" name="name" autocomplete="name" required maxlength="80">
       <label for="email">Your email <span style="font-weight:500">(optional)</span></label>
       <input id="email" name="email" type="email" autocomplete="email" maxlength="120">
+      <label for="loc">Where? <span style="font-weight:500">(optional)</span></label>
+      <input id="loc" name="loc" autocomplete="street-address" maxlength="160" placeholder="An address, a place, or “video call”">
       <label for="msg">Anything to share? <span style="font-weight:500">(optional)</span></label>
       <textarea id="msg" name="msg" maxlength="400"></textarea>
       <p class="err" id="err">Please add your name.</p>
@@ -135,6 +156,7 @@
       <h2>Almost there!</h2>
       <p id="done-text"></p>
       <div class="actions" id="send-actions"></div>
+      <div id="manage-link"></div>
       <p class="note" id="done-note">Your request goes to <span id="host2"></span>, who adds it to their calendar with one tap.</p>
     </div>
   </section>
@@ -186,9 +208,11 @@
   }
   window.__tidemarkSeal = seal; // for testing
 
+  // "#<offer>" or, from a guest's own "change or cancel" link, "#<offer>.<booking id>".
+  const [token, linkedBooking] = location.hash.slice(1).split('.');
   let offer;
   try {
-    offer = JSON.parse(b64d(location.hash.slice(1)));
+    offer = JSON.parse(b64d(token));
     if (!offer || !Array.isArray(offer.w) || !offer.d) throw new Error('bad');
   } catch (e) {
     $('host').textContent = 'This link looks incomplete';
@@ -294,6 +318,64 @@
     if (submit) submit.textContent = 'Book this time';
   }
 
+  // The guest's own bookings with this host, remembered in this browser (and reachable from their private link).
+  const relay = !!(offer.r && offer.k);
+  const store = {
+    all() { try { return JSON.parse(localStorage.getItem('tidemark-bookings') || '{}'); } catch { return {}; } },
+    save(b, req) { try { const a = this.all(); a[b] = { req, token, r: offer.r }; localStorage.setItem('tidemark-bookings', JSON.stringify(a)); } catch {} },
+    drop(b) { try { const a = this.all(); delete a[b]; localStorage.setItem('tidemark-bookings', JSON.stringify(a)); } catch {} },
+  };
+  const newID = () => b64eBytes(crypto.getRandomValues(new Uint8Array(9)));
+  const manageURL = (b) => location.origin + location.pathname + '#' + token + '.' + b;
+  let current = null;   // { b, req } being managed
+  let editing = false;
+  function findCurrent() {
+    const all = store.all();
+    if (linkedBooking) return { b: linkedBooking, req: all[linkedBooking]?.req || null };
+    const mine = Object.entries(all).filter(([, v]) => v.r === offer.r && v.req && v.req.s * 60000 > Date.now())
+      .sort((a, b) => a[1].req.s - b[1].req.s);
+    return mine.length ? { b: mine[0][0], req: mine[0][1].req } : null;
+  }
+  function describe(req) {
+    const t = req.s * 60000;
+    return `${fmtLong.format(new Date(t))}, ${fmtTime.format(new Date(t))} – ${fmtTime.format(new Date(t + req.d * 60000))}`;
+  }
+  function showManage() {
+    current = relay ? findCurrent() : null;
+    $('manage').hidden = !current;
+    if (!current) return;
+    $('manage-when').textContent = current.req ? `${title} · ${describe(current.req)}` : `${title} with ${host}`;
+    $('manage-meta').textContent = current.req ? [current.req.l, current.req.n].filter(Boolean).join(' · ') : 'Pick a new time below, or cancel.';
+    $('manage-status').textContent = '';
+  }
+  $('manage-change').addEventListener('click', () => {
+    editing = true;
+    const r = current?.req;
+    if (r) { $('name').value = r.n || ''; $('email').value = r.e || ''; $('loc').value = r.l || ''; $('msg').value = r.m || ''; }
+    $('manage-status').textContent = 'Pick a new time below (or the same one to just change the details).';
+    document.querySelector('#picker .grid').style.display = '';
+    $('picker').scrollIntoView({ behavior: 'smooth', block: 'start' });
+  });
+  $('manage-cancel').addEventListener('click', async () => {
+    if (!current) return;
+    const when = current.req ? describe(current.req) : 'your booking';
+    if (!confirm(`Cancel ${title} on ${when}?`)) return;
+    const req = { v: 1, k: 'cancel', b: current.b, t: title, s: current.req?.s || Math.round(Date.now() / 60000), d: minutes,
+                  n: current.req?.n || 'Guest', h: host };
+    $('manage-cancel').disabled = true;
+    const ok = await deliver(req);
+    $('manage-cancel').disabled = false;
+    if (ok) {
+      store.drop(current.b);
+      $('manage-when').textContent = 'Cancelled';
+      $('manage-meta').textContent = `${host} has been told, and it's off their calendar.`;
+      document.querySelectorAll('#manage .actions .btn').forEach(b => b.hidden = true);
+    } else {
+      $('manage-status').textContent = "That didn't go through. Check your connection and try again.";
+    }
+  });
+  showManage();
+
   const first = byDay.keys().next().value;
   renderDays(first);
   renderSlots(first);
@@ -305,9 +387,15 @@
     $('err').style.display = 'none';
     const email = $('email').value.trim();
     const msg = $('msg').value.trim();
+    const where = $('loc').value.trim();
     const req = { v: 1, t: title, s: Math.round(chosen / 60000), d: minutes, n: name, h: host };
     if (email) req.e = email;
     if (msg) req.m = msg;
+    if (where) req.l = where;
+    if (relay) {
+      req.b = editing && current ? current.b : newID();
+      if (editing && current) req.k = 'edit';
+    }
     const confirmURL = new URL('confirm.html#' + b64e(JSON.stringify(req)), location.href).href;
     const when = `${fmtLong.format(new Date(chosen))} at ${fmtTime.format(new Date(chosen))} (${guestTZ.replace(/_/g, ' ')})`;
     const text = `Hi ${host}, I'd like to book "${title}" on ${when}.${msg ? '\n\n' + msg : ''}\n\nAdd it to your calendar: ${confirmURL}\n\n— ${name}`;
@@ -331,10 +419,26 @@
     };
     if (delivered) {
       // Straight onto the host's calendar: nothing for the guest to send.
-      document.querySelector('#done h2') && (document.querySelector('#done h2').textContent = "You're booked");
-      $('done-text').textContent = `${title} on ${when} is on ${host}'s calendar. Add it to yours too:`;
-      $('done-note').textContent = `${host} gets a notification from Tidemark. Nothing else to send.`;
+      store.save(req.b, req);
+      const changed = req.k === 'edit';
+      editing = false;
+      showManage();
+      document.querySelector('#done h2') && (document.querySelector('#done h2').textContent = changed ? 'Booking updated' : "You're booked");
+      $('done-text').textContent = `${title} on ${when}${where ? ' at ' + where : ''} is on ${host}'s calendar. Add it to yours too:`;
+      $('done-note').textContent = `${host} gets a notification from Tidemark and will confirm. Nothing else to send.`;
       add('Add to my calendar', 'primary', () => downloadICS(req));
+      // A private link to come back and change or cancel (this browser also remembers it).
+      const link = manageURL(req.b);
+      const box = document.createElement('div');
+      box.className = 'linkbox';
+      box.innerHTML = '<span></span>';
+      box.querySelector('span').textContent = 'To change or cancel later, keep this link: ' + link;
+      const copy = document.createElement('button');
+      copy.className = 'btn secondary'; copy.type = 'button'; copy.textContent = 'Copy'; copy.style.padding = '8px 14px';
+      copy.addEventListener('click', async () => { try { await navigator.clipboard.writeText(link); copy.textContent = 'Copied ✓'; } catch { prompt('Copy this link:', link); } });
+      box.appendChild(copy);
+      $('manage-link').innerHTML = '';
+      $('manage-link').appendChild(box);
       $('done').classList.add('show');
       $('done').scrollIntoView({ behavior: 'smooth', block: 'center' });
       return;
@@ -365,6 +469,7 @@
       'BEGIN:VCALENDAR', 'VERSION:2.0', 'PRODID:-//Tidemark//Booking//EN', 'BEGIN:VEVENT',
       `UID:${req.s}-${Math.random().toString(36).slice(2)}@tidemark`, `DTSTAMP:${stamp(Date.now())}`,
       `DTSTART:${stamp(start)}`, `DTEND:${stamp(start + req.d * 60000)}`,
+      ...(req.l ? [`LOCATION:${esc(req.l)}`] : []),
       `SUMMARY:${esc(`${req.t} with ${host}`)}`, 'STATUS:TENTATIVE',
       `DESCRIPTION:${esc(`Requested through Tidemark. Waiting for ${host} to confirm.`)}`,
       'END:VEVENT', 'END:VCALENDAR'
