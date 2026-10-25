@@ -370,6 +370,9 @@
       $('manage-when').textContent = 'Cancelled';
       $('manage-meta').textContent = `${host} has been told, and it's off their calendar.`;
       document.querySelectorAll('#manage .actions .btn').forEach(b => b.hidden = true);
+      // The "You're booked" card from earlier no longer applies.
+      $('done').classList.remove('show');
+      $('form').classList.remove('show');
     } else {
       $('manage-status').textContent = "That didn't go through. Check your connection and try again.";
     }
