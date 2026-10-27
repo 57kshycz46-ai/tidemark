@@ -92,6 +92,11 @@
   .answer.yes { background:color-mix(in srgb, var(--accent) 16%, transparent); color:var(--accent); }
   .answer.no { background:color-mix(in srgb, var(--coral) 16%, transparent); color:var(--coral); }
   .bell { margin-top:12px; padding:10px 16px; font-size:14px; }
+  .promo { display:flex; gap:12px; align-items:center; margin-top:22px; padding:14px 16px; border-radius:16px; background:var(--sunken);
+           text-align:left; color:var(--ink); text-decoration:none; }
+  .promo img { width:44px; height:44px; border-radius:11px; flex:none; }
+  .promo b { display:block; font-size:15px; }
+  .promo span { color:var(--soft); font-size:13px; line-height:1.35; }
 </style>
 </head>
 <body>
@@ -165,9 +170,13 @@
       <div class="actions" id="send-actions"></div>
       <div id="manage-link"></div>
       <p class="note" id="done-note">Your request goes to <span id="host2"></span>, who adds it to their calendar with one tap.</p>
+      <a class="promo" href="https://apps.apple.com/app/apple-store/id6821510047?pt=129556715&amp;ct=booking-done&amp;mt=8" target="_blank" rel="noopener">
+        <img src="icon.png" alt="">
+        <div><b>Want a booking link like this?</b><span>Tidemark is a free, private calendar for iPhone, iPad and Mac.</span></div>
+      </a>
     </div>
   </section>
-  <footer>Scheduling by <a href="./">Tidemark</a> · No account needed · <a href="privacy.html">Privacy</a></footer>
+  <footer>Scheduling by <a href="https://apps.apple.com/app/apple-store/id6821510047?pt=129556715&amp;ct=booking-footer&amp;mt=8" target="_blank" rel="noopener">Tidemark</a> · No account needed · <a href="privacy.html">Privacy</a></footer>
 </main>
 
 <script>

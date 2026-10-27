@@ -2,34 +2,120 @@
 <html lang="en">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Tidemark Support</title>
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Tidemark — the calendar you can just ask</title>
+<meta name="description" content="A private calendar for iPhone, iPad, Mac and Apple Watch. Ask about your time in plain English, scan flyers into events, share a booking link, and know when to leave. The AI runs on your device.">
+<meta name="apple-itunes-app" content="app-id=6821510047">
+<link rel="canonical" href="https://57kshycz46-ai.github.io/tidemark/">
+<link rel="icon" href="icon.png">
+<link rel="apple-touch-icon" href="icon.png">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Tidemark">
+<meta property="og:title" content="Tidemark — the calendar you can just ask">
+<meta property="og:description" content="Ask about your time in plain English, scan flyers into events and let people book you. Private, on your device.">
+<meta property="og:url" content="https://57kshycz46-ai.github.io/tidemark/">
+<meta property="og:image" content="https://57kshycz46-ai.github.io/tidemark/og.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://57kshycz46-ai.github.io/tidemark/og.jpg">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"SoftwareApplication","name":"Tidemark: Calendar & Planner","operatingSystem":"iOS, iPadOS, macOS, watchOS",
+ "applicationCategory":"ProductivityApplication","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},
+ "url":"https://apps.apple.com/app/id6821510047"}
+</script>
 <style>
-  :root { --bg:#F4F7F8; --ink:#0E1A26; --soft:#5E6E7A; --accent:#0B8C8C; --line:rgba(14,26,38,.12); }
-  @media (prefers-color-scheme: dark) { :root { --bg:#0A1118; --ink:#EAF2F5; --soft:#9AAAB5; --accent:#3CCFC4; --line:rgba(234,242,245,.14); } }
+  :root { --bg:#F4F7F8; --card:#FFFFFF; --sunken:#E9EFF2; --ink:#0E1A26; --soft:#5E6E7A; --accent:#0B8C8C; --accent2:#2F6FEB;
+          --line:rgba(14,26,38,.12); --shadow:0 24px 60px -30px rgba(11,37,64,.45); }
+  @media (prefers-color-scheme: dark) {
+    :root { --bg:#0A1118; --card:#131D27; --sunken:#0F1820; --ink:#EAF2F5; --soft:#9AAAB5; --accent:#3CCFC4; --accent2:#6C9BFF;
+            --line:rgba(234,242,245,.14); --shadow:0 24px 60px -30px rgba(0,0,0,.9); }
+  }
+  * { box-sizing:border-box; }
   body { margin:0; background:var(--bg); color:var(--ink); font:17px/1.6 -apple-system, BlinkMacSystemFont, "Segoe UI", system-ui, sans-serif; }
-  main { max-width:680px; margin:0 auto; padding:48px 20px 72px; }
-  h1 { font:600 2.1rem/1.2 ui-serif, "New York", Georgia, serif; margin:0 0 4px; }
-  h2 { font:600 1.25rem/1.3 ui-serif, "New York", Georgia, serif; margin:2.2em 0 .4em; padding-top:1.2em; border-top:1px solid var(--line); }
-  em, .soft { color:var(--soft); }
   a { color:var(--accent); }
-  li { margin:.5em 0; }
-  footer { margin-top:3em; color:var(--soft); font-size:.9rem; }
+  .wrap { max-width:1040px; margin:0 auto; padding:0 20px; }
+  .serif { font-family:ui-serif, "New York", Georgia, serif; }
+  header.hero { padding:64px 0 32px;
+    background:radial-gradient(1000px 500px at 0% -20%, color-mix(in srgb, var(--accent) 22%, transparent), transparent),
+               radial-gradient(800px 500px at 110% 10%, color-mix(in srgb, var(--accent2) 18%, transparent), transparent); }
+  .brand { display:flex; align-items:center; gap:14px; }
+  .brand img { width:64px; height:64px; border-radius:15px; box-shadow:var(--shadow); }
+  .brand span { font:700 1.4rem/1 ui-serif, "New York", Georgia, serif; }
+  h1 { font:700 clamp(2.4rem, 6vw, 4rem)/1.05 ui-serif, "New York", Georgia, serif; margin:28px 0 14px; letter-spacing:-.01em; }
+  .lede { font-size:1.2rem; color:var(--soft); max-width:620px; margin:0; }
+  .cta { display:inline-flex; align-items:center; gap:10px; margin-top:26px; padding:15px 26px; border-radius:999px; font-weight:700;
+         color:#fff; text-decoration:none; background:linear-gradient(135deg, var(--accent), var(--accent2));
+         box-shadow:0 14px 30px -14px var(--accent); }
+  .meta { color:var(--soft); font-size:.95rem; margin-top:12px; }
+  .shots { display:flex; gap:18px; overflow-x:auto; scroll-snap-type:x mandatory; padding:28px 20px 36px; margin:0 -20px; }
+  .shots img { width:min(240px, 62vw); height:auto; border-radius:22px; box-shadow:var(--shadow); scroll-snap-align:start; flex:none; }
+  section { padding:44px 0; border-top:1px solid var(--line); }
+  h2 { font:600 1.8rem/1.2 ui-serif, "New York", Georgia, serif; margin:0 0 18px; }
+  .grid { display:grid; grid-template-columns:repeat(auto-fit, minmax(260px, 1fr)); gap:16px; }
+  .feature { background:var(--card); border:1px solid var(--line); border-radius:20px; padding:20px 22px; }
+  .feature h3 { margin:0 0 6px; font-size:1.08rem; }
+  .feature p { margin:0; color:var(--soft); font-size:.98rem; }
+  .privacy { background:var(--card); border:1px solid var(--line); border-radius:24px; padding:26px; }
+  .privacy p { margin:.4em 0; color:var(--soft); }
+  .faq p { margin:0 0 1.1em; }
+  .faq strong { color:var(--ink); }
+  footer { padding:32px 0 60px; color:var(--soft); font-size:.92rem; border-top:1px solid var(--line); }
 </style>
 </head>
 <body>
-<main>
-<h1>Tidemark</h1>
-<p class="soft">A calm, modern calendar for iPhone, iPad, Mac and Apple Watch. Every calendar in one place, live travel time, reminders built in, and quick add that understands plain English.</p>
-<h2>Support</h2>
-<p>Questions, bug reports or feedback: <a href="mailto:raghav_c@kalbhor.com">raghav_c@kalbhor.com</a>. We usually reply within two days.</p>
-<h2>Common questions</h2>
-<p><strong>How do I add my Google or Outlook calendar?</strong><br>Add the account once in your device settings (iPhone/iPad: Settings › Apps › Calendar › Calendar Accounts; Mac: System Settings › Internet Accounts). Tidemark shows it automatically, with no extra sign-in.</p>
-<p><strong>How do I subscribe to a holiday or sports calendar?</strong><br>Open Tidemark › Calendars › Add Feed and paste any webcal:// or .ics link, or pick one of the popular feeds.</p>
-<p><strong>Why doesn't my event show travel time?</strong><br>Travel time needs a location on the event and either location access or a home address (Tidemark › Settings › Travel Time).</p>
-<p><strong>How do I cancel my subscription?</strong><br>Open Tidemark › Settings › Manage Subscription, or go to Settings › your name › Subscriptions on your iPhone.</p>
-<p><strong>I bought Tidemark Pro on another device.</strong><br>Pro is tied to your Apple Account and unlocks on all your devices. If it doesn't appear, open Settings › Restore Purchases.</p>
-<footer><a href="privacy.html">Privacy Policy</a> · <a href="terms.html">Terms of Use</a></footer>
+<header class="hero">
+  <div class="wrap">
+    <div class="brand"><img src="icon.png" alt=""><span>Tidemark</span></div>
+    <h1>The calendar you can just ask.</h1>
+    <p class="lede">Every calendar in one place, with the weather, travel time and reminders built in. Ask about your time in plain English, turn a flyer into events, and let people book you. The AI runs on your device.</p>
+    <a class="cta" href="https://apps.apple.com/app/apple-store/id6821510047?pt=129556715&amp;ct=site&amp;mt=8">Get Tidemark free on the App Store</a>
+    <p class="meta">iPhone, iPad, Mac and Apple Watch · Free, with optional Tidemark Pro</p>
+    <div class="shots" aria-label="Screenshots">
+      <img src="img/1-today.jpg" alt="Today: a short brief with the weather, what's next and when to leave" loading="lazy">
+      <img src="img/2-ask.jpg" alt="Ask: “What does tomorrow look like?” answered from the calendar" loading="lazy">
+      <img src="img/3-scan.jpg" alt="Scan to Event: three events found on a festival flyer" loading="lazy">
+      <img src="img/4-bookings.jpg" alt="Booking requests waiting to be accepted" loading="lazy">
+      <img src="img/5-detail.jpg" alt="An event with live travel time and a leave-by alert" loading="lazy">
+    </div>
+  </div>
+</header>
+
+<main class="wrap">
+  <section>
+    <h2>What it does</h2>
+    <div class="grid">
+      <div class="feature"><h3>Ask Tidemark</h3><p>“Am I free at 3 tomorrow?” “When's my next 1:1?” Exact answers from your calendar, even typed in a hurry.</p></div>
+      <div class="feature"><h3>Scan to Event</h3><p>Snap a flyer, ticket or screenshot, or drop in a PDF. Tidemark finds the events and you check each one.</p></div>
+      <div class="feature"><h3>Let people book you</h3><p>Share a link with your open times. Guests pick a time and a place; nothing goes on your calendar until you accept.</p></div>
+      <div class="feature"><h3>Know when to leave</h3><p>Live travel time from Apple Maps on every event with a place, and time-to-leave alerts.</p></div>
+      <div class="feature"><h3>Every calendar, one place</h3><p>iCloud, Google, Outlook, Exchange and Yahoo, plus Apple Reminders and any ICS feed. No extra sign-in.</p></div>
+      <div class="feature"><h3>Your day, briefly</h3><p>The weather, what's next, your longest free stretch and any clashes, in a few lines each morning.</p></div>
+    </div>
+  </section>
+
+  <section>
+    <div class="privacy">
+      <h2>Private by design</h2>
+      <p>No account, no ads, no tracking. Your calendar stays on your Apple devices, and the AI that reads flyers and answers questions runs on your device with Apple Intelligence.</p>
+      <p>Booking requests are end-to-end encrypted. <a href="privacy.html">Read the privacy policy</a>.</p>
+    </div>
+  </section>
+
+  <section class="faq" id="support">
+    <h2>Support</h2>
+    <p>Questions, bug reports or feedback: <a href="mailto:raghav_c@kalbhor.com">raghav_c@kalbhor.com</a>. We usually reply within two days.</p>
+    <p><strong>How do I add my Google or Outlook calendar?</strong><br>Add the account once in your device settings (iPhone/iPad: Settings › Apps › Calendar › Calendar Accounts; Mac: System Settings › Internet Accounts). Tidemark shows it automatically, with no extra sign-in.</p>
+    <p><strong>How do I subscribe to a holiday or sports calendar?</strong><br>On iPhone and iPad, open Settings (the gear) › Calendars &amp; Feeds › Add Feed; on the Mac, Accounts &amp; Feeds in the sidebar. Paste any webcal:// or .ics link, or pick one of the popular feeds.</p>
+    <p><strong>Why doesn't my event show travel time?</strong><br>Travel time needs a location on the event and either location access or a home address (Settings › Travel Time).</p>
+    <p><strong>Ask and Scan to Event</strong><br>Both work on every device. With Apple Intelligence turned on (iPhone 15 Pro and later, iPad and Mac with Apple silicon), Tidemark also understands more kinds of questions and text.</p>
+    <p><strong>How do I cancel my subscription?</strong><br>Open Tidemark › Settings › Manage Subscription, or go to Settings › your name › Subscriptions on your iPhone.</p>
+    <p><strong>I bought Tidemark Pro on another device.</strong><br>Pro is tied to your Apple Account and unlocks on all your devices. If it doesn't appear, open Settings › Restore Purchases.</p>
+  </section>
 </main>
+
+<footer>
+  <div class="wrap">Tidemark · <a href="privacy.html">Privacy Policy</a> · <a href="terms.html">Terms of Use</a> · <a href="mailto:raghav_c@kalbhor.com">Contact</a></div>
+</footer>
 </body>
 </html>
