@@ -7,89 +7,113 @@
 <meta name="referrer" content="no-referrer">
 <title>Book a time · Tidemark</title>
 <style>
+  /* Tidemark's look: the app's canvas washed with the theme from the top corners, cards on it, tracked caps labels
+     in the theme's colour, a serif for names and days, rounded type for labels. Lagoon theme. */
   :root {
-    --bg:#F4F7F8; --card:#FFFFFF; --sunken:#E9EFF2; --ink:#0E1A26; --soft:#5E6E7A; --line:rgba(14,26,38,.10);
-    --accent:#0B8C8C; --accent2:#2F6FEB; --coral:#FF6B57; --shadow:0 18px 50px -24px rgba(11,37,64,.35);
+    --bg:#F4F7F8; --card:#FFFFFF; --sunken:#E9EFF2; --ink:#0E1A26; --soft:#5E6E7A; --line:#D8E1E6;
+    --accent:#0FA3A3; --accent-ink:#0B8C8C; --accent2:#2F6FEB; --coral:#FF6B57; --deep:#0B2540;
+    --shadow:0 14px 34px -18px rgba(11,37,64,.28);
+    --serif: ui-serif, "New York", Georgia, serif;
+    --rounded: ui-rounded, "SF Pro Rounded", -apple-system, BlinkMacSystemFont, system-ui, sans-serif;
   }
   @media (prefers-color-scheme: dark) {
-    :root { --bg:#0A1118; --card:#131D27; --sunken:#0F1820; --ink:#EAF2F5; --soft:#9AAAB5; --line:rgba(234,242,245,.10);
-            --accent:#3CCFC4; --accent2:#6C9BFF; --shadow:0 18px 50px -24px rgba(0,0,0,.8); }
+    :root { --bg:#0A1118; --card:#131D27; --sunken:#0F1820; --ink:#EAF2F5; --soft:#93A3AE; --line:#223140;
+            --accent-ink:#2CC2BC; --shadow:0 18px 40px -20px rgba(0,0,0,.75); }
   }
   * { box-sizing:border-box; }
   html { -webkit-text-size-adjust:100%; }
-  body { margin:0; background:var(--bg); color:var(--ink); font:16px/1.5 -apple-system, BlinkMacSystemFont, "Segoe UI", system-ui, sans-serif; }
-  .hero { position:relative; overflow:hidden; color:#fff; padding:48px 20px 96px;
-          background:linear-gradient(135deg, var(--accent) 0%, var(--accent2) 100%); }
-  .hero svg { position:absolute; left:0; right:0; bottom:-2px; width:100%; height:90px; }
+  body { margin:0; min-height:100vh; color:var(--ink); font:16px/1.5 -apple-system, BlinkMacSystemFont, "Segoe UI", system-ui, sans-serif;
+         background:
+           radial-gradient(520px 460px at 0% 0%, color-mix(in srgb, var(--accent) 18%, transparent), transparent 70%),
+           radial-gradient(420px 380px at 100% 0%, color-mix(in srgb, var(--accent2) 12%, transparent), transparent 70%),
+           var(--bg);
+         background-repeat:no-repeat; overflow-x:hidden; }
+  .hero { position:relative; padding:40px 20px 56px; overflow:hidden; }
+  .hero > svg { position:absolute; left:0; right:0; bottom:0; width:100%; height:70px; }
   .wrap { max-width:880px; margin:0 auto; position:relative; }
   .host { display:flex; align-items:center; gap:16px; }
-  .avatar { width:60px; height:60px; border-radius:50%; display:grid; place-items:center; flex:none;
-            background:rgba(255,255,255,.2); font:700 26px/1 ui-serif, "New York", Georgia, serif; backdrop-filter:blur(6px); }
-  .eyebrow { text-transform:uppercase; letter-spacing:.14em; font-size:12px; font-weight:800; opacity:.85; }
-  h1 { font:700 clamp(28px, 5vw, 40px)/1.12 ui-serif, "New York", Georgia, serif; margin:2px 0 0; }
+  .avatar { width:58px; height:58px; border-radius:50%; display:grid; place-items:center; flex:none; color:#fff;
+            background:linear-gradient(135deg, var(--accent), var(--accent2)); font:700 25px/1 var(--serif);
+            box-shadow:0 10px 24px -12px var(--accent); }
+  .eyebrow { font:800 12px/1.4 var(--rounded); letter-spacing:.16em; text-transform:uppercase; color:var(--accent-ink); }
+  h1 { font:700 clamp(30px, 5.4vw, 42px)/1.1 var(--serif); margin:2px 0 0; }
   .chips { display:flex; flex-wrap:wrap; gap:8px; margin-top:18px; }
-  .chip { display:inline-flex; align-items:center; gap:6px; padding:6px 12px; border-radius:999px; background:rgba(255,255,255,.18);
-          font-size:14px; font-weight:600; }
-  main { max-width:880px; margin:-64px auto 0; padding:0 16px 64px; position:relative; }
-  .card { background:var(--card); border-radius:26px; box-shadow:var(--shadow); padding:22px; border:1px solid var(--line); }
-  .grid { display:grid; grid-template-columns: 300px 1fr; gap:22px; }
-  @media (max-width: 720px) { .grid { grid-template-columns: 1fr; } }
-  h2 { font:700 19px/1.3 ui-serif, "New York", Georgia, serif; margin:0 0 12px; }
-  .days { display:flex; flex-direction:column; gap:8px; }
-  @media (max-width: 720px) { .days { flex-direction:row; overflow-x:auto; padding-bottom:6px; scroll-snap-type:x mandatory; } }
-  .day { all:unset; cursor:pointer; display:flex; align-items:center; gap:14px; padding:10px 14px; border-radius:16px;
-         background:var(--sunken); scroll-snap-align:start; flex:none; transition:transform .15s, background .15s; }
-  .day:hover { transform:translateY(-1px); }
+  .chip { display:inline-flex; align-items:center; gap:6px; padding:6px 12px 6px 10px; border-radius:999px; font:600 14px/1.2 var(--rounded);
+          color:var(--accent-ink); background:color-mix(in srgb, var(--accent) 13%, transparent); }
+  .chip svg, .label svg, .field svg { width:15px; height:15px; flex:none; }
+  main { max-width:880px; margin:0 auto; padding:0 16px 64px; position:relative; }
+  .card { background:var(--card); border-radius:22px; box-shadow:var(--shadow); padding:22px; border:.5px solid color-mix(in srgb, var(--line) 60%, transparent); }
+  .grid { display:grid; grid-template-columns: 290px 1fr; gap:26px; }
+  /* The scrolling row of days mustn't widen its column past the screen. */
+  .grid > div { min-width:0; }
+  @media (max-width: 720px) { .grid { grid-template-columns: 1fr; gap:20px; } .card { padding:18px; } }
+  .label { display:flex; align-items:center; gap:7px; margin:0 0 12px; font:800 12px/1.3 var(--rounded); letter-spacing:.12em;
+           text-transform:uppercase; color:var(--accent-ink); }
+  h2 { font:700 19px/1.3 var(--serif); margin:0 0 12px; }
+  .days { display:flex; flex-direction:column; gap:4px; }
+  @media (max-width: 720px) { .days { flex-direction:row; overflow-x:auto; padding-bottom:6px; scroll-snap-type:x mandatory; gap:8px; } }
+  /* Like the Mac sidebar: the chosen day is a tinted pill with the theme's bar on its leading edge. */
+  .day { all:unset; position:relative; cursor:pointer; display:flex; align-items:center; gap:14px; padding:9px 14px; border-radius:14px;
+         scroll-snap-align:start; flex:none; transition:background .15s; }
+  .day:hover { background:var(--sunken); }
   .day:focus-visible, .slot:focus-visible, .btn:focus-visible { outline:3px solid var(--accent); outline-offset:2px; }
-  .day .num { font:700 26px/1 ui-serif, "New York", Georgia, serif; min-width:34px; text-align:center; }
-  .day .wd { font-size:12px; font-weight:800; letter-spacing:.08em; text-transform:uppercase; color:var(--soft); }
+  .day .num { font:700 26px/1 var(--serif); min-width:34px; text-align:center; }
+  .day .wd { font:800 11px/1.4 var(--rounded); letter-spacing:.1em; text-transform:uppercase; color:var(--soft); }
   .day .cnt { font-size:13px; color:var(--soft); }
-  .day[aria-pressed="true"] { background:linear-gradient(135deg, var(--accent), var(--accent2)); color:#fff; }
-  .day[aria-pressed="true"] .wd, .day[aria-pressed="true"] .cnt { color:rgba(255,255,255,.85); }
-  .slots { display:grid; grid-template-columns:repeat(auto-fill, minmax(118px, 1fr)); gap:10px; }
-  .slot { all:unset; cursor:pointer; text-align:center; padding:12px 8px; border-radius:14px; font-weight:700; font-variant-numeric:tabular-nums;
-          color:var(--accent); border:1.5px solid color-mix(in srgb, var(--accent) 40%, transparent);
-          background:color-mix(in srgb, var(--accent) 9%, transparent); transition:all .15s; }
-  .slot:hover { background:color-mix(in srgb, var(--accent) 18%, transparent); }
-  .slot[aria-pressed="true"] { background:var(--accent); color:#fff; border-color:var(--accent); }
+  .day[aria-pressed="true"] { background:color-mix(in srgb, var(--accent) 15%, transparent); }
+  .day[aria-pressed="true"]::before { content:""; position:absolute; left:0; top:9px; bottom:9px; width:3.5px; border-radius:3px; background:var(--accent); }
+  .day[aria-pressed="true"] .num, .day[aria-pressed="true"] .wd { color:var(--accent-ink); }
+  @media (max-width: 720px) { .day { background:var(--sunken); } }
+  #slots-title { font:700 20px/1.3 var(--serif); margin:-4px 0 14px; }
+  .slots { display:grid; grid-template-columns:repeat(auto-fill, minmax(112px, 1fr)); gap:8px; }
+  .slot { all:unset; cursor:pointer; text-align:center; padding:12px 8px; border-radius:12px; font:700 16px/1.2 var(--rounded);
+          font-variant-numeric:tabular-nums; background:var(--sunken); transition:background .15s, color .15s, transform .15s; }
+  .slot:hover { background:color-mix(in srgb, var(--accent) 14%, var(--sunken)); color:var(--accent-ink); }
+  .slot:active { transform:scale(.97); }
+  .slot[aria-pressed="true"] { background:linear-gradient(135deg, var(--accent), var(--accent2)); color:#fff; }
   .tz { color:var(--soft); font-size:13px; margin:14px 0 0; }
-  form { display:none; margin-top:22px; padding-top:22px; border-top:1px solid var(--line); }
-  form.show { display:block; animation:rise .25s ease-out; }
-  @keyframes rise { from { opacity:0; transform:translateY(8px); } to { opacity:1; transform:none; } }
-  .picked { font:600 17px/1.4 ui-serif, "New York", Georgia, serif; margin:0 0 14px; }
-  label { display:block; font-size:13px; font-weight:700; color:var(--soft); margin:12px 0 6px; }
-  input, textarea { width:100%; font:inherit; color:var(--ink); background:var(--sunken); border:1.5px solid transparent;
-                    border-radius:12px; padding:12px 14px; outline:none; }
-  input:focus, textarea:focus { border-color:var(--accent); }
+  form { display:none; margin-top:22px; padding-top:22px; border-top:1px solid color-mix(in srgb, var(--line) 70%, transparent); }
+  form.show { display:block; animation:rise .3s cubic-bezier(.2,.8,.2,1); }
+  @keyframes rise { from { opacity:0; transform:translateY(10px); } to { opacity:1; transform:none; } }
+  @media (prefers-reduced-motion: reduce) { form.show, .done.show { animation:none; } }
+  .picked { font:700 18px/1.4 var(--serif); margin:0 0 6px; }
+  label { display:block; font:800 11px/1.4 var(--rounded); letter-spacing:.1em; text-transform:uppercase; color:var(--soft); margin:14px 0 6px; }
+  label span { text-transform:none; letter-spacing:0; font-weight:500; }
+  .field { display:flex; align-items:center; gap:10px; padding:0 12px; border-radius:12px; background:var(--sunken);
+           border:1.5px solid transparent; color:var(--accent-ink); transition:border-color .15s; }
+  .field:focus-within { border-color:var(--accent); }
+  .field.top { align-items:flex-start; padding-top:12px; }
+  input, textarea { flex:1; width:100%; font:inherit; color:var(--ink); background:transparent; border:0; padding:11px 0; outline:none; }
+  .field.top textarea { padding-top:0; }
   textarea { min-height:84px; resize:vertical; }
-  .btn { all:unset; cursor:pointer; display:inline-flex; align-items:center; justify-content:center; gap:8px; padding:14px 22px;
-         border-radius:999px; font-weight:700; text-align:center; }
-  .primary { color:#fff; background:linear-gradient(135deg, var(--accent), var(--accent2)); box-shadow:0 10px 26px -12px var(--accent); }
+  .btn { all:unset; cursor:pointer; display:inline-flex; align-items:center; justify-content:center; gap:8px; padding:13px 22px;
+         border-radius:999px; font:700 15px/1.2 var(--rounded); text-align:center; }
+  .primary { color:#fff; background:linear-gradient(135deg, var(--accent), var(--accent2)); box-shadow:0 10px 24px -12px var(--accent); }
   .secondary { color:var(--ink); background:var(--sunken); }
   .actions { display:flex; flex-wrap:wrap; gap:10px; margin-top:18px; }
   .done { display:none; text-align:center; padding:12px 6px 4px; }
-  .done.show { display:block; animation:rise .3s ease-out; }
-  .tick { width:64px; height:64px; margin:0 auto 10px; border-radius:50%; display:grid; place-items:center; color:#fff; font-size:32px;
-          background:linear-gradient(135deg, var(--accent), var(--accent2)); }
-  .done h2 { font-size:24px; }
+  .done.show { display:block; animation:rise .35s cubic-bezier(.2,.8,.2,1); }
+  .tick { width:64px; height:64px; margin:0 auto 12px; border-radius:50%; display:grid; place-items:center; color:#fff; font-size:30px;
+          background:linear-gradient(135deg, var(--accent), var(--accent2)); box-shadow:0 12px 28px -12px var(--accent); }
+  .done h2 { font-size:26px; }
   .done .actions { justify-content:center; }
   .empty { text-align:center; padding:28px 10px; color:var(--soft); }
   .note { color:var(--soft); font-size:13px; margin-top:14px; }
   footer { text-align:center; color:var(--soft); font-size:13px; margin-top:26px; }
-  footer a { color:var(--accent); text-decoration:none; font-weight:600; }
+  footer a { color:var(--accent-ink); text-decoration:none; font-weight:600; }
   .err { color:var(--coral); font-size:14px; margin-top:8px; display:none; }
   [hidden] { display:none !important; }
-  .manage h2 { margin:0 0 4px; }
-  .manage .when { font-size:18px; font-weight:700; margin:2px 0; }
+  .manage { margin-bottom:18px; }
+  .manage .when { font:700 22px/1.3 var(--serif); margin:4px 0 2px; }
   .manage .meta { color:var(--soft); font-size:14px; }
   .manage .actions { margin-top:14px; }
   .linkbox { display:flex; gap:8px; align-items:center; margin-top:14px; background:var(--sunken); border-radius:12px; padding:10px 12px;
              font-size:13px; color:var(--soft); word-break:break-all; text-align:left; }
   .linkbox span { flex:1; }
   .danger { color:var(--coral); background:var(--sunken); }
-  .answer { display:inline-flex; align-items:center; gap:6px; margin-top:12px; padding:8px 14px; border-radius:999px; font-weight:700; font-size:14px; }
+  .answer { display:inline-flex; align-items:center; gap:6px; margin-top:12px; padding:7px 14px; border-radius:999px; font:700 14px/1.2 var(--rounded); }
   .answer.wait { background:var(--sunken); color:var(--soft); }
-  .answer.yes { background:color-mix(in srgb, var(--accent) 16%, transparent); color:var(--accent); }
+  .answer.yes { background:color-mix(in srgb, var(--accent) 16%, transparent); color:var(--accent-ink); }
   .answer.no { background:color-mix(in srgb, var(--coral) 16%, transparent); color:var(--coral); }
   .bell { margin-top:12px; padding:10px 16px; font-size:14px; }
   .promo { display:flex; gap:12px; align-items:center; margin-top:22px; padding:14px 16px; border-radius:16px; background:var(--sunken);
@@ -110,20 +134,22 @@
       </div>
     </div>
     <div class="chips">
-      <span class="chip" id="chip-title">Meeting</span>
-      <span class="chip" id="chip-len">30 min</span>
-      <span class="chip" id="chip-tz">Your time zone</span>
+      <span class="chip"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><rect x="3.5" y="5" width="17" height="15" rx="3"/><path d="M3.5 10h17M8 3v4M16 3v4"/></svg><span id="chip-title">Meeting</span></span>
+      <span class="chip"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="8.5"/><path d="M12 7.5V12l3 2"/></svg><span id="chip-len">30 min</span></span>
+      <span class="chip"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="8.5"/><path d="M3.5 12h17M12 3.5c2.6 2.4 3.8 5.2 3.8 8.5s-1.2 6.1-3.8 8.5M12 3.5C9.4 5.9 8.2 8.7 8.2 12s1.2 6.1 3.8 8.5"/></svg><span id="chip-tz">Your time zone</span></span>
     </div>
   </div>
-  <svg viewBox="0 0 1440 90" preserveAspectRatio="none" aria-hidden="true">
-    <path d="M0,40 C240,90 480,0 720,36 C960,72 1200,10 1440,44 L1440,90 L0,90 Z" fill="var(--bg)"/>
-    <path d="M0,58 C260,20 520,90 760,52 C1000,14 1220,70 1440,40" fill="none" stroke="rgba(255,255,255,.18)" stroke-width="10"/>
+  <!-- The app's tide lines, pooling under the heading. -->
+  <svg viewBox="0 0 1440 70" preserveAspectRatio="none" aria-hidden="true">
+    <path d="M0,34 C240,62 480,8 720,30 C960,52 1200,14 1440,36" fill="none" stroke="var(--accent)" stroke-opacity=".16" stroke-width="2"/>
+    <path d="M0,48 C260,22 520,70 760,44 C1000,18 1220,56 1440,40" fill="none" stroke="var(--accent2)" stroke-opacity=".12" stroke-width="2"/>
+    <path d="M0,60 C300,44 560,74 820,58 C1060,44 1260,66 1440,56" fill="none" stroke="var(--accent)" stroke-opacity=".10" stroke-width="2"/>
   </svg>
 </header>
 
 <main>
   <section class="card manage" id="manage" hidden aria-live="polite">
-    <div class="eyebrow" style="color:var(--accent)">Your booking</div>
+    <div class="label"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" aria-hidden="true"><rect x="3.5" y="5" width="17" height="15" rx="3"/><path d="M3.5 10h17M8 3v4M16 3v4M9 15l2 2 4-4"/></svg>Your booking</div>
     <div class="when" id="manage-when"></div>
     <div class="meta" id="manage-meta"></div>
     <div class="actions">
@@ -137,10 +163,11 @@
   <section class="card" id="picker" aria-live="polite">
     <div class="grid">
       <div>
-        <h2>Pick a day</h2>
+        <div class="label"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" aria-hidden="true"><rect x="3.5" y="5" width="17" height="15" rx="3"/><path d="M3.5 10h17M8 3v4M16 3v4"/></svg>Pick a day</div>
         <div class="days" id="days" role="group" aria-label="Days"></div>
       </div>
       <div>
+        <div class="label"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="8.5"/><path d="M12 7.5V12l3 2"/></svg>Available times</div>
         <h2 id="slots-title">Available times</h2>
         <div class="slots" id="slots" role="group" aria-label="Times"></div>
         <p class="tz" id="tz-note"></p>
@@ -150,13 +177,13 @@
     <form id="form" novalidate>
       <p class="picked" id="picked"></p>
       <label for="name">Your name</label>
-      <input id="name" name="name" autocomplete="name" required maxlength="80">
-      <label for="email">Your email <span style="font-weight:500">(optional)</span></label>
-      <input id="email" name="email" type="email" autocomplete="email" maxlength="120">
-      <label for="loc">Where? <span style="font-weight:500">(optional)</span></label>
-      <input id="loc" name="loc" autocomplete="street-address" maxlength="160" placeholder="An address, a place, or “video call”">
-      <label for="msg">Anything to share? <span style="font-weight:500">(optional)</span></label>
-      <textarea id="msg" name="msg" maxlength="400"></textarea>
+      <div class="field"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="8.5" r="4"/><path d="M4.5 20c1.4-3.6 4.2-5.4 7.5-5.4s6.1 1.8 7.5 5.4"/></svg><input id="name" name="name" autocomplete="name" required maxlength="80"></div>
+      <label for="email">Your email <span>(optional)</span></label>
+      <div class="field"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><rect x="3.5" y="5.5" width="17" height="13" rx="2.5"/><path d="M4.5 7l7.5 6 7.5-6"/></svg><input id="email" name="email" type="email" autocomplete="email" maxlength="120"></div>
+      <label for="loc">Where? <span>(optional)</span></label>
+      <div class="field"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><path d="M12 21s-6.5-6.2-6.5-11.2a6.5 6.5 0 0 1 13 0C18.5 14.8 12 21 12 21z"/><circle cx="12" cy="9.8" r="2.3"/></svg><input id="loc" name="loc" autocomplete="street-address" maxlength="160" placeholder="An address, a place, or “video call”"></div>
+      <label for="msg">Anything to share? <span>(optional)</span></label>
+      <div class="field top"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><path d="M5 5.5h14a1.5 1.5 0 0 1 1.5 1.5v8.5A1.5 1.5 0 0 1 19 17h-8l-4.5 3.5V17H5a1.5 1.5 0 0 1-1.5-1.5V7A1.5 1.5 0 0 1 5 5.5z"/></svg><textarea id="msg" name="msg" maxlength="400"></textarea></div>
       <p class="err" id="err">Please add your name.</p>
       <div class="actions">
         <button class="btn primary" type="submit">Request this time</button>
@@ -244,9 +271,9 @@
   $('host').textContent = host;
   $('host2').textContent = host;
   $('avatar').textContent = host.trim().charAt(0).toUpperCase() || '·';
-  $('chip-title').textContent = '📅 ' + title;
-  $('chip-len').textContent = '⏱ ' + (minutes < 60 ? `${minutes} min` : `${minutes / 60} hr`);
-  $('chip-tz').textContent = '🌍 ' + guestTZ.replace(/_/g, ' ');
+  $('chip-title').textContent = title;
+  $('chip-len').textContent = (minutes < 60 ? `${minutes} min` : `${minutes / 60} hr`);
+  $('chip-tz').textContent = guestTZ.replace(/_/g, ' ');
   if (offer.z && offer.z !== guestTZ) {
     $('tz-note').textContent = `Times are in your time zone (${guestTZ.replace(/_/g, ' ')}). ${host} is in ${offer.z.replace(/_/g, ' ')}.`;
   } else {
