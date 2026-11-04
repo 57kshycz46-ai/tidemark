@@ -121,19 +121,76 @@
   .promo img { width:44px; height:44px; border-radius:11px; flex:none; }
   .promo b { display:block; font-size:15px; }
   .promo span { color:var(--soft); font-size:13px; line-height:1.35; }
+
+  /* Motion, in the app's spirit: things rise into place in a quick cascade, the chosen time pops, and a sent request
+     gets a check that draws itself with a burst of the theme's colours. All of it goes under Reduce Motion. */
+  @keyframes fadeUp { from { opacity:0; transform:translateY(14px); } to { opacity:1; transform:none; } }
+  @keyframes popIn { 0% { opacity:0; transform:scale(.6); } 70% { opacity:1; transform:scale(1.06); } 100% { transform:scale(1); } }
+  @keyframes cellIn { from { opacity:0; transform:translateY(8px) scale(.96); } to { opacity:1; transform:none; } }
+  @keyframes pop { 0% { transform:scale(1); } 40% { transform:scale(1.08); } 100% { transform:scale(1); } }
+  @keyframes bar { from { transform:scaleY(0); } to { transform:scaleY(1); } }
+  @keyframes swap { from { opacity:0; transform:translateX(-6px); } to { opacity:1; transform:none; } }
+  @keyframes drift { from { transform:translateX(-28px); } to { transform:translateX(28px); } }
+  @keyframes draw { to { stroke-dashoffset:0; } }
+  @keyframes ring { from { opacity:.55; transform:scale(1); } to { opacity:0; transform:scale(1.9); } }
+  @keyframes fly { from { transform:translate(-50%, -50%) scale(.4); } to { transform:translate(calc(-50% + var(--dx)), calc(-50% + var(--dy))) scale(1); } }
+  @keyframes fade { 0% { opacity:0; } 10% { opacity:1; } 55% { opacity:1; } 100% { opacity:0; } }
+  @keyframes spin { to { transform:rotate(360deg); } }
+  .rise { animation:fadeUp .55s cubic-bezier(.2,.8,.2,1) both; animation-delay:calc(var(--i, 0) * 70ms); }
+  .avatar.rise { animation-name:popIn; }
+  .hero > svg path { animation:drift 11s ease-in-out infinite alternate; }
+  .hero > svg path:nth-child(2) { animation-duration:14s; animation-direction:alternate-reverse; }
+  .hero > svg path:nth-child(3) { animation-duration:17s; }
+  .cascade > * { animation:cellIn .42s cubic-bezier(.2,.8,.2,1) both; animation-delay:calc(var(--base, 0ms) + var(--i, 0) * 28ms); }
+  .day[aria-pressed="true"]::before { transform-origin:center; animation:bar .28s cubic-bezier(.2,.8,.2,1); }
+  .day { transition:background .2s, transform .2s; }
+  .day:active { transform:scale(.98); }
+  .slot { transition:background .15s, color .15s, transform .18s, box-shadow .18s; }
+  .slot:hover { transform:translateY(-1px); box-shadow:0 8px 18px -12px var(--accent); }
+  .slot[aria-pressed="true"] { box-shadow:0 10px 22px -12px var(--accent); }
+  .slot.pop { animation:pop .32s cubic-bezier(.2,.8,.2,1); }
+  #slots-title.swap, .picked.swap-in { animation:swap .3s cubic-bezier(.2,.8,.2,1); }
+  form.show > * { animation:fadeUp .45s cubic-bezier(.2,.8,.2,1) both; animation-delay:calc(var(--i, 0) * 35ms); }
+  .btn { transition:transform .15s, box-shadow .2s, opacity .2s; }
+  .btn:active { transform:scale(.97); }
+  .primary:hover { box-shadow:0 14px 28px -12px var(--accent); }
+  .btn[aria-busy="true"] { opacity:.85; pointer-events:none; }
+  .btn[aria-busy="true"]::after { content:""; width:15px; height:15px; border-radius:50%; border:2px solid currentColor; border-right-color:transparent;
+                                  animation:spin .7s linear infinite; }
+  .done.show > * { animation:fadeUp .5s cubic-bezier(.2,.8,.2,1) both; animation-delay:calc(var(--i, 0) * 80ms + 120ms); }
+  .done.show > .tick { animation:popIn .5s cubic-bezier(.2,.8,.2,1) both; }
+  .tick { position:relative; }
+  .tick svg { width:32px; height:32px; }
+  .tick svg path { stroke-dasharray:40; stroke-dashoffset:40; animation:draw .45s .32s cubic-bezier(.65,0,.35,1) forwards; }
+  .tick::after { content:""; position:absolute; inset:0; border-radius:50%; border:2px solid var(--accent); opacity:0; pointer-events:none; }
+  .done.show .tick::after { animation:ring .8s .3s ease-out; }
+  .spark { position:absolute; left:50%; top:50%; width:var(--s, 7px); height:var(--s, 7px); border-radius:50%; background:var(--c);
+           pointer-events:none; opacity:0;
+           animation:fly .95s var(--d, .3s) cubic-bezier(.15,.7,.3,1) both, fade .95s var(--d, .3s) linear both; }
+  .spark.bar { width:4px; height:10px; border-radius:2px; }
+  .answer { transition:background .3s, color .3s; }
+  .answer.changed { animation:pop .4s cubic-bezier(.2,.8,.2,1); }
+  @media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after { animation-duration:.01ms !important; animation-delay:0s !important; animation-iteration-count:1 !important;
+                             transition-duration:.01ms !important; }
+    .hero > svg path { animation:none !important; }
+    .tick svg path { stroke-dashoffset:0; }
+    .spark { display:none; }
+    .slot:hover, .btn:active, .day:active { transform:none; }
+  }
 </style>
 </head>
 <body>
 <header class="hero">
   <div class="wrap">
     <div class="host">
-      <div class="avatar" id="avatar" aria-hidden="true">·</div>
+      <div class="avatar rise" id="avatar" aria-hidden="true" style="--i:0">·</div>
       <div>
-        <div class="eyebrow">Book a time with</div>
-        <h1 id="host">…</h1>
+        <div class="eyebrow rise" style="--i:1">Book a time with</div>
+        <h1 id="host" class="rise" style="--i:2">…</h1>
       </div>
     </div>
-    <div class="chips">
+    <div class="chips rise" style="--i:3">
       <span class="chip"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><rect x="3.5" y="5" width="17" height="15" rx="3"/><path d="M3.5 10h17M8 3v4M16 3v4"/></svg><span id="chip-title">Meeting</span></span>
       <span class="chip"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="8.5"/><path d="M12 7.5V12l3 2"/></svg><span id="chip-len">30 min</span></span>
       <span class="chip"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="8.5"/><path d="M3.5 12h17M12 3.5c2.6 2.4 3.8 5.2 3.8 8.5s-1.2 6.1-3.8 8.5M12 3.5C9.4 5.9 8.2 8.7 8.2 12s1.2 6.1 3.8 8.5"/></svg><span id="chip-tz">Your time zone</span></span>
@@ -160,7 +217,7 @@
     <p class="note" id="manage-status"></p>
     <button class="btn secondary bell" type="button" id="manage-notify" hidden>🔔 Notify me when they answer</button>
   </section>
-  <section class="card" id="picker" aria-live="polite">
+  <section class="card rise" id="picker" aria-live="polite" style="--i:4">
     <div class="grid">
       <div>
         <div class="label"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" aria-hidden="true"><rect x="3.5" y="5" width="17" height="15" rx="3"/><path d="M3.5 10h17M8 3v4M16 3v4"/></svg>Pick a day</div>
@@ -191,7 +248,7 @@
     </form>
 
     <div class="done" id="done">
-      <div class="tick" aria-hidden="true">✓</div>
+      <div class="tick" aria-hidden="true"></div>
       <h2>Almost there!</h2>
       <p id="done-text"></p>
       <div class="actions" id="send-actions"></div>
@@ -203,7 +260,7 @@
       </a>
     </div>
   </section>
-  <footer>Scheduling by <a href="https://apps.apple.com/app/apple-store/id6821510047?pt=129556715&amp;ct=booking-footer&amp;mt=8" target="_blank" rel="noopener">Tidemark</a> · No account needed · <a href="privacy.html">Privacy</a></footer>
+  <footer class="rise" style="--i:6">Scheduling by <a href="https://apps.apple.com/app/apple-store/id6821510047?pt=129556715&amp;ct=booking-footer&amp;mt=8" target="_blank" rel="noopener">Tidemark</a> · No account needed · <a href="privacy.html">Privacy</a></footer>
 </main>
 
 <script>
@@ -313,43 +370,77 @@
 
   function escapeHTML(s) { const d = document.createElement('div'); d.textContent = s; return d.innerHTML; }
 
+  // Restarts a CSS animation class on an element (so a second pick pops again).
+  function replay(el, cls) { el.classList.remove(cls); void el.offsetWidth; el.classList.add(cls); }
+  const stagger = (box) => Array.from(box.children).forEach((el, i) => el.style.setProperty('--i', Math.min(i, 14)));
+
   function renderDays(selectedKey) {
     const box = $('days');
     box.innerHTML = '';
+    box.classList.add('cascade');
     for (const [k, list] of byDay) {
       const d = new Date(list[0]);
       const b = document.createElement('button');
       b.type = 'button';
       b.className = 'day';
+      b.dataset.k = k;
       b.setAttribute('aria-pressed', String(k === selectedKey));
       b.innerHTML = `<span class="num"></span><span><span class="wd"></span><br><span class="cnt"></span></span>`;
       b.querySelector('.num').textContent = d.getDate();
       b.querySelector('.wd').textContent = d.toLocaleDateString(undefined, { weekday: 'long' }) + ' · ' + d.toLocaleDateString(undefined, { month: 'short' });
       b.querySelector('.cnt').textContent = `${list.length} time${list.length === 1 ? '' : 's'}`;
-      b.addEventListener('click', () => { renderDays(k); renderSlots(k); });
+      b.addEventListener('click', () => selectDay(k));
       box.appendChild(b);
     }
+    stagger(box);
+    // The cascade is for the first look only; choosing a day later just moves the highlight.
+    setTimeout(() => box.classList.remove('cascade'), 1500);
+  }
+
+  let shownDay = null;
+  function selectDay(k) {
+    for (const b of $('days').children) b.setAttribute('aria-pressed', String(b.dataset.k === k));
+    const sel = $('days').querySelector('[aria-pressed="true"]');
+    if (sel && matchMedia('(max-width: 720px)').matches) sel.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'nearest' });
+    if (k !== shownDay) renderSlots(k);
   }
 
   function renderSlots(k) {
     const list = byDay.get(k);
+    const changed = shownDay !== null && shownDay !== k;
+    shownDay = k;
     $('slots-title').textContent = fmtLong.format(new Date(list[0]));
+    if (changed) replay($('slots-title'), 'swap');
     const box = $('slots');
     box.innerHTML = '';
     for (const t of list) {
       const b = document.createElement('button');
       b.type = 'button';
       b.className = 'slot';
+      b.dataset.t = t;
       b.textContent = fmtTime.format(new Date(t));
       b.setAttribute('aria-pressed', String(t === chosen));
       b.addEventListener('click', () => pick(t));
       box.appendChild(b);
     }
+    stagger(box);
+    replay(box, 'cascade');
   }
 
   function pick(t) {
+    const again = chosen !== null;
     chosen = t;
-    renderSlots(dayKey(t));
+    for (const b of $('slots').children) {
+      const on = Number(b.dataset.t) === t;
+      b.setAttribute('aria-pressed', String(on));
+      if (on) replay(b, 'pop');
+    }
+    // A form already open stays put; the first pick brings it in.
+    if (again && $('form').classList.contains('show')) {
+      $('picked').textContent = `${title} · ${fmtLong.format(new Date(t))}, ${fmtTime.format(new Date(t))} – ${fmtTime.format(new Date(t + length))}`;
+      replay($('picked'), 'swap-in');
+      return;
+    }
     $('picked').textContent = `${title} · ${fmtLong.format(new Date(t))}, ${fmtTime.format(new Date(t))} – ${fmtTime.format(new Date(t + length))}`;
     $('form').classList.add('show');
     $('name').focus({ preventScroll: true });
@@ -431,6 +522,41 @@
       .sort((a, b) => a[1].req.s - b[1].req.s);
     return mine.length ? { b: mine[0][0], req: mine[0][1].req } : null;
   }
+  // The sent card's check (or cross), drawn as it appears.
+  function setTick(kind) {
+    const path = kind === 'no' ? 'M8 8l8 8M16 8l-8 8' : 'M6.5 12.5l3.6 3.6 7.4-8';
+    document.querySelector('#done .tick').innerHTML =
+      `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round"><path d="${path}"/></svg>`;
+  }
+  // A burst of the theme's colours around the check, like completing a reminder in the app.
+  function burst() {
+    if (matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+    const tick = document.querySelector('#done .tick');
+    const colors = ['var(--accent)', 'var(--accent2)', 'var(--coral)', '#F5B935'];
+    for (let i = 0; i < 14; i++) {
+      const a = (i / 14) * Math.PI * 2 + Math.random() * .3;
+      const r = 54 + Math.random() * 26;
+      const el = document.createElement('i');
+      el.className = 'spark' + (i % 3 === 0 ? ' bar' : '');
+      el.style.setProperty('--dx', `${Math.cos(a) * r}px`);
+      el.style.setProperty('--dy', `${Math.sin(a) * r}px`);
+      el.style.setProperty('--c', colors[i % colors.length]);
+      el.style.setProperty('--d', `${.34 + Math.random() * .08}s`);
+      el.style.setProperty('--s', `${5 + Math.round(Math.random() * 4)}px`);
+      tick.appendChild(el);
+      setTimeout(() => el.remove(), 1500);
+    }
+  }
+  function showDone() {
+    const done = $('done');
+    stagger(done);
+    done.classList.remove('show');
+    void done.offsetWidth;
+    done.classList.add('show');
+    burst();
+    done.scrollIntoView({ behavior: matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth', block: 'center' });
+  }
+
   function describe(req) {
     const t = req.s * 60000;
     return `${fmtLong.format(new Date(t))}, ${fmtTime.format(new Date(t))} – ${fmtTime.format(new Date(t + req.d * 60000))}`;
@@ -460,7 +586,10 @@
     let kind = 'wait', text = `Waiting for ${host} to confirm`;
     if (ans && ans.a === 'yes') { kind = 'yes'; text = ans.c ? `${host} accepted your change` : `Confirmed — it's on ${host}'s calendar`; }
     if (ans && ans.a === 'no') { kind = 'no'; text = ans.c ? `${host} couldn't make the new time — the original time stands` : `${host} can't make this time — pick another below`; }
+    const before = badge.dataset.kind;
     badge.className = 'answer ' + kind;
+    badge.dataset.kind = kind;
+    if (before && before !== kind) replay(badge, 'changed');
     badge.textContent = (kind === 'yes' ? '✓ ' : kind === 'no' ? '✕ ' : '⏳ ') + text;
     const declinedNew = ans && ans.a === 'no' && !ans.c;
     $('manage-change').hidden = declinedNew;
@@ -488,7 +617,12 @@
         $('manage-link').innerHTML = '';
       }
       $('done-note').textContent = '';
-      document.querySelector('#done .tick').textContent = kind === 'yes' ? '✓' : '✕';
+      const was = document.querySelector('#done .tick').dataset.kind;
+      if (was !== kind) {
+        document.querySelector('#done .tick').dataset.kind = kind;
+        setTick(kind === 'yes' ? 'yes' : 'no');
+        if (kind === 'yes') burst();
+      }
     }
     const bell = $('manage-notify');
     bell.hidden = !('Notification' in window) || Notification.permission !== 'default' || kind !== 'wait' || !(rec && rec.g);
@@ -577,8 +711,13 @@
   showManage();
 
   const first = byDay.keys().next().value;
+  // The first look waits for the card to rise in.
+  $('days').style.setProperty('--base', '240ms');
+  $('slots').style.setProperty('--base', '300ms');
   renderDays(first);
   renderSlots(first);
+  setTimeout(() => { $('days').style.removeProperty('--base'); $('slots').style.removeProperty('--base'); }, 1500);
+  stagger($('form'));
 
   $('form').addEventListener('submit', async (ev) => {
     ev.preventDefault();
@@ -606,9 +745,9 @@
 
     const submit = $('form').querySelector('button[type="submit"]');
     const submitLabel = submit ? submit.textContent : '';
-    if (submit) { submit.disabled = true; submit.textContent = 'Booking…'; }
+    if (submit) { submit.disabled = true; submit.textContent = 'Booking…'; submit.setAttribute('aria-busy', 'true'); }
     const delivered = await deliver(req);
-    if (submit) { submit.disabled = false; submit.textContent = submitLabel; }
+    if (submit) { submit.disabled = false; submit.textContent = submitLabel; submit.removeAttribute('aria-busy'); }
     $('form').classList.remove('show');
     document.querySelector('#picker .grid').style.display = 'none';
     const actions = $('send-actions');
@@ -628,7 +767,8 @@
       editing = false;
       showManage();
       document.querySelector('#done h2') && (document.querySelector('#done h2').textContent = changed ? 'Change requested' : 'Request sent');
-      document.querySelector('#done .tick').textContent = '✓';
+      setTick('yes');
+      document.querySelector('#done .tick').dataset.kind = 'wait';
       $('done-text').textContent = `${title} on ${when}${where ? ' at ' + where : ''}. ${host} will confirm, and you'll see the answer here.`;
       $('done-note').textContent = `${host} gets a notification from Tidemark and accepts or declines. Nothing else to send.`;
       if ('Notification' in window && Notification.permission === 'default' && channel) {
@@ -651,8 +791,7 @@
       box.appendChild(copy);
       $('manage-link').innerHTML = '';
       $('manage-link').appendChild(box);
-      $('done').classList.add('show');
-      $('done').scrollIntoView({ behavior: 'smooth', block: 'center' });
+      showDone();
       return;
     }
     $('done-text').textContent = `Send your request for ${when} to ${host}.`;
@@ -669,8 +808,8 @@
       catch { prompt('Copy this and send it:', text); }
     });
     add('Add to my calendar', 'secondary', () => downloadICS(req));
-    $('done').classList.add('show');
-    $('done').scrollIntoView({ behavior: 'smooth', block: 'center' });
+    setTick('yes');
+    showDone();
   });
 
   function downloadICS(req) {
