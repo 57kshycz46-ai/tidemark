@@ -1,0 +1,196 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Tidemark//NFL schedules from Wikipedia//EN
+CALSCALE:GREGORIAN
+X-WR-CALNAME:Green Bay Packers
+X-WR-CALDESC:Green Bay Packers 2026 schedule\, from Wikipedia (https://en.
+ wikipedia.org/wiki/2026_Green_Bay_Packers_season)\, CC BY-SA 4.0.
+X-PUBLISHED-TTL:PT12H
+REFRESH-INTERVAL;VALUE=DURATION:PT12H
+BEGIN:VEVENT
+UID:nfl-2026-packers-reg-1@tidemark
+DTSTAMP:20261106T182357Z
+DTSTART:20260913T202500Z
+DTEND:20260913T234000Z
+SUMMARY:Packers at Vikings
+DESCRIPTION:Week 1\nTV: CBS\nResult: L 22–39\nSchedule from Wikipedia (h
+ ttps://en.wikipedia.org/wiki/2026_Green_Bay_Packers_season)\, CC BY-SA 4.
+ 0. Times can change.
+LOCATION:U.S. Bank Stadium
+END:VEVENT
+BEGIN:VEVENT
+UID:nfl-2026-packers-reg-2@tidemark
+DTSTAMP:20261106T182357Z
+DTSTART:20260920T170000Z
+DTEND:20260920T201500Z
+SUMMARY:Packers at Jets
+DESCRIPTION:Week 2\nTV: Fox\nResult: W 20–17 (OT)\nSchedule from Wikiped
+ ia (https://en.wikipedia.org/wiki/2026_Green_Bay_Packers_season)\, CC BY-
+ SA 4.0. Times can change.
+LOCATION:MetLife Stadium
+END:VEVENT
+BEGIN:VEVENT
+UID:nfl-2026-packers-reg-3@tidemark
+DTSTAMP:20261106T182357Z
+DTSTART:20260925T001500Z
+DTEND:20260925T033000Z
+SUMMARY:Falcons at Packers
+DESCRIPTION:Week 3\nTV: Prime Video\nResult: L 14–35\nSchedule from Wiki
+ pedia (https://en.wikipedia.org/wiki/2026_Green_Bay_Packers_season)\, CC 
+ BY-SA 4.0. Times can change.
+LOCATION:Lambeau Field
+END:VEVENT
+BEGIN:VEVENT
+UID:nfl-2026-packers-reg-4@tidemark
+DTSTAMP:20261106T182357Z
+DTSTART:20261004T170000Z
+DTEND:20261004T201500Z
+SUMMARY:Packers at Buccaneers
+DESCRIPTION:Week 4\nTV: Fox\nResult: W 17–14\nSchedule from Wikipedia (h
+ ttps://en.wikipedia.org/wiki/2026_Green_Bay_Packers_season)\, CC BY-SA 4.
+ 0. Times can change.
+LOCATION:Raymond James Stadium
+END:VEVENT
+BEGIN:VEVENT
+UID:nfl-2026-packers-reg-5@tidemark
+DTSTAMP:20261106T182357Z
+DTSTART:20261011T170000Z
+DTEND:20261011T201500Z
+SUMMARY:Bears at Packers
+DESCRIPTION:Week 5\nTV: Fox\nResult: W 31–7\nSchedule from Wikipedia (ht
+ tps://en.wikipedia.org/wiki/2026_Green_Bay_Packers_season)\, CC BY-SA 4.0
+ . Times can change.
+LOCATION:Lambeau Field
+END:VEVENT
+BEGIN:VEVENT
+UID:nfl-2026-packers-reg-6@tidemark
+DTSTAMP:20261106T182357Z
+DTSTART:20261019T002000Z
+DTEND:20261019T033500Z
+SUMMARY:Cowboys at Packers
+DESCRIPTION:Week 6\nTV: NBC\nResult: W 23–13\nSchedule from Wikipedia (h
+ ttps://en.wikipedia.org/wiki/2026_Green_Bay_Packers_season)\, CC BY-SA 4.
+ 0. Times can change.
+LOCATION:Lambeau Field
+END:VEVENT
+BEGIN:VEVENT
+UID:nfl-2026-packers-reg-7@tidemark
+DTSTAMP:20261106T182357Z
+DTSTART:20261025T202500Z
+DTEND:20261025T234000Z
+SUMMARY:Packers at Lions
+DESCRIPTION:Week 7\nTV: Fox\nResult: L 17–20\nSchedule from Wikipedia (h
+ ttps://en.wikipedia.org/wiki/2026_Green_Bay_Packers_season)\, CC BY-SA 4.
+ 0. Times can change.
+LOCATION:Ford Field
+END:VEVENT
+BEGIN:VEVENT
+UID:nfl-2026-packers-reg-8@tidemark
+DTSTAMP:20261106T182357Z
+DTSTART:20261030T001500Z
+DTEND:20261030T033000Z
+SUMMARY:Panthers at Packers
+DESCRIPTION:Week 8\nTV: Prime Video\nResult: W 27–19\nSchedule from Wiki
+ pedia (https://en.wikipedia.org/wiki/2026_Green_Bay_Packers_season)\, CC 
+ BY-SA 4.0. Times can change.
+LOCATION:Lambeau Field
+END:VEVENT
+BEGIN:VEVENT
+UID:nfl-2026-packers-reg-9@tidemark
+DTSTAMP:20261106T182357Z
+DTSTART:20261108T212500Z
+DTEND:20261109T004000Z
+SUMMARY:Packers at Patriots
+DESCRIPTION:Week 9\nTV: Fox\nSchedule from Wikipedia (https://en.wikipedia
+ .org/wiki/2026_Green_Bay_Packers_season)\, CC BY-SA 4.0. Times can change
+ .
+LOCATION:Gillette Stadium
+END:VEVENT
+BEGIN:VEVENT
+UID:nfl-2026-packers-reg-10@tidemark
+DTSTAMP:20261106T182357Z
+DTSTART:20261115T180000Z
+DTEND:20261115T211500Z
+SUMMARY:Vikings at Packers
+DESCRIPTION:Week 10\nTV: Fox\nSchedule from Wikipedia (https://en.wikipedi
+ a.org/wiki/2026_Green_Bay_Packers_season)\, CC BY-SA 4.0. Times can chang
+ e.
+LOCATION:Lambeau Field
+END:VEVENT
+BEGIN:VEVENT
+UID:nfl-2026-packers-reg-12@tidemark
+DTSTAMP:20261106T182357Z
+DTSTART:20261126T010000Z
+DTEND:20261126T041500Z
+SUMMARY:Packers at Rams
+DESCRIPTION:Week 12\nTV: Netflix\nSchedule from Wikipedia (https://en.wiki
+ pedia.org/wiki/2026_Green_Bay_Packers_season)\, CC BY-SA 4.0. Times can c
+ hange.
+LOCATION:SoFi Stadium
+END:VEVENT
+BEGIN:VEVENT
+UID:nfl-2026-packers-reg-13@tidemark
+DTSTAMP:20261106T182357Z
+DTSTART:20261206T180000Z
+DTEND:20261206T211500Z
+SUMMARY:Packers at Saints
+DESCRIPTION:Week 13\nTV: Fox\nSchedule from Wikipedia (https://en.wikipedi
+ a.org/wiki/2026_Green_Bay_Packers_season)\, CC BY-SA 4.0. Times can chang
+ e.
+LOCATION:Caesars Superdome
+END:VEVENT
+BEGIN:VEVENT
+UID:nfl-2026-packers-reg-14@tidemark
+DTSTAMP:20261106T182357Z
+DTSTART:20261214T012000Z
+DTEND:20261214T043500Z
+SUMMARY:Bills at Packers
+DESCRIPTION:Week 14\nTV: NBC\nSchedule from Wikipedia (https://en.wikipedi
+ a.org/wiki/2026_Green_Bay_Packers_season)\, CC BY-SA 4.0. Times can chang
+ e.
+LOCATION:Lambeau Field
+END:VEVENT
+BEGIN:VEVENT
+UID:nfl-2026-packers-reg-15@tidemark
+DTSTAMP:20261106T182357Z
+DTSTART:20261220T180000Z
+DTEND:20261220T211500Z
+SUMMARY:Dolphins at Packers
+DESCRIPTION:Week 15\nTV: Fox\nSchedule from Wikipedia (https://en.wikipedi
+ a.org/wiki/2026_Green_Bay_Packers_season)\, CC BY-SA 4.0. Times can chang
+ e.
+LOCATION:Lambeau Field
+END:VEVENT
+BEGIN:VEVENT
+UID:nfl-2026-packers-reg-16@tidemark
+DTSTAMP:20261106T182357Z
+DTSTART:20261225T180000Z
+DTEND:20261225T211500Z
+SUMMARY:Packers at Bears
+DESCRIPTION:Week 16\nTV: Netflix\nSchedule from Wikipedia (https://en.wiki
+ pedia.org/wiki/2026_Green_Bay_Packers_season)\, CC BY-SA 4.0. Times can c
+ hange.
+LOCATION:Soldier Field
+END:VEVENT
+BEGIN:VEVENT
+UID:nfl-2026-packers-reg-17@tidemark
+DTSTAMP:20261106T182357Z
+DTSTART:20270105T011500Z
+DTEND:20270105T043000Z
+SUMMARY:Texans at Packers
+DESCRIPTION:Week 17\nTV: ESPN\nSchedule from Wikipedia (https://en.wikiped
+ ia.org/wiki/2026_Green_Bay_Packers_season)\, CC BY-SA 4.0. Times can chan
+ ge.
+LOCATION:Lambeau Field
+END:VEVENT
+BEGIN:VEVENT
+UID:nfl-2026-packers-reg-18@tidemark
+DTSTAMP:20261106T182357Z
+DTSTART;VALUE=DATE:20270109
+DTEND;VALUE=DATE:20270110
+SUMMARY:Lions at Packers (Jan 9 or 10)
+DESCRIPTION:Week 18\nSchedule from Wikipedia (https://en.wikipedia.org/wik
+ i/2026_Green_Bay_Packers_season)\, CC BY-SA 4.0. Times can change.
+LOCATION:Lambeau Field
+END:VEVENT
+END:VCALENDAR

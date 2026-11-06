@@ -1,0 +1,195 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Tidemark//NFL schedules from Wikipedia//EN
+CALSCALE:GREGORIAN
+X-WR-CALNAME:Minnesota Vikings
+X-WR-CALDESC:Minnesota Vikings 2026 schedule\, from Wikipedia (https://en.
+ wikipedia.org/wiki/2026_Minnesota_Vikings_season)\, CC BY-SA 4.0.
+X-PUBLISHED-TTL:PT12H
+REFRESH-INTERVAL;VALUE=DURATION:PT12H
+BEGIN:VEVENT
+UID:nfl-2026-vikings-reg-1@tidemark
+DTSTAMP:20261106T182405Z
+DTSTART:20260913T202500Z
+DTEND:20260913T234000Z
+SUMMARY:Packers at Vikings
+DESCRIPTION:Week 1\nTV: CBS\nResult: W 39–22\nSchedule from Wikipedia (h
+ ttps://en.wikipedia.org/wiki/2026_Minnesota_Vikings_season)\, CC BY-SA 4.
+ 0. Times can change.
+LOCATION:U.S. Bank Stadium
+END:VEVENT
+BEGIN:VEVENT
+UID:nfl-2026-vikings-reg-2@tidemark
+DTSTAMP:20261106T182405Z
+DTSTART:20260920T170000Z
+DTEND:20260920T201500Z
+SUMMARY:Vikings at Bears
+DESCRIPTION:Week 2\nTV: Fox\nResult: W 9–3\nSchedule from Wikipedia (htt
+ ps://en.wikipedia.org/wiki/2026_Minnesota_Vikings_season)\, CC BY-SA 4.0.
+  Times can change.
+LOCATION:Soldier Field
+END:VEVENT
+BEGIN:VEVENT
+UID:nfl-2026-vikings-reg-3@tidemark
+DTSTAMP:20261106T182405Z
+DTSTART:20260927T200500Z
+DTEND:20260927T232000Z
+SUMMARY:Vikings at Buccaneers
+DESCRIPTION:Week 3\nTV: Fox\nResult: W 23–16\nSchedule from Wikipedia (h
+ ttps://en.wikipedia.org/wiki/2026_Minnesota_Vikings_season)\, CC BY-SA 4.
+ 0. Times can change.
+LOCATION:Raymond James Stadium
+END:VEVENT
+BEGIN:VEVENT
+UID:nfl-2026-vikings-reg-4@tidemark
+DTSTAMP:20261106T182405Z
+DTSTART:20261004T200500Z
+DTEND:20261004T232000Z
+SUMMARY:Dolphins at Vikings
+DESCRIPTION:Week 4\nTV: Fox\nResult: W 15–10\nSchedule from Wikipedia (h
+ ttps://en.wikipedia.org/wiki/2026_Minnesota_Vikings_season)\, CC BY-SA 4.
+ 0. Times can change.
+LOCATION:U.S. Bank Stadium
+END:VEVENT
+BEGIN:VEVENT
+UID:nfl-2026-vikings-reg-5@tidemark
+DTSTAMP:20261106T182405Z
+DTSTART:20261011T170000Z
+DTEND:20261011T201500Z
+SUMMARY:Vikings at Saints
+DESCRIPTION:Week 5\nTV: Fox\nResult: W 23–13\nSchedule from Wikipedia (h
+ ttps://en.wikipedia.org/wiki/2026_Minnesota_Vikings_season)\, CC BY-SA 4.
+ 0. Times can change.
+LOCATION:Caesars Superdome
+END:VEVENT
+BEGIN:VEVENT
+UID:nfl-2026-vikings-reg-7@tidemark
+DTSTAMP:20261106T182405Z
+DTSTART:20261025T170000Z
+DTEND:20261025T201500Z
+SUMMARY:Colts at Vikings
+DESCRIPTION:Week 7\nTV: CBS\nResult: W 16–10\nSchedule from Wikipedia (h
+ ttps://en.wikipedia.org/wiki/2026_Minnesota_Vikings_season)\, CC BY-SA 4.
+ 0. Times can change.
+LOCATION:U.S. Bank Stadium
+END:VEVENT
+BEGIN:VEVENT
+UID:nfl-2026-vikings-reg-8@tidemark
+DTSTAMP:20261106T182405Z
+DTSTART:20261101T180000Z
+DTEND:20261101T211500Z
+SUMMARY:Vikings at Lions
+DESCRIPTION:Week 8\nTV: Fox\nResult: L 15–19\nSchedule from Wikipedia (h
+ ttps://en.wikipedia.org/wiki/2026_Minnesota_Vikings_season)\, CC BY-SA 4.
+ 0. Times can change.
+LOCATION:Ford Field
+END:VEVENT
+BEGIN:VEVENT
+UID:nfl-2026-vikings-reg-9@tidemark
+DTSTAMP:20261106T182405Z
+DTSTART:20261110T011500Z
+DTEND:20261110T043000Z
+SUMMARY:Bills at Vikings
+DESCRIPTION:Week 9\nTV: ESPN/ABC\nSchedule from Wikipedia (https://en.wiki
+ pedia.org/wiki/2026_Minnesota_Vikings_season)\, CC BY-SA 4.0. Times can c
+ hange.
+LOCATION:U.S. Bank Stadium
+END:VEVENT
+BEGIN:VEVENT
+UID:nfl-2026-vikings-reg-10@tidemark
+DTSTAMP:20261106T182405Z
+DTSTART:20261115T180000Z
+DTEND:20261115T211500Z
+SUMMARY:Vikings at Packers
+DESCRIPTION:Week 10\nTV: Fox\nSchedule from Wikipedia (https://en.wikipedi
+ a.org/wiki/2026_Minnesota_Vikings_season)\, CC BY-SA 4.0. Times can chang
+ e.
+LOCATION:Lambeau Field
+END:VEVENT
+BEGIN:VEVENT
+UID:nfl-2026-vikings-reg-11@tidemark
+DTSTAMP:20261106T182405Z
+DTSTART:20261123T012000Z
+DTEND:20261123T043500Z
+SUMMARY:Vikings at 49ers
+DESCRIPTION:Week 11\nTV: NBC\nSchedule from Wikipedia (https://en.wikipedi
+ a.org/wiki/2026_Minnesota_Vikings_season)\, CC BY-SA 4.0. Times can chang
+ e.
+LOCATION:Estadio Azteca (Mexico City)
+END:VEVENT
+BEGIN:VEVENT
+UID:nfl-2026-vikings-reg-12@tidemark
+DTSTAMP:20261106T182405Z
+DTSTART:20261129T180000Z
+DTEND:20261129T211500Z
+SUMMARY:Falcons at Vikings
+DESCRIPTION:Week 12\nTV: Fox\nSchedule from Wikipedia (https://en.wikipedi
+ a.org/wiki/2026_Minnesota_Vikings_season)\, CC BY-SA 4.0. Times can chang
+ e.
+LOCATION:U.S. Bank Stadium
+END:VEVENT
+BEGIN:VEVENT
+UID:nfl-2026-vikings-reg-13@tidemark
+DTSTAMP:20261106T182405Z
+DTSTART:20261206T212500Z
+DTEND:20261207T004000Z
+SUMMARY:Panthers at Vikings
+DESCRIPTION:Week 13\nTV: CBS\nSchedule from Wikipedia (https://en.wikipedi
+ a.org/wiki/2026_Minnesota_Vikings_season)\, CC BY-SA 4.0. Times can chang
+ e.
+LOCATION:U.S. Bank Stadium
+END:VEVENT
+BEGIN:VEVENT
+UID:nfl-2026-vikings-reg-14@tidemark
+DTSTAMP:20261106T182405Z
+DTSTART:20261211T011500Z
+DTEND:20261211T043000Z
+SUMMARY:Vikings at Patriots
+DESCRIPTION:Week 14\nTV: Prime Video\nSchedule from Wikipedia (https://en.
+ wikipedia.org/wiki/2026_Minnesota_Vikings_season)\, CC BY-SA 4.0. Times c
+ an change.
+LOCATION:Gillette Stadium
+END:VEVENT
+BEGIN:VEVENT
+UID:nfl-2026-vikings-reg-15@tidemark
+DTSTAMP:20261106T182405Z
+DTSTART:20261221T012000Z
+DTEND:20261221T043500Z
+SUMMARY:Lions at Vikings
+DESCRIPTION:Week 15\nTV: NBC\nSchedule from Wikipedia (https://en.wikipedi
+ a.org/wiki/2026_Minnesota_Vikings_season)\, CC BY-SA 4.0. Times can chang
+ e.
+LOCATION:U.S. Bank Stadium
+END:VEVENT
+BEGIN:VEVENT
+UID:nfl-2026-vikings-reg-16@tidemark
+DTSTAMP:20261106T182405Z
+DTSTART;VALUE=DATE:20261226
+DTEND;VALUE=DATE:20261227
+SUMMARY:Commanders at Vikings (Dec 26 or 27)
+DESCRIPTION:Week 16\nSchedule from Wikipedia (https://en.wikipedia.org/wik
+ i/2026_Minnesota_Vikings_season)\, CC BY-SA 4.0. Times can change.
+LOCATION:U.S. Bank Stadium
+END:VEVENT
+BEGIN:VEVENT
+UID:nfl-2026-vikings-reg-17@tidemark
+DTSTAMP:20261106T182405Z
+DTSTART:20270103T180000Z
+DTEND:20270103T211500Z
+SUMMARY:Vikings at Jets
+DESCRIPTION:Week 17\nTV: CBS\nSchedule from Wikipedia (https://en.wikipedi
+ a.org/wiki/2026_Minnesota_Vikings_season)\, CC BY-SA 4.0. Times can chang
+ e.
+LOCATION:MetLife Stadium
+END:VEVENT
+BEGIN:VEVENT
+UID:nfl-2026-vikings-reg-18@tidemark
+DTSTAMP:20261106T182405Z
+DTSTART;VALUE=DATE:20270109
+DTEND;VALUE=DATE:20270110
+SUMMARY:Bears at Vikings (Jan 9 or 10)
+DESCRIPTION:Week 18\nSchedule from Wikipedia (https://en.wikipedia.org/wik
+ i/2026_Minnesota_Vikings_season)\, CC BY-SA 4.0. Times can change.
+LOCATION:U.S. Bank Stadium
+END:VEVENT
+END:VCALENDAR

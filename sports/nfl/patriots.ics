@@ -1,0 +1,195 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Tidemark//NFL schedules from Wikipedia//EN
+CALSCALE:GREGORIAN
+X-WR-CALNAME:New England Patriots
+X-WR-CALDESC:New England Patriots 2026 schedule\, from Wikipedia (https://
+ en.wikipedia.org/wiki/2026_New_England_Patriots_season)\, CC BY-SA 4.0.
+X-PUBLISHED-TTL:PT12H
+REFRESH-INTERVAL;VALUE=DURATION:PT12H
+BEGIN:VEVENT
+UID:nfl-2026-patriots-reg-1@tidemark
+DTSTAMP:20261106T182406Z
+DTSTART:20260910T002000Z
+DTEND:20260910T033500Z
+SUMMARY:Patriots at Seahawks
+DESCRIPTION:Week 1\nTV: NBC\nResult: L 10–13\nSchedule from Wikipedia (h
+ ttps://en.wikipedia.org/wiki/2026_New_England_Patriots_season)\, CC BY-SA
+  4.0. Times can change.
+LOCATION:Lumen Field
+END:VEVENT
+BEGIN:VEVENT
+UID:nfl-2026-patriots-reg-2@tidemark
+DTSTAMP:20261106T182406Z
+DTSTART:20260920T170000Z
+DTEND:20260920T201500Z
+SUMMARY:Steelers at Patriots
+DESCRIPTION:Week 2\nTV: CBS\nResult: W 20–3\nSchedule from Wikipedia (ht
+ tps://en.wikipedia.org/wiki/2026_New_England_Patriots_season)\, CC BY-SA 
+ 4.0. Times can change.
+LOCATION:Gillette Stadium
+END:VEVENT
+BEGIN:VEVENT
+UID:nfl-2026-patriots-reg-3@tidemark
+DTSTAMP:20261106T182406Z
+DTSTART:20260927T170000Z
+DTEND:20260927T201500Z
+SUMMARY:Patriots at Jaguars
+DESCRIPTION:Week 3\nTV: CBS\nResult: L 6–35\nSchedule from Wikipedia (ht
+ tps://en.wikipedia.org/wiki/2026_New_England_Patriots_season)\, CC BY-SA 
+ 4.0. Times can change.
+LOCATION:EverBank Stadium
+END:VEVENT
+BEGIN:VEVENT
+UID:nfl-2026-patriots-reg-4@tidemark
+DTSTAMP:20261106T182406Z
+DTSTART:20261004T170000Z
+DTEND:20261004T201500Z
+SUMMARY:Patriots at Bills
+DESCRIPTION:Week 4\nTV: CBS\nResult: W 29–26\nSchedule from Wikipedia (h
+ ttps://en.wikipedia.org/wiki/2026_New_England_Patriots_season)\, CC BY-SA
+  4.0. Times can change.
+LOCATION:Highmark Stadium
+END:VEVENT
+BEGIN:VEVENT
+UID:nfl-2026-patriots-reg-5@tidemark
+DTSTAMP:20261106T182406Z
+DTSTART:20261011T170000Z
+DTEND:20261011T201500Z
+SUMMARY:Raiders at Patriots
+DESCRIPTION:Week 5\nTV: CBS\nResult: W 45–17\nSchedule from Wikipedia (h
+ ttps://en.wikipedia.org/wiki/2026_New_England_Patriots_season)\, CC BY-SA
+  4.0. Times can change.
+LOCATION:Gillette Stadium
+END:VEVENT
+BEGIN:VEVENT
+UID:nfl-2026-patriots-reg-6@tidemark
+DTSTAMP:20261106T182406Z
+DTSTART:20261018T170000Z
+DTEND:20261018T201500Z
+SUMMARY:Jets at Patriots
+DESCRIPTION:Week 6\nTV: CBS\nResult: W 26–19\nSchedule from Wikipedia (h
+ ttps://en.wikipedia.org/wiki/2026_New_England_Patriots_season)\, CC BY-SA
+  4.0. Times can change.
+LOCATION:Gillette Stadium
+END:VEVENT
+BEGIN:VEVENT
+UID:nfl-2026-patriots-reg-7@tidemark
+DTSTAMP:20261106T182406Z
+DTSTART:20261023T001500Z
+DTEND:20261023T033000Z
+SUMMARY:Patriots at Bears
+DESCRIPTION:Week 7\nTV: Prime Video\nResult: L 24–30\nSchedule from Wiki
+ pedia (https://en.wikipedia.org/wiki/2026_New_England_Patriots_season)\, 
+ CC BY-SA 4.0. Times can change.
+LOCATION:Soldier Field
+END:VEVENT
+BEGIN:VEVENT
+UID:nfl-2026-patriots-reg-8@tidemark
+DTSTAMP:20261106T182406Z
+DTSTART:20261101T212500Z
+DTEND:20261102T004000Z
+SUMMARY:Patriots at Dolphins
+DESCRIPTION:Week 8\nTV: CBS\nResult: W 24–19\nSchedule from Wikipedia (h
+ ttps://en.wikipedia.org/wiki/2026_New_England_Patriots_season)\, CC BY-SA
+  4.0. Times can change.
+LOCATION:Hard Rock Stadium
+END:VEVENT
+BEGIN:VEVENT
+UID:nfl-2026-patriots-reg-9@tidemark
+DTSTAMP:20261106T182406Z
+DTSTART:20261108T212500Z
+DTEND:20261109T004000Z
+SUMMARY:Packers at Patriots
+DESCRIPTION:Week 9\nTV: Fox\nSchedule from Wikipedia (https://en.wikipedia
+ .org/wiki/2026_New_England_Patriots_season)\, CC BY-SA 4.0. Times can cha
+ nge.
+LOCATION:Gillette Stadium
+END:VEVENT
+BEGIN:VEVENT
+UID:nfl-2026-patriots-reg-10@tidemark
+DTSTAMP:20261106T182406Z
+DTSTART:20261115T143000Z
+DTEND:20261115T174500Z
+SUMMARY:Patriots at Lions
+DESCRIPTION:Week 10\nTV: Fox\nSchedule from Wikipedia (https://en.wikipedi
+ a.org/wiki/2026_New_England_Patriots_season)\, CC BY-SA 4.0. Times can ch
+ ange.
+LOCATION:Allianz Arena (Munich)
+END:VEVENT
+BEGIN:VEVENT
+UID:nfl-2026-patriots-reg-12@tidemark
+DTSTAMP:20261106T182406Z
+DTSTART:20261130T012000Z
+DTEND:20261130T043500Z
+SUMMARY:Patriots at Chargers
+DESCRIPTION:Week 12\nTV: NBC\nSchedule from Wikipedia (https://en.wikipedi
+ a.org/wiki/2026_New_England_Patriots_season)\, CC BY-SA 4.0. Times can ch
+ ange.
+LOCATION:SoFi Stadium
+END:VEVENT
+BEGIN:VEVENT
+UID:nfl-2026-patriots-reg-13@tidemark
+DTSTAMP:20261106T182406Z
+DTSTART:20261206T212500Z
+DTEND:20261207T004000Z
+SUMMARY:Bills at Patriots
+DESCRIPTION:Week 13\nTV: CBS\nSchedule from Wikipedia (https://en.wikipedi
+ a.org/wiki/2026_New_England_Patriots_season)\, CC BY-SA 4.0. Times can ch
+ ange.
+LOCATION:Gillette Stadium
+END:VEVENT
+BEGIN:VEVENT
+UID:nfl-2026-patriots-reg-14@tidemark
+DTSTAMP:20261106T182406Z
+DTSTART:20261211T011500Z
+DTEND:20261211T043000Z
+SUMMARY:Vikings at Patriots
+DESCRIPTION:Week 14\nTV: Prime Video\nSchedule from Wikipedia (https://en.
+ wikipedia.org/wiki/2026_New_England_Patriots_season)\, CC BY-SA 4.0. Time
+ s can change.
+LOCATION:Gillette Stadium
+END:VEVENT
+BEGIN:VEVENT
+UID:nfl-2026-patriots-reg-15@tidemark
+DTSTAMP:20261106T182406Z
+DTSTART:20261222T011500Z
+DTEND:20261222T043000Z
+SUMMARY:Patriots at Chiefs
+DESCRIPTION:Week 15\nTV: ESPN/ABC\nSchedule from Wikipedia (https://en.wik
+ ipedia.org/wiki/2026_New_England_Patriots_season)\, CC BY-SA 4.0. Times c
+ an change.
+LOCATION:Arrowhead Stadium
+END:VEVENT
+BEGIN:VEVENT
+UID:nfl-2026-patriots-reg-16@tidemark
+DTSTAMP:20261106T182406Z
+DTSTART:20261227T180000Z
+DTEND:20261227T211500Z
+SUMMARY:Patriots at Jets
+DESCRIPTION:Week 16\nTV: CBS\nSchedule from Wikipedia (https://en.wikipedi
+ a.org/wiki/2026_New_England_Patriots_season)\, CC BY-SA 4.0. Times can ch
+ ange.
+LOCATION:MetLife Stadium
+END:VEVENT
+BEGIN:VEVENT
+UID:nfl-2026-patriots-reg-17@tidemark
+DTSTAMP:20261106T182406Z
+DTSTART;VALUE=DATE:20270102
+DTEND;VALUE=DATE:20270103
+SUMMARY:Broncos at Patriots (Jan 2 or 3)
+DESCRIPTION:Week 17\nSchedule from Wikipedia (https://en.wikipedia.org/wik
+ i/2026_New_England_Patriots_season)\, CC BY-SA 4.0. Times can change.
+LOCATION:Gillette Stadium
+END:VEVENT
+BEGIN:VEVENT
+UID:nfl-2026-patriots-reg-18@tidemark
+DTSTAMP:20261106T182406Z
+DTSTART;VALUE=DATE:20270109
+DTEND;VALUE=DATE:20270110
+SUMMARY:Dolphins at Patriots (Jan 9 or 10)
+DESCRIPTION:Week 18\nSchedule from Wikipedia (https://en.wikipedia.org/wik
+ i/2026_New_England_Patriots_season)\, CC BY-SA 4.0. Times can change.
+LOCATION:Gillette Stadium
+END:VEVENT
+END:VCALENDAR

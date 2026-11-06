@@ -1,0 +1,195 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Tidemark//NFL schedules from Wikipedia//EN
+CALSCALE:GREGORIAN
+X-WR-CALNAME:Seattle Seahawks
+X-WR-CALDESC:Seattle Seahawks 2026 schedule\, from Wikipedia (https://en.w
+ ikipedia.org/wiki/2026_Seattle_Seahawks_season)\, CC BY-SA 4.0.
+X-PUBLISHED-TTL:PT12H
+REFRESH-INTERVAL;VALUE=DURATION:PT12H
+BEGIN:VEVENT
+UID:nfl-2026-seahawks-reg-1@tidemark
+DTSTAMP:20261106T182412Z
+DTSTART:20260910T002000Z
+DTEND:20260910T033500Z
+SUMMARY:Patriots at Seahawks
+DESCRIPTION:Week 1\nTV: NBC\nResult: W 13–10\nSchedule from Wikipedia (h
+ ttps://en.wikipedia.org/wiki/2026_Seattle_Seahawks_season)\, CC BY-SA 4.0
+ . Times can change.
+LOCATION:Lumen Field
+END:VEVENT
+BEGIN:VEVENT
+UID:nfl-2026-seahawks-reg-2@tidemark
+DTSTAMP:20261106T182412Z
+DTSTART:20260920T202500Z
+DTEND:20260920T234000Z
+SUMMARY:Seahawks at Cardinals
+DESCRIPTION:Week 2\nTV: Fox\nResult: W 31–7\nSchedule from Wikipedia (ht
+ tps://en.wikipedia.org/wiki/2026_Seattle_Seahawks_season)\, CC BY-SA 4.0.
+  Times can change.
+LOCATION:State Farm Stadium
+END:VEVENT
+BEGIN:VEVENT
+UID:nfl-2026-seahawks-reg-3@tidemark
+DTSTAMP:20261106T182412Z
+DTSTART:20260927T170000Z
+DTEND:20260927T201500Z
+SUMMARY:Seahawks at Commanders
+DESCRIPTION:Week 3\nTV: Fox\nResult: L 31–33\nSchedule from Wikipedia (h
+ ttps://en.wikipedia.org/wiki/2026_Seattle_Seahawks_season)\, CC BY-SA 4.0
+ . Times can change.
+LOCATION:Northwest Stadium
+END:VEVENT
+BEGIN:VEVENT
+UID:nfl-2026-seahawks-reg-4@tidemark
+DTSTAMP:20261106T182412Z
+DTSTART:20261004T202500Z
+DTEND:20261004T234000Z
+SUMMARY:Chargers at Seahawks
+DESCRIPTION:Week 4\nTV: CBS\nResult: W 30–23\nSchedule from Wikipedia (h
+ ttps://en.wikipedia.org/wiki/2026_Seattle_Seahawks_season)\, CC BY-SA 4.0
+ . Times can change.
+LOCATION:Lumen Field
+END:VEVENT
+BEGIN:VEVENT
+UID:nfl-2026-seahawks-reg-5@tidemark
+DTSTAMP:20261106T182412Z
+DTSTART:20261011T202500Z
+DTEND:20261011T234000Z
+SUMMARY:49ers at Seahawks
+DESCRIPTION:Week 5\nTV: Fox\nResult: L 29–32\nSchedule from Wikipedia (h
+ ttps://en.wikipedia.org/wiki/2026_Seattle_Seahawks_season)\, CC BY-SA 4.0
+ . Times can change.
+LOCATION:Lumen Field
+END:VEVENT
+BEGIN:VEVENT
+UID:nfl-2026-seahawks-reg-6@tidemark
+DTSTAMP:20261106T182412Z
+DTSTART:20261016T001500Z
+DTEND:20261016T033000Z
+SUMMARY:Seahawks at Broncos
+DESCRIPTION:Week 6\nTV: Prime Video\nResult: L 14–17 (OT)\nSchedule from
+  Wikipedia (https://en.wikipedia.org/wiki/2026_Seattle_Seahawks_season)\,
+  CC BY-SA 4.0. Times can change.
+LOCATION:Empower Field at Mile High
+END:VEVENT
+BEGIN:VEVENT
+UID:nfl-2026-seahawks-reg-7@tidemark
+DTSTAMP:20261106T182412Z
+DTSTART:20261026T002000Z
+DTEND:20261026T033500Z
+SUMMARY:Chiefs at Seahawks
+DESCRIPTION:Week 7\nTV: NBC\nResult: W 20–3\nSchedule from Wikipedia (ht
+ tps://en.wikipedia.org/wiki/2026_Seattle_Seahawks_season)\, CC BY-SA 4.0.
+  Times can change.
+LOCATION:Lumen Field
+END:VEVENT
+BEGIN:VEVENT
+UID:nfl-2026-seahawks-reg-8@tidemark
+DTSTAMP:20261106T182412Z
+DTSTART:20261103T011500Z
+DTEND:20261103T043000Z
+SUMMARY:Bears at Seahawks
+DESCRIPTION:Week 8\nTV: ESPN\nResult: L 17–34\nSchedule from Wikipedia (
+ https://en.wikipedia.org/wiki/2026_Seattle_Seahawks_season)\, CC BY-SA 4.
+ 0. Times can change.
+LOCATION:Lumen Field
+END:VEVENT
+BEGIN:VEVENT
+UID:nfl-2026-seahawks-reg-9@tidemark
+DTSTAMP:20261106T182412Z
+DTSTART:20261108T212500Z
+DTEND:20261109T004000Z
+SUMMARY:Cardinals at Seahawks
+DESCRIPTION:Week 9\nTV: Fox\nSchedule from Wikipedia (https://en.wikipedia
+ .org/wiki/2026_Seattle_Seahawks_season)\, CC BY-SA 4.0. Times can change.
+LOCATION:Lumen Field
+END:VEVENT
+BEGIN:VEVENT
+UID:nfl-2026-seahawks-reg-10@tidemark
+DTSTAMP:20261106T182412Z
+DTSTART:20261115T210500Z
+DTEND:20261116T002000Z
+SUMMARY:Seahawks at Raiders
+DESCRIPTION:Week 10\nTV: CBS\nSchedule from Wikipedia (https://en.wikipedi
+ a.org/wiki/2026_Seattle_Seahawks_season)\, CC BY-SA 4.0. Times can change
+ .
+LOCATION:Allegiant Stadium
+END:VEVENT
+BEGIN:VEVENT
+UID:nfl-2026-seahawks-reg-12@tidemark
+DTSTAMP:20261106T182412Z
+DTSTART:20261129T212500Z
+DTEND:20261130T004000Z
+SUMMARY:Seahawks at 49ers
+DESCRIPTION:Week 12\nTV: Fox\nSchedule from Wikipedia (https://en.wikipedi
+ a.org/wiki/2026_Seattle_Seahawks_season)\, CC BY-SA 4.0. Times can change
+ .
+LOCATION:Levi's Stadium
+END:VEVENT
+BEGIN:VEVENT
+UID:nfl-2026-seahawks-reg-13@tidemark
+DTSTAMP:20261106T182412Z
+DTSTART:20261208T011500Z
+DTEND:20261208T043000Z
+SUMMARY:Cowboys at Seahawks
+DESCRIPTION:Week 13\nTV: ESPN/ABC\nSchedule from Wikipedia (https://en.wik
+ ipedia.org/wiki/2026_Seattle_Seahawks_season)\, CC BY-SA 4.0. Times can c
+ hange.
+LOCATION:Lumen Field
+END:VEVENT
+BEGIN:VEVENT
+UID:nfl-2026-seahawks-reg-14@tidemark
+DTSTAMP:20261106T182412Z
+DTSTART:20261213T212500Z
+DTEND:20261214T004000Z
+SUMMARY:Giants at Seahawks
+DESCRIPTION:Week 14\nTV: Fox\nSchedule from Wikipedia (https://en.wikipedi
+ a.org/wiki/2026_Seattle_Seahawks_season)\, CC BY-SA 4.0. Times can change
+ .
+LOCATION:Lumen Field
+END:VEVENT
+BEGIN:VEVENT
+UID:nfl-2026-seahawks-reg-15@tidemark
+DTSTAMP:20261106T182412Z
+DTSTART:20261219T220000Z
+DTEND:20261220T011500Z
+SUMMARY:Seahawks at Eagles
+DESCRIPTION:Week 15\nTV: Fox\nSchedule from Wikipedia (https://en.wikipedi
+ a.org/wiki/2026_Seattle_Seahawks_season)\, CC BY-SA 4.0. Times can change
+ .
+LOCATION:Lincoln Financial Field
+END:VEVENT
+BEGIN:VEVENT
+UID:nfl-2026-seahawks-reg-16@tidemark
+DTSTAMP:20261106T182412Z
+DTSTART:20261226T011500Z
+DTEND:20261226T043000Z
+SUMMARY:Rams at Seahawks
+DESCRIPTION:Week 16\nTV: Fox\nSchedule from Wikipedia (https://en.wikipedi
+ a.org/wiki/2026_Seattle_Seahawks_season)\, CC BY-SA 4.0. Times can change
+ .
+LOCATION:Lumen Field
+END:VEVENT
+BEGIN:VEVENT
+UID:nfl-2026-seahawks-reg-17@tidemark
+DTSTAMP:20261106T182412Z
+DTSTART:20270103T180000Z
+DTEND:20270103T211500Z
+SUMMARY:Seahawks at Panthers
+DESCRIPTION:Week 17\nTV: Fox\nSchedule from Wikipedia (https://en.wikipedi
+ a.org/wiki/2026_Seattle_Seahawks_season)\, CC BY-SA 4.0. Times can change
+ .
+LOCATION:Bank of America Stadium
+END:VEVENT
+BEGIN:VEVENT
+UID:nfl-2026-seahawks-reg-18@tidemark
+DTSTAMP:20261106T182412Z
+DTSTART;VALUE=DATE:20270109
+DTEND;VALUE=DATE:20270110
+SUMMARY:Seahawks at Rams (Jan 9 or 10)
+DESCRIPTION:Week 18\nSchedule from Wikipedia (https://en.wikipedia.org/wik
+ i/2026_Seattle_Seahawks_season)\, CC BY-SA 4.0. Times can change.
+LOCATION:SoFi Stadium
+END:VEVENT
+END:VCALENDAR

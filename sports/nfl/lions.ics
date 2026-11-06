@@ -1,0 +1,187 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Tidemark//NFL schedules from Wikipedia//EN
+CALSCALE:GREGORIAN
+X-WR-CALNAME:Detroit Lions
+X-WR-CALDESC:Detroit Lions 2026 schedule\, from Wikipedia (https://en.wiki
+ pedia.org/wiki/2026_Detroit_Lions_season)\, CC BY-SA 4.0.
+X-PUBLISHED-TTL:PT12H
+REFRESH-INTERVAL;VALUE=DURATION:PT12H
+BEGIN:VEVENT
+UID:nfl-2026-lions-reg-1@tidemark
+DTSTAMP:20261106T182356Z
+DTSTART:20260913T170000Z
+DTEND:20260913T201500Z
+SUMMARY:Saints at Lions
+DESCRIPTION:Week 1\nResult: W 31–30 (OT)\nSchedule from Wikipedia (https
+ ://en.wikipedia.org/wiki/2026_Detroit_Lions_season)\, CC BY-SA 4.0. Times
+  can change.
+LOCATION:Ford Field
+END:VEVENT
+BEGIN:VEVENT
+UID:nfl-2026-lions-reg-2@tidemark
+DTSTAMP:20261106T182356Z
+DTSTART:20260918T001500Z
+DTEND:20260918T033000Z
+SUMMARY:Lions at Bills
+DESCRIPTION:Week 2\nResult: L 31–41\nSchedule from Wikipedia (https://en
+ .wikipedia.org/wiki/2026_Detroit_Lions_season)\, CC BY-SA 4.0. Times can 
+ change.
+LOCATION:Highmark Stadium
+END:VEVENT
+BEGIN:VEVENT
+UID:nfl-2026-lions-reg-3@tidemark
+DTSTAMP:20261106T182356Z
+DTSTART:20260927T170000Z
+DTEND:20260927T201500Z
+SUMMARY:Jets at Lions
+DESCRIPTION:Week 3\nResult: W 31–24\nSchedule from Wikipedia (https://en
+ .wikipedia.org/wiki/2026_Detroit_Lions_season)\, CC BY-SA 4.0. Times can 
+ change.
+LOCATION:Ford Field
+END:VEVENT
+BEGIN:VEVENT
+UID:nfl-2026-lions-reg-4@tidemark
+DTSTAMP:20261106T182356Z
+DTSTART:20261005T002000Z
+DTEND:20261005T033500Z
+SUMMARY:Lions at Panthers
+DESCRIPTION:Week 4\nResult: L 26–32\nSchedule from Wikipedia (https://en
+ .wikipedia.org/wiki/2026_Detroit_Lions_season)\, CC BY-SA 4.0. Times can 
+ change.
+LOCATION:Bank of America Stadium
+END:VEVENT
+BEGIN:VEVENT
+UID:nfl-2026-lions-reg-5@tidemark
+DTSTAMP:20261106T182356Z
+DTSTART:20261011T202500Z
+DTEND:20261011T234000Z
+SUMMARY:Lions at Cardinals
+DESCRIPTION:Week 5\nResult: W 45–21\nSchedule from Wikipedia (https://en
+ .wikipedia.org/wiki/2026_Detroit_Lions_season)\, CC BY-SA 4.0. Times can 
+ change.
+LOCATION:State Farm Stadium
+END:VEVENT
+BEGIN:VEVENT
+UID:nfl-2026-lions-reg-7@tidemark
+DTSTAMP:20261106T182356Z
+DTSTART:20261025T202500Z
+DTEND:20261025T234000Z
+SUMMARY:Packers at Lions
+DESCRIPTION:Week 7\nResult: W 20–17\nSchedule from Wikipedia (https://en
+ .wikipedia.org/wiki/2026_Detroit_Lions_season)\, CC BY-SA 4.0. Times can 
+ change.
+LOCATION:Ford Field
+END:VEVENT
+BEGIN:VEVENT
+UID:nfl-2026-lions-reg-8@tidemark
+DTSTAMP:20261106T182356Z
+DTSTART:20261101T180000Z
+DTEND:20261101T211500Z
+SUMMARY:Vikings at Lions
+DESCRIPTION:Week 8\nResult: W 19–15\nSchedule from Wikipedia (https://en
+ .wikipedia.org/wiki/2026_Detroit_Lions_season)\, CC BY-SA 4.0. Times can 
+ change.
+LOCATION:Ford Field
+END:VEVENT
+BEGIN:VEVENT
+UID:nfl-2026-lions-reg-9@tidemark
+DTSTAMP:20261106T182356Z
+DTSTART:20261108T180000Z
+DTEND:20261108T211500Z
+SUMMARY:Lions at Dolphins
+DESCRIPTION:Week 9\nSchedule from Wikipedia (https://en.wikipedia.org/wiki
+ /2026_Detroit_Lions_season)\, CC BY-SA 4.0. Times can change.
+LOCATION:Hard Rock Stadium
+END:VEVENT
+BEGIN:VEVENT
+UID:nfl-2026-lions-reg-10@tidemark
+DTSTAMP:20261106T182356Z
+DTSTART:20261115T143000Z
+DTEND:20261115T174500Z
+SUMMARY:Patriots at Lions
+DESCRIPTION:Week 10\nSchedule from Wikipedia (https://en.wikipedia.org/wik
+ i/2026_Detroit_Lions_season)\, CC BY-SA 4.0. Times can change.
+LOCATION:Allianz Arena (Munich)
+END:VEVENT
+BEGIN:VEVENT
+UID:nfl-2026-lions-reg-11@tidemark
+DTSTAMP:20261106T182356Z
+DTSTART:20261122T180000Z
+DTEND:20261122T211500Z
+SUMMARY:Buccaneers at Lions
+DESCRIPTION:Week 11\nSchedule from Wikipedia (https://en.wikipedia.org/wik
+ i/2026_Detroit_Lions_season)\, CC BY-SA 4.0. Times can change.
+LOCATION:Ford Field
+END:VEVENT
+BEGIN:VEVENT
+UID:nfl-2026-lions-reg-12@tidemark
+DTSTAMP:20261106T182356Z
+DTSTART:20261126T180000Z
+DTEND:20261126T211500Z
+SUMMARY:Bears at Lions
+DESCRIPTION:Week 12\nSchedule from Wikipedia (https://en.wikipedia.org/wik
+ i/2026_Detroit_Lions_season)\, CC BY-SA 4.0. Times can change.
+LOCATION:Ford Field
+END:VEVENT
+BEGIN:VEVENT
+UID:nfl-2026-lions-reg-13@tidemark
+DTSTAMP:20261106T182356Z
+DTSTART:20261206T180000Z
+DTEND:20261206T211500Z
+SUMMARY:Lions at Falcons
+DESCRIPTION:Week 13\nSchedule from Wikipedia (https://en.wikipedia.org/wik
+ i/2026_Detroit_Lions_season)\, CC BY-SA 4.0. Times can change.
+LOCATION:Mercedes-Benz Stadium
+END:VEVENT
+BEGIN:VEVENT
+UID:nfl-2026-lions-reg-14@tidemark
+DTSTAMP:20261106T182356Z
+DTSTART:20261213T180000Z
+DTEND:20261213T211500Z
+SUMMARY:Titans at Lions
+DESCRIPTION:Week 14\nSchedule from Wikipedia (https://en.wikipedia.org/wik
+ i/2026_Detroit_Lions_season)\, CC BY-SA 4.0. Times can change.
+LOCATION:Ford Field
+END:VEVENT
+BEGIN:VEVENT
+UID:nfl-2026-lions-reg-15@tidemark
+DTSTAMP:20261106T182356Z
+DTSTART:20261221T012000Z
+DTEND:20261221T043500Z
+SUMMARY:Lions at Vikings
+DESCRIPTION:Week 15\nSchedule from Wikipedia (https://en.wikipedia.org/wik
+ i/2026_Detroit_Lions_season)\, CC BY-SA 4.0. Times can change.
+LOCATION:U.S. Bank Stadium
+END:VEVENT
+BEGIN:VEVENT
+UID:nfl-2026-lions-reg-16@tidemark
+DTSTAMP:20261106T182356Z
+DTSTART:20261229T011500Z
+DTEND:20261229T043000Z
+SUMMARY:Giants at Lions
+DESCRIPTION:Week 16\nSchedule from Wikipedia (https://en.wikipedia.org/wik
+ i/2026_Detroit_Lions_season)\, CC BY-SA 4.0. Times can change.
+LOCATION:Ford Field
+END:VEVENT
+BEGIN:VEVENT
+UID:nfl-2026-lions-reg-17@tidemark
+DTSTAMP:20261106T182356Z
+DTSTART:20270103T212500Z
+DTEND:20270104T004000Z
+SUMMARY:Lions at Bears
+DESCRIPTION:Week 17\nSchedule from Wikipedia (https://en.wikipedia.org/wik
+ i/2026_Detroit_Lions_season)\, CC BY-SA 4.0. Times can change.
+LOCATION:Soldier Field
+END:VEVENT
+BEGIN:VEVENT
+UID:nfl-2026-lions-reg-18@tidemark
+DTSTAMP:20261106T182356Z
+DTSTART;VALUE=DATE:20270109
+DTEND;VALUE=DATE:20270110
+SUMMARY:Lions at Packers (Jan 9 or 10)
+DESCRIPTION:Week 18\nSchedule from Wikipedia (https://en.wikipedia.org/wik
+ i/2026_Detroit_Lions_season)\, CC BY-SA 4.0. Times can change.
+LOCATION:Lambeau Field
+END:VEVENT
+END:VCALENDAR

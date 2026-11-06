@@ -1,0 +1,196 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Tidemark//NFL schedules from Wikipedia//EN
+CALSCALE:GREGORIAN
+X-WR-CALNAME:New Orleans Saints
+X-WR-CALDESC:New Orleans Saints 2026 schedule\, from Wikipedia (https://en
+ .wikipedia.org/wiki/2026_New_Orleans_Saints_season)\, CC BY-SA 4.0.
+X-PUBLISHED-TTL:PT12H
+REFRESH-INTERVAL;VALUE=DURATION:PT12H
+BEGIN:VEVENT
+UID:nfl-2026-saints-reg-1@tidemark
+DTSTAMP:20261106T182407Z
+DTSTART:20260913T170000Z
+DTEND:20260913T201500Z
+SUMMARY:Saints at Lions
+DESCRIPTION:Week 1\nTV: Fox\nResult: L 30–31 (OT)\nSchedule from Wikiped
+ ia (https://en.wikipedia.org/wiki/2026_New_Orleans_Saints_season)\, CC BY
+ -SA 4.0. Times can change.
+LOCATION:Ford Field
+END:VEVENT
+BEGIN:VEVENT
+UID:nfl-2026-saints-reg-2@tidemark
+DTSTAMP:20261106T182407Z
+DTSTART:20260920T170000Z
+DTEND:20260920T201500Z
+SUMMARY:Saints at Ravens
+DESCRIPTION:Week 2\nTV: CBS\nResult: W 24–17\nSchedule from Wikipedia (h
+ ttps://en.wikipedia.org/wiki/2026_New_Orleans_Saints_season)\, CC BY-SA 4
+ .0. Times can change.
+LOCATION:M&T Bank Stadium
+END:VEVENT
+BEGIN:VEVENT
+UID:nfl-2026-saints-reg-3@tidemark
+DTSTAMP:20261106T182407Z
+DTSTART:20260927T202500Z
+DTEND:20260927T234000Z
+SUMMARY:Raiders at Saints
+DESCRIPTION:Week 3\nTV: CBS\nResult: L 27–35\nSchedule from Wikipedia (h
+ ttps://en.wikipedia.org/wiki/2026_New_Orleans_Saints_season)\, CC BY-SA 4
+ .0. Times can change.
+LOCATION:Caesars Superdome
+END:VEVENT
+BEGIN:VEVENT
+UID:nfl-2026-saints-reg-4@tidemark
+DTSTAMP:20261106T182407Z
+DTSTART:20261006T001500Z
+DTEND:20261006T033000Z
+SUMMARY:Falcons at Saints
+DESCRIPTION:Week 4\nTV: ESPN\nResult: L 24–45\nSchedule from Wikipedia (
+ https://en.wikipedia.org/wiki/2026_New_Orleans_Saints_season)\, CC BY-SA 
+ 4.0. Times can change.
+LOCATION:Caesars Superdome
+END:VEVENT
+BEGIN:VEVENT
+UID:nfl-2026-saints-reg-5@tidemark
+DTSTAMP:20261106T182407Z
+DTSTART:20261011T170000Z
+DTEND:20261011T201500Z
+SUMMARY:Vikings at Saints
+DESCRIPTION:Week 5\nTV: Fox\nResult: L 13–23\nSchedule from Wikipedia (h
+ ttps://en.wikipedia.org/wiki/2026_New_Orleans_Saints_season)\, CC BY-SA 4
+ .0. Times can change.
+LOCATION:Caesars Superdome
+END:VEVENT
+BEGIN:VEVENT
+UID:nfl-2026-saints-reg-6@tidemark
+DTSTAMP:20261106T182407Z
+DTSTART:20261018T170000Z
+DTEND:20261018T201500Z
+SUMMARY:Saints at Giants
+DESCRIPTION:Week 6\nTV: Fox\nResult: W 34–27\nSchedule from Wikipedia (h
+ ttps://en.wikipedia.org/wiki/2026_New_Orleans_Saints_season)\, CC BY-SA 4
+ .0. Times can change.
+LOCATION:MetLife Stadium
+END:VEVENT
+BEGIN:VEVENT
+UID:nfl-2026-saints-reg-7@tidemark
+DTSTAMP:20261106T182407Z
+DTSTART:20261025T133000Z
+DTEND:20261025T164500Z
+SUMMARY:Steelers at Saints
+DESCRIPTION:Week 7\nTV: NFLN\nResult: L 10–16\nSchedule from Wikipedia (
+ https://en.wikipedia.org/wiki/2026_New_Orleans_Saints_season)\, CC BY-SA 
+ 4.0. Times can change.
+LOCATION:Stade de France (Paris)
+END:VEVENT
+BEGIN:VEVENT
+UID:nfl-2026-saints-reg-9@tidemark
+DTSTAMP:20261106T182407Z
+DTSTART:20261108T180000Z
+DTEND:20261108T211500Z
+SUMMARY:Browns at Saints
+DESCRIPTION:Week 9\nTV: CBS\nSchedule from Wikipedia (https://en.wikipedia
+ .org/wiki/2026_New_Orleans_Saints_season)\, CC BY-SA 4.0. Times can chang
+ e.
+LOCATION:Caesars Superdome
+END:VEVENT
+BEGIN:VEVENT
+UID:nfl-2026-saints-reg-10@tidemark
+DTSTAMP:20261106T182407Z
+DTSTART:20261115T180000Z
+DTEND:20261115T211500Z
+SUMMARY:Panthers at Saints
+DESCRIPTION:Week 10\nTV: Fox\nSchedule from Wikipedia (https://en.wikipedi
+ a.org/wiki/2026_New_Orleans_Saints_season)\, CC BY-SA 4.0. Times can chan
+ ge.
+LOCATION:Caesars Superdome
+END:VEVENT
+BEGIN:VEVENT
+UID:nfl-2026-saints-reg-11@tidemark
+DTSTAMP:20261106T182407Z
+DTSTART:20261122T180000Z
+DTEND:20261122T211500Z
+SUMMARY:Saints at Bears
+DESCRIPTION:Week 11\nTV: Fox\nSchedule from Wikipedia (https://en.wikipedi
+ a.org/wiki/2026_New_Orleans_Saints_season)\, CC BY-SA 4.0. Times can chan
+ ge.
+LOCATION:Soldier Field
+END:VEVENT
+BEGIN:VEVENT
+UID:nfl-2026-saints-reg-12@tidemark
+DTSTAMP:20261106T182407Z
+DTSTART:20261129T180000Z
+DTEND:20261129T211500Z
+SUMMARY:Saints at Bengals
+DESCRIPTION:Week 12\nTV: CBS\nSchedule from Wikipedia (https://en.wikipedi
+ a.org/wiki/2026_New_Orleans_Saints_season)\, CC BY-SA 4.0. Times can chan
+ ge.
+LOCATION:Paycor Stadium
+END:VEVENT
+BEGIN:VEVENT
+UID:nfl-2026-saints-reg-13@tidemark
+DTSTAMP:20261106T182407Z
+DTSTART:20261206T180000Z
+DTEND:20261206T211500Z
+SUMMARY:Packers at Saints
+DESCRIPTION:Week 13\nTV: Fox\nSchedule from Wikipedia (https://en.wikipedi
+ a.org/wiki/2026_New_Orleans_Saints_season)\, CC BY-SA 4.0. Times can chan
+ ge.
+LOCATION:Caesars Superdome
+END:VEVENT
+BEGIN:VEVENT
+UID:nfl-2026-saints-reg-14@tidemark
+DTSTAMP:20261106T182407Z
+DTSTART:20261213T180000Z
+DTEND:20261213T211500Z
+SUMMARY:Saints at Panthers
+DESCRIPTION:Week 14\nTV: CBS\nSchedule from Wikipedia (https://en.wikipedi
+ a.org/wiki/2026_New_Orleans_Saints_season)\, CC BY-SA 4.0. Times can chan
+ ge.
+LOCATION:Bank of America Stadium
+END:VEVENT
+BEGIN:VEVENT
+UID:nfl-2026-saints-reg-15@tidemark
+DTSTAMP:20261106T182407Z
+DTSTART:20261220T180000Z
+DTEND:20261220T211500Z
+SUMMARY:Saints at Buccaneers
+DESCRIPTION:Week 15\nTV: Fox\nSchedule from Wikipedia (https://en.wikipedi
+ a.org/wiki/2026_New_Orleans_Saints_season)\, CC BY-SA 4.0. Times can chan
+ ge.
+LOCATION:Raymond James Stadium
+END:VEVENT
+BEGIN:VEVENT
+UID:nfl-2026-saints-reg-16@tidemark
+DTSTAMP:20261106T182407Z
+DTSTART:20261227T180000Z
+DTEND:20261227T211500Z
+SUMMARY:Cardinals at Saints
+DESCRIPTION:Week 16\nTV: Fox\nSchedule from Wikipedia (https://en.wikipedi
+ a.org/wiki/2026_New_Orleans_Saints_season)\, CC BY-SA 4.0. Times can chan
+ ge.
+LOCATION:Caesars Superdome
+END:VEVENT
+BEGIN:VEVENT
+UID:nfl-2026-saints-reg-17@tidemark
+DTSTAMP:20261106T182407Z
+DTSTART:20270103T180000Z
+DTEND:20270103T211500Z
+SUMMARY:Saints at Falcons
+DESCRIPTION:Week 17\nTV: Fox\nSchedule from Wikipedia (https://en.wikipedi
+ a.org/wiki/2026_New_Orleans_Saints_season)\, CC BY-SA 4.0. Times can chan
+ ge.
+LOCATION:Mercedes-Benz Stadium
+END:VEVENT
+BEGIN:VEVENT
+UID:nfl-2026-saints-reg-18@tidemark
+DTSTAMP:20261106T182407Z
+DTSTART;VALUE=DATE:20270109
+DTEND;VALUE=DATE:20270110
+SUMMARY:Buccaneers at Saints (Jan 9 or 10)
+DESCRIPTION:Week 18\nSchedule from Wikipedia (https://en.wikipedia.org/wik
+ i/2026_New_Orleans_Saints_season)\, CC BY-SA 4.0. Times can change.
+LOCATION:Caesars Superdome
+END:VEVENT
+END:VCALENDAR

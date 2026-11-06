@@ -1,0 +1,195 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Tidemark//NFL schedules from Wikipedia//EN
+CALSCALE:GREGORIAN
+X-WR-CALNAME:Jacksonville Jaguars
+X-WR-CALDESC:Jacksonville Jaguars 2026 schedule\, from Wikipedia (https://
+ en.wikipedia.org/wiki/2026_Jacksonville_Jaguars_season)\, CC BY-SA 4.0.
+X-PUBLISHED-TTL:PT12H
+REFRESH-INTERVAL;VALUE=DURATION:PT12H
+BEGIN:VEVENT
+UID:nfl-2026-jaguars-reg-1@tidemark
+DTSTAMP:20261106T182400Z
+DTSTART:20260913T170000Z
+DTEND:20260913T201500Z
+SUMMARY:Browns at Jaguars
+DESCRIPTION:Week 1\nTV: CBS\nResult: W 34–10\nSchedule from Wikipedia (h
+ ttps://en.wikipedia.org/wiki/2026_Jacksonville_Jaguars_season)\, CC BY-SA
+  4.0. Times can change.
+LOCATION:EverBank Stadium
+END:VEVENT
+BEGIN:VEVENT
+UID:nfl-2026-jaguars-reg-2@tidemark
+DTSTAMP:20261106T182400Z
+DTSTART:20260920T200500Z
+DTEND:20260920T232000Z
+SUMMARY:Jaguars at Broncos
+DESCRIPTION:Week 2\nTV: CBS\nResult: L 13–20\nSchedule from Wikipedia (h
+ ttps://en.wikipedia.org/wiki/2026_Jacksonville_Jaguars_season)\, CC BY-SA
+  4.0. Times can change.
+LOCATION:Empower Field at Mile High
+END:VEVENT
+BEGIN:VEVENT
+UID:nfl-2026-jaguars-reg-3@tidemark
+DTSTAMP:20261106T182400Z
+DTSTART:20260927T170000Z
+DTEND:20260927T201500Z
+SUMMARY:Patriots at Jaguars
+DESCRIPTION:Week 3\nTV: CBS\nResult: W 35–6\nSchedule from Wikipedia (ht
+ tps://en.wikipedia.org/wiki/2026_Jacksonville_Jaguars_season)\, CC BY-SA 
+ 4.0. Times can change.
+LOCATION:EverBank Stadium
+END:VEVENT
+BEGIN:VEVENT
+UID:nfl-2026-jaguars-reg-4@tidemark
+DTSTAMP:20261106T182400Z
+DTSTART:20261004T170000Z
+DTEND:20261004T201500Z
+SUMMARY:Jaguars at Bengals
+DESCRIPTION:Week 4\nTV: CBS\nResult: W 22–17\nSchedule from Wikipedia (h
+ ttps://en.wikipedia.org/wiki/2026_Jacksonville_Jaguars_season)\, CC BY-SA
+  4.0. Times can change.
+LOCATION:Paycor Stadium
+END:VEVENT
+BEGIN:VEVENT
+UID:nfl-2026-jaguars-reg-5@tidemark
+DTSTAMP:20261106T182400Z
+DTSTART:20261011T133000Z
+DTEND:20261011T164500Z
+SUMMARY:Eagles at Jaguars
+DESCRIPTION:Week 5\nTV: NFLN\nResult: W 19–17\nSchedule from Wikipedia (
+ https://en.wikipedia.org/wiki/2026_Jacksonville_Jaguars_season)\, CC BY-S
+ A 4.0. Times can change.
+LOCATION:Tottenham Hotspur Stadium (London)
+END:VEVENT
+BEGIN:VEVENT
+UID:nfl-2026-jaguars-reg-6@tidemark
+DTSTAMP:20261106T182400Z
+DTSTART:20261018T133000Z
+DTEND:20261018T164500Z
+SUMMARY:Texans at Jaguars
+DESCRIPTION:Week 6\nTV: NFLN\nResult: L 31–34\nSchedule from Wikipedia (
+ https://en.wikipedia.org/wiki/2026_Jacksonville_Jaguars_season)\, CC BY-S
+ A 4.0. Times can change.
+LOCATION:Wembley Stadium (London)
+END:VEVENT
+BEGIN:VEVENT
+UID:nfl-2026-jaguars-reg-8@tidemark
+DTSTAMP:20261106T182400Z
+DTSTART:20261101T180000Z
+DTEND:20261101T211500Z
+SUMMARY:Colts at Jaguars
+DESCRIPTION:Week 8\nTV: CBS\nResult: W 42–7\nSchedule from Wikipedia (ht
+ tps://en.wikipedia.org/wiki/2026_Jacksonville_Jaguars_season)\, CC BY-SA 
+ 4.0. Times can change.
+LOCATION:EverBank Stadium
+END:VEVENT
+BEGIN:VEVENT
+UID:nfl-2026-jaguars-reg-9@tidemark
+DTSTAMP:20261106T182400Z
+DTSTART:20261106T011500Z
+DTEND:20261106T043000Z
+SUMMARY:Jaguars at Ravens
+DESCRIPTION:Week 9\nTV: Prime Video\nResult: W 33–10\nSchedule from Wiki
+ pedia (https://en.wikipedia.org/wiki/2026_Jacksonville_Jaguars_season)\, 
+ CC BY-SA 4.0. Times can change.
+LOCATION:M&T Bank Stadium
+END:VEVENT
+BEGIN:VEVENT
+UID:nfl-2026-jaguars-reg-10@tidemark
+DTSTAMP:20261106T182400Z
+DTSTART:20261115T180000Z
+DTEND:20261115T211500Z
+SUMMARY:Jaguars at Titans
+DESCRIPTION:Week 10\nTV: Fox\nSchedule from Wikipedia (https://en.wikipedi
+ a.org/wiki/2026_Jacksonville_Jaguars_season)\, CC BY-SA 4.0. Times can ch
+ ange.
+LOCATION:Nissan Stadium
+END:VEVENT
+BEGIN:VEVENT
+UID:nfl-2026-jaguars-reg-11@tidemark
+DTSTAMP:20261106T182400Z
+DTSTART:20261122T180000Z
+DTEND:20261122T211500Z
+SUMMARY:Jaguars at Giants
+DESCRIPTION:Week 11\nTV: CBS\nSchedule from Wikipedia (https://en.wikipedi
+ a.org/wiki/2026_Jacksonville_Jaguars_season)\, CC BY-SA 4.0. Times can ch
+ ange.
+LOCATION:MetLife Stadium
+END:VEVENT
+BEGIN:VEVENT
+UID:nfl-2026-jaguars-reg-12@tidemark
+DTSTAMP:20261106T182400Z
+DTSTART:20261129T210500Z
+DTEND:20261130T002000Z
+SUMMARY:Titans at Jaguars
+DESCRIPTION:Week 12\nTV: CBS\nSchedule from Wikipedia (https://en.wikipedi
+ a.org/wiki/2026_Jacksonville_Jaguars_season)\, CC BY-SA 4.0. Times can ch
+ ange.
+LOCATION:EverBank Stadium
+END:VEVENT
+BEGIN:VEVENT
+UID:nfl-2026-jaguars-reg-13@tidemark
+DTSTAMP:20261106T182400Z
+DTSTART:20261206T180000Z
+DTEND:20261206T211500Z
+SUMMARY:Jaguars at Bears
+DESCRIPTION:Week 13\nTV: Fox\nSchedule from Wikipedia (https://en.wikipedi
+ a.org/wiki/2026_Jacksonville_Jaguars_season)\, CC BY-SA 4.0. Times can ch
+ ange.
+LOCATION:Soldier Field
+END:VEVENT
+BEGIN:VEVENT
+UID:nfl-2026-jaguars-reg-14@tidemark
+DTSTAMP:20261106T182400Z
+DTSTART:20261215T011500Z
+DTEND:20261215T043000Z
+SUMMARY:Steelers at Jaguars
+DESCRIPTION:Week 14\nTV: ESPN\nSchedule from Wikipedia (https://en.wikiped
+ ia.org/wiki/2026_Jacksonville_Jaguars_season)\, CC BY-SA 4.0. Times can c
+ hange.
+LOCATION:EverBank Stadium
+END:VEVENT
+BEGIN:VEVENT
+UID:nfl-2026-jaguars-reg-15@tidemark
+DTSTAMP:20261106T182400Z
+DTSTART:20261220T180000Z
+DTEND:20261220T211500Z
+SUMMARY:Jaguars at Texans
+DESCRIPTION:Week 15\nTV: CBS\nSchedule from Wikipedia (https://en.wikipedi
+ a.org/wiki/2026_Jacksonville_Jaguars_season)\, CC BY-SA 4.0. Times can ch
+ ange.
+LOCATION:Reliant Stadium
+END:VEVENT
+BEGIN:VEVENT
+UID:nfl-2026-jaguars-reg-16@tidemark
+DTSTAMP:20261106T182400Z
+DTSTART:20261228T012000Z
+DTEND:20261228T043500Z
+SUMMARY:Jaguars at Cowboys
+DESCRIPTION:Week 16\nTV: NBC\nSchedule from Wikipedia (https://en.wikipedi
+ a.org/wiki/2026_Jacksonville_Jaguars_season)\, CC BY-SA 4.0. Times can ch
+ ange.
+LOCATION:AT&T Stadium
+END:VEVENT
+BEGIN:VEVENT
+UID:nfl-2026-jaguars-reg-17@tidemark
+DTSTAMP:20261106T182400Z
+DTSTART;VALUE=DATE:20270102
+DTEND;VALUE=DATE:20270103
+SUMMARY:Commanders at Jaguars (Jan 2 or 3)
+DESCRIPTION:Week 17\nSchedule from Wikipedia (https://en.wikipedia.org/wik
+ i/2026_Jacksonville_Jaguars_season)\, CC BY-SA 4.0. Times can change.
+LOCATION:EverBank Stadium
+END:VEVENT
+BEGIN:VEVENT
+UID:nfl-2026-jaguars-reg-18@tidemark
+DTSTAMP:20261106T182400Z
+DTSTART;VALUE=DATE:20270109
+DTEND;VALUE=DATE:20270110
+SUMMARY:Jaguars at Colts (Jan 9 or 10)
+DESCRIPTION:Week 18\nSchedule from Wikipedia (https://en.wikipedia.org/wik
+ i/2026_Jacksonville_Jaguars_season)\, CC BY-SA 4.0. Times can change.
+LOCATION:Lucas Oil Stadium
+END:VEVENT
+END:VCALENDAR
