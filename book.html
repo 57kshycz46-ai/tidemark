@@ -310,9 +310,44 @@
 
   // "#<offer>" or, from a guest's own "change or cancel" link, "#<offer>.<booking id>[.<reply channel>.<key>.<secret>]".
   const [token, linkedBooking, linkG, linkPub, linkD] = location.hash.slice(1).split('.');
+  // Compact links ("~…"): the offer packed in a few bytes (see BookingLink.compact in the app).
+  const P = 2n ** 256n - 2n ** 224n + 2n ** 192n + 2n ** 96n - 1n;
+  const B = 0x5ac635d8aa3a93e7b3ebbd55769886bc651d06b0cc53b0f63bce3c3e27d2604bn;
+  const modpow = (b, e, m) => { let r = 1n; b %= m; while (e > 0n) { if (e & 1n) r = r * b % m; b = b * b % m; e >>= 1n; } return r; };
+  const toBig = (u8) => u8.reduce((n, x) => (n << 8n) | BigInt(x), 0n);
+  const fromBig = (n, len) => { const out = new Uint8Array(len); for (let i = len - 1; i >= 0; i--) { out[i] = Number(n & 255n); n >>= 8n; } return out; };
+  // A P-256 key in its compressed form (33 bytes) back to the 65 bytes Web Crypto and Tidemark use.
+  function decompress(c) {
+    const x = toBig(c.slice(1));
+    const rhs = ((x * x % P) * x - 3n * x + B) % P;
+    let y = modpow((rhs + P) % P, (P + 1n) / 4n, P);
+    if ((y & 1n) !== BigInt(c[0] & 1)) y = P - y;
+    return join(Uint8Array.of(4), fromBig(x, 32), fromBig(y, 32));
+  }
+  function unpack(text) {
+    const u8 = bytes(text);
+    let i = 1;
+    const varint = () => { let v = 0, mul = 1; for (;;) { if (i >= u8.length) throw new Error('short'); const b = u8[i++]; v += (b & 127) * mul; if (!(b & 128)) return v; mul *= 128; } };
+    const str = () => { const n = varint(); const s = new TextDecoder().decode(u8.slice(i, i + n)); i += n; return s; };
+    const flags = u8[0];
+    const o = { v: 2, d: varint() };
+    let last = varint();
+    const count = varint();
+    o.w = [];
+    for (let k = 0; k < count; k++) { const start = last + varint(); const end = start + varint(); o.w.push([start, end]); last = end; }
+    o.n = str(); o.t = str(); o.z = str();
+    if (flags & 2) o.e = str();
+    if (flags & 1) {
+      o.r = 'tm-' + b64eBytes(u8.slice(i, i + 18));
+      o.k = b64eBytes(decompress(u8.slice(i + 18, i + 51)));
+    }
+    return o;
+  }
+
   let offer;
   try {
-    offer = JSON.parse(b64d(token));
+    offer = token.startsWith('~') ? unpack(token.slice(1)) : JSON.parse(b64d(token));
+    window.__tidemarkOffer = offer; // for testing
     if (!offer || !Array.isArray(offer.w) || !offer.d) throw new Error('bad');
   } catch (e) {
     $('host').textContent = 'This link looks incomplete';
