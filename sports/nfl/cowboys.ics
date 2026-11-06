@@ -1,0 +1,189 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Tidemark//NFL schedules from Wikipedia//EN
+CALSCALE:GREGORIAN
+X-WR-CALNAME:Dallas Cowboys
+X-WR-CALDESC:Dallas Cowboys 2026 schedule\, from Wikipedia (https://en.wik
+ ipedia.org/wiki/2026_Dallas_Cowboys_season)\, CC BY-SA 4.0.
+X-PUBLISHED-TTL:PT12H
+REFRESH-INTERVAL;VALUE=DURATION:PT12H
+BEGIN:VEVENT
+UID:nfl-2026-cowboys-reg-1@tidemark
+DTSTAMP:20261106T182355Z
+DTSTART:20260914T002000Z
+DTEND:20260914T033500Z
+SUMMARY:Cowboys at Giants
+DESCRIPTION:Week 1\nTV: NBC\nResult: L 20–28\nSchedule from Wikipedia (h
+ ttps://en.wikipedia.org/wiki/2026_Dallas_Cowboys_season)\, CC BY-SA 4.0. 
+ Times can change.
+LOCATION:MetLife Stadium
+END:VEVENT
+BEGIN:VEVENT
+UID:nfl-2026-cowboys-reg-2@tidemark
+DTSTAMP:20261106T182355Z
+DTSTART:20260920T202500Z
+DTEND:20260920T234000Z
+SUMMARY:Commanders at Cowboys
+DESCRIPTION:Week 2\nTV: Fox\nResult: W 37–20\nSchedule from Wikipedia (h
+ ttps://en.wikipedia.org/wiki/2026_Dallas_Cowboys_season)\, CC BY-SA 4.0. 
+ Times can change.
+LOCATION:AT&T Stadium
+END:VEVENT
+BEGIN:VEVENT
+UID:nfl-2026-cowboys-reg-3@tidemark
+DTSTAMP:20261106T182355Z
+DTSTART:20260927T202500Z
+DTEND:20260927T234000Z
+SUMMARY:Ravens at Cowboys
+DESCRIPTION:Week 3\nTV: CBS\nResult: L 31–34\nSchedule from Wikipedia (h
+ ttps://en.wikipedia.org/wiki/2026_Dallas_Cowboys_season)\, CC BY-SA 4.0. 
+ Times can change.
+LOCATION:Maracanã Stadium (Rio de Janeiro)
+END:VEVENT
+BEGIN:VEVENT
+UID:nfl-2026-cowboys-reg-4@tidemark
+DTSTAMP:20261106T182355Z
+DTSTART:20261004T170000Z
+DTEND:20261004T201500Z
+SUMMARY:Cowboys at Texans
+DESCRIPTION:Week 4\nTV: Fox\nResult: W 34–30\nSchedule from Wikipedia (h
+ ttps://en.wikipedia.org/wiki/2026_Dallas_Cowboys_season)\, CC BY-SA 4.0. 
+ Times can change.
+LOCATION:Reliant Stadium
+END:VEVENT
+BEGIN:VEVENT
+UID:nfl-2026-cowboys-reg-5@tidemark
+DTSTAMP:20261106T182355Z
+DTSTART:20261009T001500Z
+DTEND:20261009T033000Z
+SUMMARY:Buccaneers at Cowboys
+DESCRIPTION:Week 5\nTV: Prime Video\nResult: L 16–24\nSchedule from Wiki
+ pedia (https://en.wikipedia.org/wiki/2026_Dallas_Cowboys_season)\, CC BY-
+ SA 4.0. Times can change.
+LOCATION:AT&T Stadium
+END:VEVENT
+BEGIN:VEVENT
+UID:nfl-2026-cowboys-reg-6@tidemark
+DTSTAMP:20261106T182355Z
+DTSTART:20261019T002000Z
+DTEND:20261019T033500Z
+SUMMARY:Cowboys at Packers
+DESCRIPTION:Week 6\nTV: NBC\nResult: L 13–23\nSchedule from Wikipedia (h
+ ttps://en.wikipedia.org/wiki/2026_Dallas_Cowboys_season)\, CC BY-SA 4.0. 
+ Times can change.
+LOCATION:Lambeau Field
+END:VEVENT
+BEGIN:VEVENT
+UID:nfl-2026-cowboys-reg-7@tidemark
+DTSTAMP:20261106T182355Z
+DTSTART:20261027T001500Z
+DTEND:20261027T033000Z
+SUMMARY:Cowboys at Eagles
+DESCRIPTION:Week 7\nTV: ESPN/ABC\nResult: W 38–21\nSchedule from Wikiped
+ ia (https://en.wikipedia.org/wiki/2026_Dallas_Cowboys_season)\, CC BY-SA 
+ 4.0. Times can change.
+LOCATION:Lincoln Financial Field
+END:VEVENT
+BEGIN:VEVENT
+UID:nfl-2026-cowboys-reg-8@tidemark
+DTSTAMP:20261106T182355Z
+DTSTART:20261101T180000Z
+DTEND:20261101T211500Z
+SUMMARY:Cardinals at Cowboys
+DESCRIPTION:Week 8\nTV: Fox\nResult: L 30–33 (OT)\nSchedule from Wikiped
+ ia (https://en.wikipedia.org/wiki/2026_Dallas_Cowboys_season)\, CC BY-SA 
+ 4.0. Times can change.
+LOCATION:AT&T Stadium
+END:VEVENT
+BEGIN:VEVENT
+UID:nfl-2026-cowboys-reg-9@tidemark
+DTSTAMP:20261106T182355Z
+DTSTART:20261108T180000Z
+DTEND:20261108T211500Z
+SUMMARY:Cowboys at Colts
+DESCRIPTION:Week 9\nTV: Fox\nSchedule from Wikipedia (https://en.wikipedia
+ .org/wiki/2026_Dallas_Cowboys_season)\, CC BY-SA 4.0. Times can change.
+LOCATION:Lucas Oil Stadium
+END:VEVENT
+BEGIN:VEVENT
+UID:nfl-2026-cowboys-reg-10@tidemark
+DTSTAMP:20261106T182355Z
+DTSTART:20261115T212500Z
+DTEND:20261116T004000Z
+SUMMARY:49ers at Cowboys
+DESCRIPTION:Week 10\nTV: Fox\nSchedule from Wikipedia (https://en.wikipedi
+ a.org/wiki/2026_Dallas_Cowboys_season)\, CC BY-SA 4.0. Times can change.
+LOCATION:AT&T Stadium
+END:VEVENT
+BEGIN:VEVENT
+UID:nfl-2026-cowboys-reg-11@tidemark
+DTSTAMP:20261106T182355Z
+DTSTART:20261122T180000Z
+DTEND:20261122T211500Z
+SUMMARY:Titans at Cowboys
+DESCRIPTION:Week 11\nTV: Fox\nSchedule from Wikipedia (https://en.wikipedi
+ a.org/wiki/2026_Dallas_Cowboys_season)\, CC BY-SA 4.0. Times can change.
+LOCATION:AT&T Stadium
+END:VEVENT
+BEGIN:VEVENT
+UID:nfl-2026-cowboys-reg-12@tidemark
+DTSTAMP:20261106T182355Z
+DTSTART:20261126T213000Z
+DTEND:20261127T004500Z
+SUMMARY:Eagles at Cowboys
+DESCRIPTION:Week 12\nTV: Fox\nSchedule from Wikipedia (https://en.wikipedi
+ a.org/wiki/2026_Dallas_Cowboys_season)\, CC BY-SA 4.0. Times can change.
+LOCATION:AT&T Stadium
+END:VEVENT
+BEGIN:VEVENT
+UID:nfl-2026-cowboys-reg-13@tidemark
+DTSTAMP:20261106T182355Z
+DTSTART:20261208T011500Z
+DTEND:20261208T043000Z
+SUMMARY:Cowboys at Seahawks
+DESCRIPTION:Week 13\nTV: ESPN/ABC\nSchedule from Wikipedia (https://en.wik
+ ipedia.org/wiki/2026_Dallas_Cowboys_season)\, CC BY-SA 4.0. Times can cha
+ nge.
+LOCATION:Lumen Field
+END:VEVENT
+BEGIN:VEVENT
+UID:nfl-2026-cowboys-reg-15@tidemark
+DTSTAMP:20261106T182355Z
+DTSTART:20261220T212500Z
+DTEND:20261221T004000Z
+SUMMARY:Cowboys at Rams
+DESCRIPTION:Week 15\nTV: CBS\nSchedule from Wikipedia (https://en.wikipedi
+ a.org/wiki/2026_Dallas_Cowboys_season)\, CC BY-SA 4.0. Times can change.
+LOCATION:SoFi Stadium
+END:VEVENT
+BEGIN:VEVENT
+UID:nfl-2026-cowboys-reg-16@tidemark
+DTSTAMP:20261106T182355Z
+DTSTART:20261228T012000Z
+DTEND:20261228T043500Z
+SUMMARY:Jaguars at Cowboys
+DESCRIPTION:Week 16\nTV: NBC\nSchedule from Wikipedia (https://en.wikipedi
+ a.org/wiki/2026_Dallas_Cowboys_season)\, CC BY-SA 4.0. Times can change.
+LOCATION:AT&T Stadium
+END:VEVENT
+BEGIN:VEVENT
+UID:nfl-2026-cowboys-reg-17@tidemark
+DTSTAMP:20261106T182355Z
+DTSTART:20270103T180000Z
+DTEND:20270103T211500Z
+SUMMARY:Giants at Cowboys
+DESCRIPTION:Week 17\nTV: Fox\nSchedule from Wikipedia (https://en.wikipedi
+ a.org/wiki/2026_Dallas_Cowboys_season)\, CC BY-SA 4.0. Times can change.
+LOCATION:AT&T Stadium
+END:VEVENT
+BEGIN:VEVENT
+UID:nfl-2026-cowboys-reg-18@tidemark
+DTSTAMP:20261106T182355Z
+DTSTART;VALUE=DATE:20270109
+DTEND;VALUE=DATE:20270110
+SUMMARY:Cowboys at Commanders (Jan 9 or 10)
+DESCRIPTION:Week 18\nSchedule from Wikipedia (https://en.wikipedia.org/wik
+ i/2026_Dallas_Cowboys_season)\, CC BY-SA 4.0. Times can change.
+LOCATION:Northwest Stadium
+END:VEVENT
+END:VCALENDAR

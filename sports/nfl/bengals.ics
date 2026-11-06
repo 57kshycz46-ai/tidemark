@@ -1,0 +1,195 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Tidemark//NFL schedules from Wikipedia//EN
+CALSCALE:GREGORIAN
+X-WR-CALNAME:Cincinnati Bengals
+X-WR-CALDESC:Cincinnati Bengals 2026 schedule\, from Wikipedia (https://en
+ .wikipedia.org/wiki/2026_Cincinnati_Bengals_season)\, CC BY-SA 4.0.
+X-PUBLISHED-TTL:PT12H
+REFRESH-INTERVAL;VALUE=DURATION:PT12H
+BEGIN:VEVENT
+UID:nfl-2026-bengals-reg-1@tidemark
+DTSTAMP:20261106T182353Z
+DTSTART:20260913T170000Z
+DTEND:20260913T201500Z
+SUMMARY:Buccaneers at Bengals
+DESCRIPTION:Week 1\nTV: Fox\nResult: W 33–27\nSchedule from Wikipedia (h
+ ttps://en.wikipedia.org/wiki/2026_Cincinnati_Bengals_season)\, CC BY-SA 4
+ .0. Times can change.
+LOCATION:Paycor Stadium
+END:VEVENT
+BEGIN:VEVENT
+UID:nfl-2026-bengals-reg-2@tidemark
+DTSTAMP:20261106T182353Z
+DTSTART:20260920T170000Z
+DTEND:20260920T201500Z
+SUMMARY:Bengals at Texans
+DESCRIPTION:Week 2\nTV: CBS\nResult: W 20–6\nSchedule from Wikipedia (ht
+ tps://en.wikipedia.org/wiki/2026_Cincinnati_Bengals_season)\, CC BY-SA 4.
+ 0. Times can change.
+LOCATION:Reliant Stadium
+END:VEVENT
+BEGIN:VEVENT
+UID:nfl-2026-bengals-reg-3@tidemark
+DTSTAMP:20261106T182353Z
+DTSTART:20260927T170000Z
+DTEND:20260927T201500Z
+SUMMARY:Bengals at Steelers
+DESCRIPTION:Week 3\nTV: CBS\nResult: L 27–30\nSchedule from Wikipedia (h
+ ttps://en.wikipedia.org/wiki/2026_Cincinnati_Bengals_season)\, CC BY-SA 4
+ .0. Times can change.
+LOCATION:Acrisure Stadium
+END:VEVENT
+BEGIN:VEVENT
+UID:nfl-2026-bengals-reg-4@tidemark
+DTSTAMP:20261106T182353Z
+DTSTART:20261004T170000Z
+DTEND:20261004T201500Z
+SUMMARY:Jaguars at Bengals
+DESCRIPTION:Week 4\nTV: CBS\nResult: L 17–22\nSchedule from Wikipedia (h
+ ttps://en.wikipedia.org/wiki/2026_Cincinnati_Bengals_season)\, CC BY-SA 4
+ .0. Times can change.
+LOCATION:Paycor Stadium
+END:VEVENT
+BEGIN:VEVENT
+UID:nfl-2026-bengals-reg-5@tidemark
+DTSTAMP:20261106T182353Z
+DTSTART:20261011T170000Z
+DTEND:20261011T201500Z
+SUMMARY:Bengals at Dolphins
+DESCRIPTION:Week 5\nTV: Fox\nResult: W 31–24\nSchedule from Wikipedia (h
+ ttps://en.wikipedia.org/wiki/2026_Cincinnati_Bengals_season)\, CC BY-SA 4
+ .0. Times can change.
+LOCATION:Hard Rock Stadium
+END:VEVENT
+BEGIN:VEVENT
+UID:nfl-2026-bengals-reg-7@tidemark
+DTSTAMP:20261106T182353Z
+DTSTART:20261025T170000Z
+DTEND:20261025T201500Z
+SUMMARY:Bengals at Ravens
+DESCRIPTION:Week 7\nTV: CBS\nResult: W 35–13\nSchedule from Wikipedia (h
+ ttps://en.wikipedia.org/wiki/2026_Cincinnati_Bengals_season)\, CC BY-SA 4
+ .0. Times can change.
+LOCATION:M&T Bank Stadium
+END:VEVENT
+BEGIN:VEVENT
+UID:nfl-2026-bengals-reg-8@tidemark
+DTSTAMP:20261106T182353Z
+DTSTART:20261101T180000Z
+DTEND:20261101T211500Z
+SUMMARY:Titans at Bengals
+DESCRIPTION:Week 8\nTV: CBS\nResult: W 43–36 (OT)\nSchedule from Wikiped
+ ia (https://en.wikipedia.org/wiki/2026_Cincinnati_Bengals_season)\, CC BY
+ -SA 4.0. Times can change.
+LOCATION:Paycor Stadium
+END:VEVENT
+BEGIN:VEVENT
+UID:nfl-2026-bengals-reg-9@tidemark
+DTSTAMP:20261106T182353Z
+DTSTART:20261108T143000Z
+DTEND:20261108T174500Z
+SUMMARY:Bengals at Falcons
+DESCRIPTION:Week 9\nTV: NFLN\nSchedule from Wikipedia (https://en.wikipedi
+ a.org/wiki/2026_Cincinnati_Bengals_season)\, CC BY-SA 4.0. Times can chan
+ ge.
+LOCATION:Bernabéu (Madrid)
+END:VEVENT
+BEGIN:VEVENT
+UID:nfl-2026-bengals-reg-10@tidemark
+DTSTAMP:20261106T182353Z
+DTSTART:20261116T012000Z
+DTEND:20261116T043500Z
+SUMMARY:Steelers at Bengals
+DESCRIPTION:Week 10\nTV: NBC\nSchedule from Wikipedia (https://en.wikipedi
+ a.org/wiki/2026_Cincinnati_Bengals_season)\, CC BY-SA 4.0. Times can chan
+ ge.
+LOCATION:Paycor Stadium
+END:VEVENT
+BEGIN:VEVENT
+UID:nfl-2026-bengals-reg-11@tidemark
+DTSTAMP:20261106T182353Z
+DTSTART:20261124T011500Z
+DTEND:20261124T043000Z
+SUMMARY:Bengals at Commanders
+DESCRIPTION:Week 11\nTV: ESPN\nSchedule from Wikipedia (https://en.wikiped
+ ia.org/wiki/2026_Cincinnati_Bengals_season)\, CC BY-SA 4.0. Times can cha
+ nge.
+LOCATION:Northwest Stadium
+END:VEVENT
+BEGIN:VEVENT
+UID:nfl-2026-bengals-reg-12@tidemark
+DTSTAMP:20261106T182353Z
+DTSTART:20261129T180000Z
+DTEND:20261129T211500Z
+SUMMARY:Saints at Bengals
+DESCRIPTION:Week 12\nTV: CBS\nSchedule from Wikipedia (https://en.wikipedi
+ a.org/wiki/2026_Cincinnati_Bengals_season)\, CC BY-SA 4.0. Times can chan
+ ge.
+LOCATION:Paycor Stadium
+END:VEVENT
+BEGIN:VEVENT
+UID:nfl-2026-bengals-reg-13@tidemark
+DTSTAMP:20261106T182353Z
+DTSTART:20261206T180000Z
+DTEND:20261206T211500Z
+SUMMARY:Bengals at Browns
+DESCRIPTION:Week 13\nTV: CBS\nSchedule from Wikipedia (https://en.wikipedi
+ a.org/wiki/2026_Cincinnati_Bengals_season)\, CC BY-SA 4.0. Times can chan
+ ge.
+LOCATION:Huntington Bank Field
+END:VEVENT
+BEGIN:VEVENT
+UID:nfl-2026-bengals-reg-14@tidemark
+DTSTAMP:20261106T182353Z
+DTSTART:20261213T212500Z
+DTEND:20261214T004000Z
+SUMMARY:Chiefs at Bengals
+DESCRIPTION:Week 14\nTV: Fox\nSchedule from Wikipedia (https://en.wikipedi
+ a.org/wiki/2026_Cincinnati_Bengals_season)\, CC BY-SA 4.0. Times can chan
+ ge.
+LOCATION:Paycor Stadium
+END:VEVENT
+BEGIN:VEVENT
+UID:nfl-2026-bengals-reg-15@tidemark
+DTSTAMP:20261106T182353Z
+DTSTART:20261220T180000Z
+DTEND:20261220T211500Z
+SUMMARY:Bengals at Panthers
+DESCRIPTION:Week 15\nTV: Fox\nSchedule from Wikipedia (https://en.wikipedi
+ a.org/wiki/2026_Cincinnati_Bengals_season)\, CC BY-SA 4.0. Times can chan
+ ge.
+LOCATION:Bank of America Stadium
+END:VEVENT
+BEGIN:VEVENT
+UID:nfl-2026-bengals-reg-16@tidemark
+DTSTAMP:20261106T182353Z
+DTSTART;VALUE=DATE:20261226
+DTEND;VALUE=DATE:20261227
+SUMMARY:Bengals at Colts (Dec 26 or 27)
+DESCRIPTION:Week 16\nSchedule from Wikipedia (https://en.wikipedia.org/wik
+ i/2026_Cincinnati_Bengals_season)\, CC BY-SA 4.0. Times can change.
+LOCATION:Lucas Oil Stadium
+END:VEVENT
+BEGIN:VEVENT
+UID:nfl-2026-bengals-reg-17@tidemark
+DTSTAMP:20261106T182353Z
+DTSTART:20270101T011500Z
+DTEND:20270101T043000Z
+SUMMARY:Ravens at Bengals
+DESCRIPTION:Week 17\nTV: Prime Video\nSchedule from Wikipedia (https://en.
+ wikipedia.org/wiki/2026_Cincinnati_Bengals_season)\, CC BY-SA 4.0. Times 
+ can change.
+LOCATION:Paycor Stadium
+END:VEVENT
+BEGIN:VEVENT
+UID:nfl-2026-bengals-reg-18@tidemark
+DTSTAMP:20261106T182353Z
+DTSTART;VALUE=DATE:20270109
+DTEND;VALUE=DATE:20270110
+SUMMARY:Browns at Bengals (Jan 9 or 10)
+DESCRIPTION:Week 18\nSchedule from Wikipedia (https://en.wikipedia.org/wik
+ i/2026_Cincinnati_Bengals_season)\, CC BY-SA 4.0. Times can change.
+LOCATION:Paycor Stadium
+END:VEVENT
+END:VCALENDAR

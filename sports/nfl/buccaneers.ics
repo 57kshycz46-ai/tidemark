@@ -1,0 +1,194 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Tidemark//NFL schedules from Wikipedia//EN
+CALSCALE:GREGORIAN
+X-WR-CALNAME:Tampa Bay Buccaneers
+X-WR-CALDESC:Tampa Bay Buccaneers 2026 schedule\, from Wikipedia (https://
+ en.wikipedia.org/wiki/2026_Tampa_Bay_Buccaneers_season)\, CC BY-SA 4.0.
+X-PUBLISHED-TTL:PT12H
+REFRESH-INTERVAL;VALUE=DURATION:PT12H
+BEGIN:VEVENT
+UID:nfl-2026-buccaneers-reg-1@tidemark
+DTSTAMP:20261106T182412Z
+DTSTART:20260913T170000Z
+DTEND:20260913T201500Z
+SUMMARY:Buccaneers at Bengals
+DESCRIPTION:Week 1\nTV: Fox\nResult: L 27–33\nSchedule from Wikipedia (h
+ ttps://en.wikipedia.org/wiki/2026_Tampa_Bay_Buccaneers_season)\, CC BY-SA
+  4.0. Times can change.
+LOCATION:Paycor Stadium
+END:VEVENT
+BEGIN:VEVENT
+UID:nfl-2026-buccaneers-reg-2@tidemark
+DTSTAMP:20261106T182412Z
+DTSTART:20260920T170000Z
+DTEND:20260920T201500Z
+SUMMARY:Browns at Buccaneers
+DESCRIPTION:Week 2\nTV: CBS\nResult: L 19–23\nSchedule from Wikipedia (h
+ ttps://en.wikipedia.org/wiki/2026_Tampa_Bay_Buccaneers_season)\, CC BY-SA
+  4.0. Times can change.
+LOCATION:Raymond James Stadium
+END:VEVENT
+BEGIN:VEVENT
+UID:nfl-2026-buccaneers-reg-3@tidemark
+DTSTAMP:20261106T182412Z
+DTSTART:20260927T200500Z
+DTEND:20260927T232000Z
+SUMMARY:Vikings at Buccaneers
+DESCRIPTION:Week 3\nTV: Fox\nResult: L 16–23\nSchedule from Wikipedia (h
+ ttps://en.wikipedia.org/wiki/2026_Tampa_Bay_Buccaneers_season)\, CC BY-SA
+  4.0. Times can change.
+LOCATION:Raymond James Stadium
+END:VEVENT
+BEGIN:VEVENT
+UID:nfl-2026-buccaneers-reg-4@tidemark
+DTSTAMP:20261106T182412Z
+DTSTART:20261004T170000Z
+DTEND:20261004T201500Z
+SUMMARY:Packers at Buccaneers
+DESCRIPTION:Week 4\nTV: Fox\nResult: L 14–17\nSchedule from Wikipedia (h
+ ttps://en.wikipedia.org/wiki/2026_Tampa_Bay_Buccaneers_season)\, CC BY-SA
+  4.0. Times can change.
+LOCATION:Raymond James Stadium
+END:VEVENT
+BEGIN:VEVENT
+UID:nfl-2026-buccaneers-reg-5@tidemark
+DTSTAMP:20261106T182412Z
+DTSTART:20261009T001500Z
+DTEND:20261009T033000Z
+SUMMARY:Buccaneers at Cowboys
+DESCRIPTION:Week 5\nTV: Prime Video\nResult: W 24–16\nSchedule from Wiki
+ pedia (https://en.wikipedia.org/wiki/2026_Tampa_Bay_Buccaneers_season)\, 
+ CC BY-SA 4.0. Times can change.
+LOCATION:AT&T Stadium
+END:VEVENT
+BEGIN:VEVENT
+UID:nfl-2026-buccaneers-reg-6@tidemark
+DTSTAMP:20261106T182412Z
+DTSTART:20261018T170000Z
+DTEND:20261018T201500Z
+SUMMARY:Steelers at Buccaneers
+DESCRIPTION:Week 6\nTV: CBS\nResult: L 19–26 (OT)\nSchedule from Wikiped
+ ia (https://en.wikipedia.org/wiki/2026_Tampa_Bay_Buccaneers_season)\, CC 
+ BY-SA 4.0. Times can change.
+LOCATION:Raymond James Stadium
+END:VEVENT
+BEGIN:VEVENT
+UID:nfl-2026-buccaneers-reg-7@tidemark
+DTSTAMP:20261106T182412Z
+DTSTART:20261025T170000Z
+DTEND:20261025T201500Z
+SUMMARY:Buccaneers at Panthers
+DESCRIPTION:Week 7\nTV: Fox\nResult: W 43–13\nSchedule from Wikipedia (h
+ ttps://en.wikipedia.org/wiki/2026_Tampa_Bay_Buccaneers_season)\, CC BY-SA
+  4.0. Times can change.
+LOCATION:Bank of America Stadium
+END:VEVENT
+BEGIN:VEVENT
+UID:nfl-2026-buccaneers-reg-8@tidemark
+DTSTAMP:20261106T182412Z
+DTSTART:20261101T180000Z
+DTEND:20261101T211500Z
+SUMMARY:Falcons at Buccaneers
+DESCRIPTION:Week 8\nTV: Fox\nResult: W 16–0\nSchedule from Wikipedia (ht
+ tps://en.wikipedia.org/wiki/2026_Tampa_Bay_Buccaneers_season)\, CC BY-SA 
+ 4.0. Times can change.
+LOCATION:Raymond James Stadium
+END:VEVENT
+BEGIN:VEVENT
+UID:nfl-2026-buccaneers-reg-9@tidemark
+DTSTAMP:20261106T182412Z
+DTSTART:20261109T012000Z
+DTEND:20261109T043500Z
+SUMMARY:Buccaneers at Bears
+DESCRIPTION:Week 9\nTV: NBC\nSchedule from Wikipedia (https://en.wikipedia
+ .org/wiki/2026_Tampa_Bay_Buccaneers_season)\, CC BY-SA 4.0. Times can cha
+ nge.
+LOCATION:Soldier Field
+END:VEVENT
+BEGIN:VEVENT
+UID:nfl-2026-buccaneers-reg-11@tidemark
+DTSTAMP:20261106T182412Z
+DTSTART:20261122T180000Z
+DTEND:20261122T211500Z
+SUMMARY:Buccaneers at Lions
+DESCRIPTION:Week 11\nTV: Fox\nSchedule from Wikipedia (https://en.wikipedi
+ a.org/wiki/2026_Tampa_Bay_Buccaneers_season)\, CC BY-SA 4.0. Times can ch
+ ange.
+LOCATION:Ford Field
+END:VEVENT
+BEGIN:VEVENT
+UID:nfl-2026-buccaneers-reg-12@tidemark
+DTSTAMP:20261106T182412Z
+DTSTART:20261201T011500Z
+DTEND:20261201T043000Z
+SUMMARY:Panthers at Buccaneers
+DESCRIPTION:Week 12\nTV: ESPN\nSchedule from Wikipedia (https://en.wikiped
+ ia.org/wiki/2026_Tampa_Bay_Buccaneers_season)\, CC BY-SA 4.0. Times can c
+ hange.
+LOCATION:Raymond James Stadium
+END:VEVENT
+BEGIN:VEVENT
+UID:nfl-2026-buccaneers-reg-13@tidemark
+DTSTAMP:20261106T182412Z
+DTSTART:20261206T180000Z
+DTEND:20261206T211500Z
+SUMMARY:Chargers at Buccaneers
+DESCRIPTION:Week 13\nTV: CBS\nSchedule from Wikipedia (https://en.wikipedi
+ a.org/wiki/2026_Tampa_Bay_Buccaneers_season)\, CC BY-SA 4.0. Times can ch
+ ange.
+LOCATION:Raymond James Stadium
+END:VEVENT
+BEGIN:VEVENT
+UID:nfl-2026-buccaneers-reg-14@tidemark
+DTSTAMP:20261106T182412Z
+DTSTART:20261213T180000Z
+DTEND:20261213T211500Z
+SUMMARY:Buccaneers at Ravens
+DESCRIPTION:Week 14\nTV: Fox\nSchedule from Wikipedia (https://en.wikipedi
+ a.org/wiki/2026_Tampa_Bay_Buccaneers_season)\, CC BY-SA 4.0. Times can ch
+ ange.
+LOCATION:M&T Bank Stadium
+END:VEVENT
+BEGIN:VEVENT
+UID:nfl-2026-buccaneers-reg-15@tidemark
+DTSTAMP:20261106T182412Z
+DTSTART:20261220T180000Z
+DTEND:20261220T211500Z
+SUMMARY:Saints at Buccaneers
+DESCRIPTION:Week 15\nTV: Fox\nSchedule from Wikipedia (https://en.wikipedi
+ a.org/wiki/2026_Tampa_Bay_Buccaneers_season)\, CC BY-SA 4.0. Times can ch
+ ange.
+LOCATION:Raymond James Stadium
+END:VEVENT
+BEGIN:VEVENT
+UID:nfl-2026-buccaneers-reg-16@tidemark
+DTSTAMP:20261106T182412Z
+DTSTART;VALUE=DATE:20261226
+DTEND;VALUE=DATE:20261227
+SUMMARY:Buccaneers at Falcons (Dec 26 or 27)
+DESCRIPTION:Week 16\nSchedule from Wikipedia (https://en.wikipedia.org/wik
+ i/2026_Tampa_Bay_Buccaneers_season)\, CC BY-SA 4.0. Times can change.
+LOCATION:Mercedes-Benz Stadium
+END:VEVENT
+BEGIN:VEVENT
+UID:nfl-2026-buccaneers-reg-17@tidemark
+DTSTAMP:20261106T182412Z
+DTSTART;VALUE=DATE:20270103
+DTEND;VALUE=DATE:20270104
+SUMMARY:Rams at Buccaneers
+DESCRIPTION:Week 17\nSchedule from Wikipedia (https://en.wikipedia.org/wik
+ i/2026_Tampa_Bay_Buccaneers_season)\, CC BY-SA 4.0. Times can change.
+LOCATION:Raymond James Stadium
+END:VEVENT
+BEGIN:VEVENT
+UID:nfl-2026-buccaneers-reg-18@tidemark
+DTSTAMP:20261106T182412Z
+DTSTART;VALUE=DATE:20270109
+DTEND;VALUE=DATE:20270110
+SUMMARY:Buccaneers at Saints (Jan 9 or 10)
+DESCRIPTION:Week 18\nSchedule from Wikipedia (https://en.wikipedia.org/wik
+ i/2026_Tampa_Bay_Buccaneers_season)\, CC BY-SA 4.0. Times can change.
+LOCATION:Caesars Superdome
+END:VEVENT
+END:VCALENDAR

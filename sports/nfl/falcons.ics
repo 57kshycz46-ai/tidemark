@@ -1,0 +1,188 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Tidemark//NFL schedules from Wikipedia//EN
+CALSCALE:GREGORIAN
+X-WR-CALNAME:Atlanta Falcons
+X-WR-CALDESC:Atlanta Falcons 2026 schedule\, from Wikipedia (https://en.wi
+ kipedia.org/wiki/2026_Atlanta_Falcons_season)\, CC BY-SA 4.0.
+X-PUBLISHED-TTL:PT12H
+REFRESH-INTERVAL;VALUE=DURATION:PT12H
+BEGIN:VEVENT
+UID:nfl-2026-falcons-reg-1@tidemark
+DTSTAMP:20261106T182348Z
+DTSTART:20260913T170000Z
+DTEND:20260913T201500Z
+SUMMARY:Falcons at Steelers
+DESCRIPTION:Week 1\nTV: Fox\nResult: L 13–20\nSchedule from Wikipedia (h
+ ttps://en.wikipedia.org/wiki/2026_Atlanta_Falcons_season)\, CC BY-SA 4.0.
+  Times can change.
+LOCATION:Acrisure Stadium
+END:VEVENT
+BEGIN:VEVENT
+UID:nfl-2026-falcons-reg-2@tidemark
+DTSTAMP:20261106T182348Z
+DTSTART:20260920T170000Z
+DTEND:20260920T201500Z
+SUMMARY:Panthers at Falcons
+DESCRIPTION:Week 2\nTV: Fox\nResult: L 3–34\nSchedule from Wikipedia (ht
+ tps://en.wikipedia.org/wiki/2026_Atlanta_Falcons_season)\, CC BY-SA 4.0. 
+ Times can change.
+LOCATION:Mercedes-Benz Stadium
+END:VEVENT
+BEGIN:VEVENT
+UID:nfl-2026-falcons-reg-3@tidemark
+DTSTAMP:20261106T182348Z
+DTSTART:20260925T001500Z
+DTEND:20260925T033000Z
+SUMMARY:Falcons at Packers
+DESCRIPTION:Week 3\nTV: Prime Video\nResult: W 35–14\nSchedule from Wiki
+ pedia (https://en.wikipedia.org/wiki/2026_Atlanta_Falcons_season)\, CC BY
+ -SA 4.0. Times can change.
+LOCATION:Lambeau Field
+END:VEVENT
+BEGIN:VEVENT
+UID:nfl-2026-falcons-reg-4@tidemark
+DTSTAMP:20261106T182348Z
+DTSTART:20261006T001500Z
+DTEND:20261006T033000Z
+SUMMARY:Falcons at Saints
+DESCRIPTION:Week 4\nTV: ESPN\nResult: W 45–24\nSchedule from Wikipedia (
+ https://en.wikipedia.org/wiki/2026_Atlanta_Falcons_season)\, CC BY-SA 4.0
+ . Times can change.
+LOCATION:Caesars Superdome
+END:VEVENT
+BEGIN:VEVENT
+UID:nfl-2026-falcons-reg-5@tidemark
+DTSTAMP:20261106T182348Z
+DTSTART:20261012T002000Z
+DTEND:20261012T033500Z
+SUMMARY:Ravens at Falcons
+DESCRIPTION:Week 5\nTV: NBC\nResult: L 23–30 (OT)\nSchedule from Wikiped
+ ia (https://en.wikipedia.org/wiki/2026_Atlanta_Falcons_season)\, CC BY-SA
+  4.0. Times can change.
+LOCATION:Mercedes-Benz Stadium
+END:VEVENT
+BEGIN:VEVENT
+UID:nfl-2026-falcons-reg-6@tidemark
+DTSTAMP:20261106T182348Z
+DTSTART:20261018T170000Z
+DTEND:20261018T201500Z
+SUMMARY:Bears at Falcons
+DESCRIPTION:Week 6\nTV: Fox\nResult: L 23–31\nSchedule from Wikipedia (h
+ ttps://en.wikipedia.org/wiki/2026_Atlanta_Falcons_season)\, CC BY-SA 4.0.
+  Times can change.
+LOCATION:Mercedes-Benz Stadium
+END:VEVENT
+BEGIN:VEVENT
+UID:nfl-2026-falcons-reg-7@tidemark
+DTSTAMP:20261106T182348Z
+DTSTART:20261025T170000Z
+DTEND:20261025T201500Z
+SUMMARY:49ers at Falcons
+DESCRIPTION:Week 7\nTV: Fox\nResult: W 29–20\nSchedule from Wikipedia (h
+ ttps://en.wikipedia.org/wiki/2026_Atlanta_Falcons_season)\, CC BY-SA 4.0.
+  Times can change.
+LOCATION:Mercedes-Benz Stadium
+END:VEVENT
+BEGIN:VEVENT
+UID:nfl-2026-falcons-reg-8@tidemark
+DTSTAMP:20261106T182348Z
+DTSTART:20261101T180000Z
+DTEND:20261101T211500Z
+SUMMARY:Falcons at Buccaneers
+DESCRIPTION:Week 8\nTV: Fox\nResult: L 0–16\nSchedule from Wikipedia (ht
+ tps://en.wikipedia.org/wiki/2026_Atlanta_Falcons_season)\, CC BY-SA 4.0. 
+ Times can change.
+LOCATION:Raymond James Stadium
+END:VEVENT
+BEGIN:VEVENT
+UID:nfl-2026-falcons-reg-9@tidemark
+DTSTAMP:20261106T182348Z
+DTSTART:20261108T143000Z
+DTEND:20261108T174500Z
+SUMMARY:Bengals at Falcons
+DESCRIPTION:Week 9\nTV: NFLN\nSchedule from Wikipedia (https://en.wikipedi
+ a.org/wiki/2026_Atlanta_Falcons_season)\, CC BY-SA 4.0. Times can change.
+LOCATION:Bernabéu (Madrid)
+END:VEVENT
+BEGIN:VEVENT
+UID:nfl-2026-falcons-reg-10@tidemark
+DTSTAMP:20261106T182348Z
+DTSTART:20261115T180000Z
+DTEND:20261115T211500Z
+SUMMARY:Chiefs at Falcons
+DESCRIPTION:Week 10\nTV: CBS\nSchedule from Wikipedia (https://en.wikipedi
+ a.org/wiki/2026_Atlanta_Falcons_season)\, CC BY-SA 4.0. Times can change.
+LOCATION:Mercedes-Benz Stadium
+END:VEVENT
+BEGIN:VEVENT
+UID:nfl-2026-falcons-reg-12@tidemark
+DTSTAMP:20261106T182348Z
+DTSTART:20261129T180000Z
+DTEND:20261129T211500Z
+SUMMARY:Falcons at Vikings
+DESCRIPTION:Week 12\nTV: Fox\nSchedule from Wikipedia (https://en.wikipedi
+ a.org/wiki/2026_Atlanta_Falcons_season)\, CC BY-SA 4.0. Times can change.
+LOCATION:U.S. Bank Stadium
+END:VEVENT
+BEGIN:VEVENT
+UID:nfl-2026-falcons-reg-13@tidemark
+DTSTAMP:20261106T182348Z
+DTSTART:20261206T180000Z
+DTEND:20261206T211500Z
+SUMMARY:Lions at Falcons
+DESCRIPTION:Week 13\nTV: CBS\nSchedule from Wikipedia (https://en.wikipedi
+ a.org/wiki/2026_Atlanta_Falcons_season)\, CC BY-SA 4.0. Times can change.
+LOCATION:Mercedes-Benz Stadium
+END:VEVENT
+BEGIN:VEVENT
+UID:nfl-2026-falcons-reg-14@tidemark
+DTSTAMP:20261106T182348Z
+DTSTART:20261213T180000Z
+DTEND:20261213T211500Z
+SUMMARY:Falcons at Browns
+DESCRIPTION:Week 14\nTV: CBS\nSchedule from Wikipedia (https://en.wikipedi
+ a.org/wiki/2026_Atlanta_Falcons_season)\, CC BY-SA 4.0. Times can change.
+LOCATION:Huntington Bank Field
+END:VEVENT
+BEGIN:VEVENT
+UID:nfl-2026-falcons-reg-15@tidemark
+DTSTAMP:20261106T182348Z
+DTSTART:20261220T180000Z
+DTEND:20261220T211500Z
+SUMMARY:Falcons at Commanders
+DESCRIPTION:Week 15\nTV: Fox\nSchedule from Wikipedia (https://en.wikipedi
+ a.org/wiki/2026_Atlanta_Falcons_season)\, CC BY-SA 4.0. Times can change.
+LOCATION:Northwest Stadium
+END:VEVENT
+BEGIN:VEVENT
+UID:nfl-2026-falcons-reg-16@tidemark
+DTSTAMP:20261106T182348Z
+DTSTART;VALUE=DATE:20261226
+DTEND;VALUE=DATE:20261227
+SUMMARY:Buccaneers at Falcons (Dec 26 or 27)
+DESCRIPTION:Week 16\nSchedule from Wikipedia (https://en.wikipedia.org/wik
+ i/2026_Atlanta_Falcons_season)\, CC BY-SA 4.0. Times can change.
+LOCATION:Mercedes-Benz Stadium
+END:VEVENT
+BEGIN:VEVENT
+UID:nfl-2026-falcons-reg-17@tidemark
+DTSTAMP:20261106T182348Z
+DTSTART:20270103T180000Z
+DTEND:20270103T211500Z
+SUMMARY:Saints at Falcons
+DESCRIPTION:Week 17\nTV: Fox\nSchedule from Wikipedia (https://en.wikipedi
+ a.org/wiki/2026_Atlanta_Falcons_season)\, CC BY-SA 4.0. Times can change.
+LOCATION:Mercedes-Benz Stadium
+END:VEVENT
+BEGIN:VEVENT
+UID:nfl-2026-falcons-reg-18@tidemark
+DTSTAMP:20261106T182348Z
+DTSTART;VALUE=DATE:20270109
+DTEND;VALUE=DATE:20270110
+SUMMARY:Falcons at Panthers (Jan 9 or 10)
+DESCRIPTION:Week 18\nSchedule from Wikipedia (https://en.wikipedia.org/wik
+ i/2026_Atlanta_Falcons_season)\, CC BY-SA 4.0. Times can change.
+LOCATION:Bank of America Stadium
+END:VEVENT
+END:VCALENDAR

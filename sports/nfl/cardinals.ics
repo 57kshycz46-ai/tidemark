@@ -1,0 +1,196 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Tidemark//NFL schedules from Wikipedia//EN
+CALSCALE:GREGORIAN
+X-WR-CALNAME:Arizona Cardinals
+X-WR-CALDESC:Arizona Cardinals 2026 schedule\, from Wikipedia (https://en.
+ wikipedia.org/wiki/2026_Arizona_Cardinals_season)\, CC BY-SA 4.0.
+X-PUBLISHED-TTL:PT12H
+REFRESH-INTERVAL;VALUE=DURATION:PT12H
+BEGIN:VEVENT
+UID:nfl-2026-cardinals-reg-1@tidemark
+DTSTAMP:20261106T182347Z
+DTSTART:20260913T202500Z
+DTEND:20260913T234000Z
+SUMMARY:Cardinals at Chargers
+DESCRIPTION:Week 1\nTV: CBS\nResult: W 26–14\nSchedule from Wikipedia (h
+ ttps://en.wikipedia.org/wiki/2026_Arizona_Cardinals_season)\, CC BY-SA 4.
+ 0. Times can change.
+LOCATION:SoFi Stadium
+END:VEVENT
+BEGIN:VEVENT
+UID:nfl-2026-cardinals-reg-2@tidemark
+DTSTAMP:20261106T182347Z
+DTSTART:20260920T202500Z
+DTEND:20260920T234000Z
+SUMMARY:Seahawks at Cardinals
+DESCRIPTION:Week 2\nTV: Fox\nResult: L 7–31\nSchedule from Wikipedia (ht
+ tps://en.wikipedia.org/wiki/2026_Arizona_Cardinals_season)\, CC BY-SA 4.0
+ . Times can change.
+LOCATION:State Farm Stadium
+END:VEVENT
+BEGIN:VEVENT
+UID:nfl-2026-cardinals-reg-3@tidemark
+DTSTAMP:20261106T182347Z
+DTSTART:20260927T200500Z
+DTEND:20260927T232000Z
+SUMMARY:Cardinals at 49ers
+DESCRIPTION:Week 3\nTV: Fox\nResult: L 30–36\nSchedule from Wikipedia (h
+ ttps://en.wikipedia.org/wiki/2026_Arizona_Cardinals_season)\, CC BY-SA 4.
+ 0. Times can change.
+LOCATION:Levi's Stadium
+END:VEVENT
+BEGIN:VEVENT
+UID:nfl-2026-cardinals-reg-4@tidemark
+DTSTAMP:20261106T182347Z
+DTSTART:20261004T170000Z
+DTEND:20261004T201500Z
+SUMMARY:Cardinals at Giants
+DESCRIPTION:Week 4\nTV: CBS\nResult: L 24–36\nSchedule from Wikipedia (h
+ ttps://en.wikipedia.org/wiki/2026_Arizona_Cardinals_season)\, CC BY-SA 4.
+ 0. Times can change.
+LOCATION:MetLife Stadium
+END:VEVENT
+BEGIN:VEVENT
+UID:nfl-2026-cardinals-reg-5@tidemark
+DTSTAMP:20261106T182347Z
+DTSTART:20261011T202500Z
+DTEND:20261011T234000Z
+SUMMARY:Lions at Cardinals
+DESCRIPTION:Week 5\nTV: Fox\nResult: L 21–45\nSchedule from Wikipedia (h
+ ttps://en.wikipedia.org/wiki/2026_Arizona_Cardinals_season)\, CC BY-SA 4.
+ 0. Times can change.
+LOCATION:State Farm Stadium
+END:VEVENT
+BEGIN:VEVENT
+UID:nfl-2026-cardinals-reg-6@tidemark
+DTSTAMP:20261106T182347Z
+DTSTART:20261018T200500Z
+DTEND:20261018T232000Z
+SUMMARY:Cardinals at Rams
+DESCRIPTION:Week 6\nTV: Fox\nResult: W 18–16\nSchedule from Wikipedia (h
+ ttps://en.wikipedia.org/wiki/2026_Arizona_Cardinals_season)\, CC BY-SA 4.
+ 0. Times can change.
+LOCATION:SoFi Stadium
+END:VEVENT
+BEGIN:VEVENT
+UID:nfl-2026-cardinals-reg-7@tidemark
+DTSTAMP:20261106T182347Z
+DTSTART:20261025T200500Z
+DTEND:20261025T232000Z
+SUMMARY:Broncos at Cardinals
+DESCRIPTION:Week 7\nTV: CBS\nResult: L 16–30\nSchedule from Wikipedia (h
+ ttps://en.wikipedia.org/wiki/2026_Arizona_Cardinals_season)\, CC BY-SA 4.
+ 0. Times can change.
+LOCATION:State Farm Stadium
+END:VEVENT
+BEGIN:VEVENT
+UID:nfl-2026-cardinals-reg-8@tidemark
+DTSTAMP:20261106T182347Z
+DTSTART:20261101T180000Z
+DTEND:20261101T211500Z
+SUMMARY:Cardinals at Cowboys
+DESCRIPTION:Week 8\nTV: Fox\nResult: W 33–30 (OT)\nSchedule from Wikiped
+ ia (https://en.wikipedia.org/wiki/2026_Arizona_Cardinals_season)\, CC BY-
+ SA 4.0. Times can change.
+LOCATION:AT&T Stadium
+END:VEVENT
+BEGIN:VEVENT
+UID:nfl-2026-cardinals-reg-9@tidemark
+DTSTAMP:20261106T182347Z
+DTSTART:20261108T212500Z
+DTEND:20261109T004000Z
+SUMMARY:Cardinals at Seahawks
+DESCRIPTION:Week 9\nTV: Fox\nSchedule from Wikipedia (https://en.wikipedia
+ .org/wiki/2026_Arizona_Cardinals_season)\, CC BY-SA 4.0. Times can change
+ .
+LOCATION:Lumen Field
+END:VEVENT
+BEGIN:VEVENT
+UID:nfl-2026-cardinals-reg-10@tidemark
+DTSTAMP:20261106T182347Z
+DTSTART:20261115T210500Z
+DTEND:20261116T002000Z
+SUMMARY:Rams at Cardinals
+DESCRIPTION:Week 10\nTV: CBS\nSchedule from Wikipedia (https://en.wikipedi
+ a.org/wiki/2026_Arizona_Cardinals_season)\, CC BY-SA 4.0. Times can chang
+ e.
+LOCATION:State Farm Stadium
+END:VEVENT
+BEGIN:VEVENT
+UID:nfl-2026-cardinals-reg-11@tidemark
+DTSTAMP:20261106T182347Z
+DTSTART:20261122T180000Z
+DTEND:20261122T211500Z
+SUMMARY:Cardinals at Chiefs
+DESCRIPTION:Week 11\nTV: CBS\nSchedule from Wikipedia (https://en.wikipedi
+ a.org/wiki/2026_Arizona_Cardinals_season)\, CC BY-SA 4.0. Times can chang
+ e.
+LOCATION:Arrowhead Stadium
+END:VEVENT
+BEGIN:VEVENT
+UID:nfl-2026-cardinals-reg-12@tidemark
+DTSTAMP:20261106T182347Z
+DTSTART:20261129T212500Z
+DTEND:20261130T004000Z
+SUMMARY:Commanders at Cardinals
+DESCRIPTION:Week 12\nTV: Fox\nSchedule from Wikipedia (https://en.wikipedi
+ a.org/wiki/2026_Arizona_Cardinals_season)\, CC BY-SA 4.0. Times can chang
+ e.
+LOCATION:State Farm Stadium
+END:VEVENT
+BEGIN:VEVENT
+UID:nfl-2026-cardinals-reg-13@tidemark
+DTSTAMP:20261106T182347Z
+DTSTART:20261206T210500Z
+DTEND:20261207T002000Z
+SUMMARY:Eagles at Cardinals
+DESCRIPTION:Week 13\nTV: Fox\nSchedule from Wikipedia (https://en.wikipedi
+ a.org/wiki/2026_Arizona_Cardinals_season)\, CC BY-SA 4.0. Times can chang
+ e.
+LOCATION:State Farm Stadium
+END:VEVENT
+BEGIN:VEVENT
+UID:nfl-2026-cardinals-reg-15@tidemark
+DTSTAMP:20261106T182347Z
+DTSTART:20261220T210500Z
+DTEND:20261221T002000Z
+SUMMARY:Jets at Cardinals
+DESCRIPTION:Week 15\nTV: Fox\nSchedule from Wikipedia (https://en.wikipedi
+ a.org/wiki/2026_Arizona_Cardinals_season)\, CC BY-SA 4.0. Times can chang
+ e.
+LOCATION:State Farm Stadium
+END:VEVENT
+BEGIN:VEVENT
+UID:nfl-2026-cardinals-reg-16@tidemark
+DTSTAMP:20261106T182347Z
+DTSTART:20261227T180000Z
+DTEND:20261227T211500Z
+SUMMARY:Cardinals at Saints
+DESCRIPTION:Week 16\nTV: Fox\nSchedule from Wikipedia (https://en.wikipedi
+ a.org/wiki/2026_Arizona_Cardinals_season)\, CC BY-SA 4.0. Times can chang
+ e.
+LOCATION:Caesars Superdome
+END:VEVENT
+BEGIN:VEVENT
+UID:nfl-2026-cardinals-reg-17@tidemark
+DTSTAMP:20261106T182347Z
+DTSTART:20270103T210500Z
+DTEND:20270104T002000Z
+SUMMARY:Raiders at Cardinals
+DESCRIPTION:Week 17\nTV: CBS\nSchedule from Wikipedia (https://en.wikipedi
+ a.org/wiki/2026_Arizona_Cardinals_season)\, CC BY-SA 4.0. Times can chang
+ e.
+LOCATION:State Farm Stadium
+END:VEVENT
+BEGIN:VEVENT
+UID:nfl-2026-cardinals-reg-18@tidemark
+DTSTAMP:20261106T182347Z
+DTSTART;VALUE=DATE:20270109
+DTEND;VALUE=DATE:20270110
+SUMMARY:49ers at Cardinals (Jan 9 or 10)
+DESCRIPTION:Week 18\nSchedule from Wikipedia (https://en.wikipedia.org/wik
+ i/2026_Arizona_Cardinals_season)\, CC BY-SA 4.0. Times can change.
+LOCATION:State Farm Stadium
+END:VEVENT
+END:VCALENDAR

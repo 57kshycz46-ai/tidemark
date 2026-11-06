@@ -1,0 +1,195 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Tidemark//NFL schedules from Wikipedia//EN
+CALSCALE:GREGORIAN
+X-WR-CALNAME:Los Angeles Chargers
+X-WR-CALDESC:Los Angeles Chargers 2026 schedule\, from Wikipedia (https://
+ en.wikipedia.org/wiki/2026_Los_Angeles_Chargers_season)\, CC BY-SA 4.0.
+X-PUBLISHED-TTL:PT12H
+REFRESH-INTERVAL;VALUE=DURATION:PT12H
+BEGIN:VEVENT
+UID:nfl-2026-chargers-reg-1@tidemark
+DTSTAMP:20261106T182402Z
+DTSTART:20260913T202500Z
+DTEND:20260913T234000Z
+SUMMARY:Cardinals at Chargers
+DESCRIPTION:Week 1\nTV: CBS\nResult: L 14–26\nSchedule from Wikipedia (h
+ ttps://en.wikipedia.org/wiki/2026_Los_Angeles_Chargers_season)\, CC BY-SA
+  4.0. Times can change.
+LOCATION:SoFi Stadium
+END:VEVENT
+BEGIN:VEVENT
+UID:nfl-2026-chargers-reg-2@tidemark
+DTSTAMP:20261106T182402Z
+DTSTART:20260920T200500Z
+DTEND:20260920T232000Z
+SUMMARY:Raiders at Chargers
+DESCRIPTION:Week 2\nTV: CBS\nResult: L 14–26\nSchedule from Wikipedia (h
+ ttps://en.wikipedia.org/wiki/2026_Los_Angeles_Chargers_season)\, CC BY-SA
+  4.0. Times can change.
+LOCATION:SoFi Stadium
+END:VEVENT
+BEGIN:VEVENT
+UID:nfl-2026-chargers-reg-3@tidemark
+DTSTAMP:20261106T182402Z
+DTSTART:20260927T170000Z
+DTEND:20260927T201500Z
+SUMMARY:Chargers at Bills
+DESCRIPTION:Week 3\nTV: Fox\nResult: L 16–24\nSchedule from Wikipedia (h
+ ttps://en.wikipedia.org/wiki/2026_Los_Angeles_Chargers_season)\, CC BY-SA
+  4.0. Times can change.
+LOCATION:Highmark Stadium
+END:VEVENT
+BEGIN:VEVENT
+UID:nfl-2026-chargers-reg-4@tidemark
+DTSTAMP:20261106T182402Z
+DTSTART:20261004T202500Z
+DTEND:20261004T234000Z
+SUMMARY:Chargers at Seahawks
+DESCRIPTION:Week 4\nTV: CBS\nResult: L 23–30\nSchedule from Wikipedia (h
+ ttps://en.wikipedia.org/wiki/2026_Los_Angeles_Chargers_season)\, CC BY-SA
+  4.0. Times can change.
+LOCATION:Lumen Field
+END:VEVENT
+BEGIN:VEVENT
+UID:nfl-2026-chargers-reg-5@tidemark
+DTSTAMP:20261106T182402Z
+DTSTART:20261011T200500Z
+DTEND:20261011T232000Z
+SUMMARY:Broncos at Chargers
+DESCRIPTION:Week 5\nTV: CBS\nResult: L 17–23\nSchedule from Wikipedia (h
+ ttps://en.wikipedia.org/wiki/2026_Los_Angeles_Chargers_season)\, CC BY-SA
+  4.0. Times can change.
+LOCATION:SoFi Stadium
+END:VEVENT
+BEGIN:VEVENT
+UID:nfl-2026-chargers-reg-6@tidemark
+DTSTAMP:20261106T182402Z
+DTSTART:20261018T202500Z
+DTEND:20261018T234000Z
+SUMMARY:Chargers at Chiefs
+DESCRIPTION:Week 6\nTV: CBS\nResult: L 6–22\nSchedule from Wikipedia (ht
+ tps://en.wikipedia.org/wiki/2026_Los_Angeles_Chargers_season)\, CC BY-SA 
+ 4.0. Times can change.
+LOCATION:Arrowhead Stadium
+END:VEVENT
+BEGIN:VEVENT
+UID:nfl-2026-chargers-reg-8@tidemark
+DTSTAMP:20261106T182402Z
+DTSTART:20261101T210500Z
+DTEND:20261102T002000Z
+SUMMARY:Chargers at Rams
+DESCRIPTION:Week 8\nTV: Fox\nResult: L 9–24\nSchedule from Wikipedia (ht
+ tps://en.wikipedia.org/wiki/2026_Los_Angeles_Chargers_season)\, CC BY-SA 
+ 4.0. Times can change.
+LOCATION:SoFi Stadium
+END:VEVENT
+BEGIN:VEVENT
+UID:nfl-2026-chargers-reg-9@tidemark
+DTSTAMP:20261106T182402Z
+DTSTART:20261108T210500Z
+DTEND:20261109T002000Z
+SUMMARY:Texans at Chargers
+DESCRIPTION:Week 9\nTV: CBS\nSchedule from Wikipedia (https://en.wikipedia
+ .org/wiki/2026_Los_Angeles_Chargers_season)\, CC BY-SA 4.0. Times can cha
+ nge.
+LOCATION:SoFi Stadium
+END:VEVENT
+BEGIN:VEVENT
+UID:nfl-2026-chargers-reg-10@tidemark
+DTSTAMP:20261106T182402Z
+DTSTART:20261117T011500Z
+DTEND:20261117T043000Z
+SUMMARY:Chargers at Ravens
+DESCRIPTION:Week 10\nTV: ESPN\nSchedule from Wikipedia (https://en.wikiped
+ ia.org/wiki/2026_Los_Angeles_Chargers_season)\, CC BY-SA 4.0. Times can c
+ hange.
+LOCATION:M&T Bank Stadium
+END:VEVENT
+BEGIN:VEVENT
+UID:nfl-2026-chargers-reg-11@tidemark
+DTSTAMP:20261106T182402Z
+DTSTART:20261122T210500Z
+DTEND:20261123T002000Z
+SUMMARY:Jets at Chargers
+DESCRIPTION:Week 11\nTV: Fox\nSchedule from Wikipedia (https://en.wikipedi
+ a.org/wiki/2026_Los_Angeles_Chargers_season)\, CC BY-SA 4.0. Times can ch
+ ange.
+LOCATION:SoFi Stadium
+END:VEVENT
+BEGIN:VEVENT
+UID:nfl-2026-chargers-reg-12@tidemark
+DTSTAMP:20261106T182402Z
+DTSTART:20261130T012000Z
+DTEND:20261130T043500Z
+SUMMARY:Patriots at Chargers
+DESCRIPTION:Week 12\nTV: NBC\nSchedule from Wikipedia (https://en.wikipedi
+ a.org/wiki/2026_Los_Angeles_Chargers_season)\, CC BY-SA 4.0. Times can ch
+ ange.
+LOCATION:SoFi Stadium
+END:VEVENT
+BEGIN:VEVENT
+UID:nfl-2026-chargers-reg-13@tidemark
+DTSTAMP:20261106T182402Z
+DTSTART:20261206T180000Z
+DTEND:20261206T211500Z
+SUMMARY:Chargers at Buccaneers
+DESCRIPTION:Week 13\nTV: CBS\nSchedule from Wikipedia (https://en.wikipedi
+ a.org/wiki/2026_Los_Angeles_Chargers_season)\, CC BY-SA 4.0. Times can ch
+ ange.
+LOCATION:Raymond James Stadium
+END:VEVENT
+BEGIN:VEVENT
+UID:nfl-2026-chargers-reg-14@tidemark
+DTSTAMP:20261106T182402Z
+DTSTART:20261213T210500Z
+DTEND:20261214T002000Z
+SUMMARY:Chargers at Raiders
+DESCRIPTION:Week 14\nTV: CBS\nSchedule from Wikipedia (https://en.wikipedi
+ a.org/wiki/2026_Los_Angeles_Chargers_season)\, CC BY-SA 4.0. Times can ch
+ ange.
+LOCATION:Allegiant Stadium
+END:VEVENT
+BEGIN:VEVENT
+UID:nfl-2026-chargers-reg-15@tidemark
+DTSTAMP:20261106T182402Z
+DTSTART:20261218T011500Z
+DTEND:20261218T043000Z
+SUMMARY:49ers at Chargers
+DESCRIPTION:Week 15\nTV: Prime Video\nSchedule from Wikipedia (https://en.
+ wikipedia.org/wiki/2026_Los_Angeles_Chargers_season)\, CC BY-SA 4.0. Time
+ s can change.
+LOCATION:SoFi Stadium
+END:VEVENT
+BEGIN:VEVENT
+UID:nfl-2026-chargers-reg-16@tidemark
+DTSTAMP:20261106T182402Z
+DTSTART:20261227T180000Z
+DTEND:20261227T211500Z
+SUMMARY:Chargers at Dolphins
+DESCRIPTION:Week 16\nTV: Fox\nSchedule from Wikipedia (https://en.wikipedi
+ a.org/wiki/2026_Los_Angeles_Chargers_season)\, CC BY-SA 4.0. Times can ch
+ ange.
+LOCATION:Hard Rock Stadium
+END:VEVENT
+BEGIN:VEVENT
+UID:nfl-2026-chargers-reg-17@tidemark
+DTSTAMP:20261106T182402Z
+DTSTART;VALUE=DATE:20270102
+DTEND;VALUE=DATE:20270103
+SUMMARY:Chiefs at Chargers (Jan 2 or 3)
+DESCRIPTION:Week 17\nSchedule from Wikipedia (https://en.wikipedia.org/wik
+ i/2026_Los_Angeles_Chargers_season)\, CC BY-SA 4.0. Times can change.
+LOCATION:SoFi Stadium
+END:VEVENT
+BEGIN:VEVENT
+UID:nfl-2026-chargers-reg-18@tidemark
+DTSTAMP:20261106T182402Z
+DTSTART;VALUE=DATE:20270109
+DTEND;VALUE=DATE:20270110
+SUMMARY:Chargers at Broncos (Jan 9 or 10)
+DESCRIPTION:Week 18\nSchedule from Wikipedia (https://en.wikipedia.org/wik
+ i/2026_Los_Angeles_Chargers_season)\, CC BY-SA 4.0. Times can change.
+LOCATION:Empower Field at Mile High
+END:VEVENT
+END:VCALENDAR

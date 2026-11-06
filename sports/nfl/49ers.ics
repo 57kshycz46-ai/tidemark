@@ -1,0 +1,196 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Tidemark//NFL schedules from Wikipedia//EN
+CALSCALE:GREGORIAN
+X-WR-CALNAME:San Francisco 49ers
+X-WR-CALDESC:San Francisco 49ers 2026 schedule\, from Wikipedia (https://e
+ n.wikipedia.org/wiki/2026_San_Francisco_49ers_season)\, CC BY-SA 4.0.
+X-PUBLISHED-TTL:PT12H
+REFRESH-INTERVAL;VALUE=DURATION:PT12H
+BEGIN:VEVENT
+UID:nfl-2026-49ers-reg-1@tidemark
+DTSTAMP:20261106T182411Z
+DTSTART:20260911T003500Z
+DTEND:20260911T035000Z
+SUMMARY:49ers at Rams
+DESCRIPTION:Week 1\nTV: Netflix\nResult: W 27–7\nSchedule from Wikipedia
+  (https://en.wikipedia.org/wiki/2026_San_Francisco_49ers_season)\, CC BY-
+ SA 4.0. Times can change.
+LOCATION:Melbourne Cricket Ground (Melbourne)
+END:VEVENT
+BEGIN:VEVENT
+UID:nfl-2026-49ers-reg-2@tidemark
+DTSTAMP:20261106T182411Z
+DTSTART:20260920T202500Z
+DTEND:20260920T234000Z
+SUMMARY:Dolphins at 49ers
+DESCRIPTION:Week 2\nTV: Fox\nResult: W 35–13\nSchedule from Wikipedia (h
+ ttps://en.wikipedia.org/wiki/2026_San_Francisco_49ers_season)\, CC BY-SA 
+ 4.0. Times can change.
+LOCATION:Levi's Stadium
+END:VEVENT
+BEGIN:VEVENT
+UID:nfl-2026-49ers-reg-3@tidemark
+DTSTAMP:20261106T182411Z
+DTSTART:20260927T200500Z
+DTEND:20260927T232000Z
+SUMMARY:Cardinals at 49ers
+DESCRIPTION:Week 3\nTV: Fox\nResult: W 36–30\nSchedule from Wikipedia (h
+ ttps://en.wikipedia.org/wiki/2026_San_Francisco_49ers_season)\, CC BY-SA 
+ 4.0. Times can change.
+LOCATION:Levi's Stadium
+END:VEVENT
+BEGIN:VEVENT
+UID:nfl-2026-49ers-reg-4@tidemark
+DTSTAMP:20261106T182411Z
+DTSTART:20261004T202500Z
+DTEND:20261004T234000Z
+SUMMARY:Broncos at 49ers
+DESCRIPTION:Week 4\nTV: CBS\nResult: W 24–14\nSchedule from Wikipedia (h
+ ttps://en.wikipedia.org/wiki/2026_San_Francisco_49ers_season)\, CC BY-SA 
+ 4.0. Times can change.
+LOCATION:Levi's Stadium
+END:VEVENT
+BEGIN:VEVENT
+UID:nfl-2026-49ers-reg-5@tidemark
+DTSTAMP:20261106T182411Z
+DTSTART:20261011T202500Z
+DTEND:20261011T234000Z
+SUMMARY:49ers at Seahawks
+DESCRIPTION:Week 5\nTV: Fox\nResult: W 32–29\nSchedule from Wikipedia (h
+ ttps://en.wikipedia.org/wiki/2026_San_Francisco_49ers_season)\, CC BY-SA 
+ 4.0. Times can change.
+LOCATION:Lumen Field
+END:VEVENT
+BEGIN:VEVENT
+UID:nfl-2026-49ers-reg-6@tidemark
+DTSTAMP:20261106T182411Z
+DTSTART:20261020T001500Z
+DTEND:20261020T033000Z
+SUMMARY:Commanders at 49ers
+DESCRIPTION:Week 6\nTV: ESPN/ABC\nResult: W 23–17\nSchedule from Wikiped
+ ia (https://en.wikipedia.org/wiki/2026_San_Francisco_49ers_season)\, CC B
+ Y-SA 4.0. Times can change.
+LOCATION:Levi's Stadium
+END:VEVENT
+BEGIN:VEVENT
+UID:nfl-2026-49ers-reg-7@tidemark
+DTSTAMP:20261106T182411Z
+DTSTART:20261025T170000Z
+DTEND:20261025T201500Z
+SUMMARY:49ers at Falcons
+DESCRIPTION:Week 7\nTV: Fox\nResult: L 20–29\nSchedule from Wikipedia (h
+ ttps://en.wikipedia.org/wiki/2026_San_Francisco_49ers_season)\, CC BY-SA 
+ 4.0. Times can change.
+LOCATION:Mercedes-Benz Stadium
+END:VEVENT
+BEGIN:VEVENT
+UID:nfl-2026-49ers-reg-9@tidemark
+DTSTAMP:20261106T182411Z
+DTSTART:20261108T212500Z
+DTEND:20261109T004000Z
+SUMMARY:Raiders at 49ers
+DESCRIPTION:Week 9\nTV: Fox\nSchedule from Wikipedia (https://en.wikipedia
+ .org/wiki/2026_San_Francisco_49ers_season)\, CC BY-SA 4.0. Times can chan
+ ge.
+LOCATION:Levi's Stadium
+END:VEVENT
+BEGIN:VEVENT
+UID:nfl-2026-49ers-reg-10@tidemark
+DTSTAMP:20261106T182411Z
+DTSTART:20261115T212500Z
+DTEND:20261116T004000Z
+SUMMARY:49ers at Cowboys
+DESCRIPTION:Week 10\nTV: Fox\nSchedule from Wikipedia (https://en.wikipedi
+ a.org/wiki/2026_San_Francisco_49ers_season)\, CC BY-SA 4.0. Times can cha
+ nge.
+LOCATION:AT&T Stadium
+END:VEVENT
+BEGIN:VEVENT
+UID:nfl-2026-49ers-reg-11@tidemark
+DTSTAMP:20261106T182411Z
+DTSTART:20261123T012000Z
+DTEND:20261123T043500Z
+SUMMARY:Vikings at 49ers
+DESCRIPTION:Week 11\nTV: NBC\nSchedule from Wikipedia (https://en.wikipedi
+ a.org/wiki/2026_San_Francisco_49ers_season)\, CC BY-SA 4.0. Times can cha
+ nge.
+LOCATION:Estadio Azteca (Mexico City)
+END:VEVENT
+BEGIN:VEVENT
+UID:nfl-2026-49ers-reg-12@tidemark
+DTSTAMP:20261106T182411Z
+DTSTART:20261129T212500Z
+DTEND:20261130T004000Z
+SUMMARY:Seahawks at 49ers
+DESCRIPTION:Week 12\nTV: Fox\nSchedule from Wikipedia (https://en.wikipedi
+ a.org/wiki/2026_San_Francisco_49ers_season)\, CC BY-SA 4.0. Times can cha
+ nge.
+LOCATION:Levi's Stadium
+END:VEVENT
+BEGIN:VEVENT
+UID:nfl-2026-49ers-reg-13@tidemark
+DTSTAMP:20261106T182411Z
+DTSTART:20261206T180000Z
+DTEND:20261206T211500Z
+SUMMARY:49ers at Giants
+DESCRIPTION:Week 13\nTV: Fox\nSchedule from Wikipedia (https://en.wikipedi
+ a.org/wiki/2026_San_Francisco_49ers_season)\, CC BY-SA 4.0. Times can cha
+ nge.
+LOCATION:MetLife Stadium
+END:VEVENT
+BEGIN:VEVENT
+UID:nfl-2026-49ers-reg-14@tidemark
+DTSTAMP:20261106T182411Z
+DTSTART:20261213T212500Z
+DTEND:20261214T004000Z
+SUMMARY:Rams at 49ers
+DESCRIPTION:Week 14\nTV: Fox\nSchedule from Wikipedia (https://en.wikipedi
+ a.org/wiki/2026_San_Francisco_49ers_season)\, CC BY-SA 4.0. Times can cha
+ nge.
+LOCATION:Levi's Stadium
+END:VEVENT
+BEGIN:VEVENT
+UID:nfl-2026-49ers-reg-15@tidemark
+DTSTAMP:20261106T182411Z
+DTSTART:20261218T011500Z
+DTEND:20261218T043000Z
+SUMMARY:49ers at Chargers
+DESCRIPTION:Week 15\nTV: Prime Video\nSchedule from Wikipedia (https://en.
+ wikipedia.org/wiki/2026_San_Francisco_49ers_season)\, CC BY-SA 4.0. Times
+  can change.
+LOCATION:SoFi Stadium
+END:VEVENT
+BEGIN:VEVENT
+UID:nfl-2026-49ers-reg-16@tidemark
+DTSTAMP:20261106T182411Z
+DTSTART:20261227T212500Z
+DTEND:20261228T004000Z
+SUMMARY:49ers at Chiefs
+DESCRIPTION:Week 16\nTV: CBS\nSchedule from Wikipedia (https://en.wikipedi
+ a.org/wiki/2026_San_Francisco_49ers_season)\, CC BY-SA 4.0. Times can cha
+ nge.
+LOCATION:Arrowhead Stadium
+END:VEVENT
+BEGIN:VEVENT
+UID:nfl-2026-49ers-reg-17@tidemark
+DTSTAMP:20261106T182411Z
+DTSTART:20270104T012000Z
+DTEND:20270104T043500Z
+SUMMARY:Eagles at 49ers
+DESCRIPTION:Week 17\nTV: NBC\nSchedule from Wikipedia (https://en.wikipedi
+ a.org/wiki/2026_San_Francisco_49ers_season)\, CC BY-SA 4.0. Times can cha
+ nge.
+LOCATION:Levi's Stadium
+END:VEVENT
+BEGIN:VEVENT
+UID:nfl-2026-49ers-reg-18@tidemark
+DTSTAMP:20261106T182411Z
+DTSTART;VALUE=DATE:20270109
+DTEND;VALUE=DATE:20270110
+SUMMARY:49ers at Cardinals (Jan 9 or 10)
+DESCRIPTION:Week 18\nSchedule from Wikipedia (https://en.wikipedia.org/wik
+ i/2026_San_Francisco_49ers_season)\, CC BY-SA 4.0. Times can change.
+LOCATION:State Farm Stadium
+END:VEVENT
+END:VCALENDAR
