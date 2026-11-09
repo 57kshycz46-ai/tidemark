@@ -48,6 +48,12 @@
          color:#fff; text-decoration:none; background:linear-gradient(135deg, var(--accent), var(--accent2));
          box-shadow:0 14px 30px -14px var(--accent); }
   .meta { color:var(--soft); font-size:.95rem; margin-top:12px; }
+  .hero-grid { display:grid; grid-template-columns:minmax(0, 1fr) auto; gap:56px; align-items:center; }
+  .hero-video { display:block; width:300px; height:auto; aspect-ratio:9/16; border-radius:28px; background:#0A1A2B; box-shadow:var(--shadow); }
+  @media (max-width:820px) {
+    .hero-grid { grid-template-columns:1fr; gap:32px; }
+    .hero-video { width:min(300px, 78vw); margin:0 auto; }
+  }
   .shots { display:flex; gap:18px; overflow-x:auto; scroll-snap-type:x mandatory; padding:28px 20px 36px; margin:0 -20px; }
   .shots img { width:min(240px, 62vw); height:auto; border-radius:22px; box-shadow:var(--shadow); scroll-snap-align:start; flex:none; }
   section { padding:44px 0; border-top:1px solid var(--line); }
@@ -66,11 +72,17 @@
 <body>
 <header class="hero">
   <div class="wrap">
-    <div class="brand"><img src="icon.png" alt=""><span>Tidemark</span></div>
-    <h1>The calendar you can just ask.</h1>
-    <p class="lede">Every calendar in one place, with the weather, travel time and reminders built in. Ask about your time in plain English, turn a flyer into events, and let people book you. The AI runs on your device.</p>
-    <a class="cta" href="https://apps.apple.com/app/apple-store/id6821510047?pt=129556715&amp;ct=site&amp;mt=8">Get Tidemark free on the App Store</a>
-    <p class="meta">iPhone, iPad, Mac and Apple Watch · Free, with optional Tidemark Pro</p>
+    <div class="hero-grid">
+      <div>
+        <div class="brand"><img src="icon.png" alt=""><span>Tidemark</span></div>
+        <h1>The calendar you can just ask.</h1>
+        <p class="lede">Every calendar in one place, with the weather, travel time and reminders built in. Ask about your time in plain English, turn a flyer into events, and let people book you. The AI runs on your device.</p>
+        <a class="cta" href="https://apps.apple.com/app/apple-store/id6821510047?pt=129556715&amp;ct=site&amp;mt=8">Get Tidemark free on the App Store</a>
+        <p class="meta">iPhone, iPad, Mac and Apple Watch · Free, with optional Tidemark Pro</p>
+      </div>
+      <video class="hero-video" src="media/tidemark-preview.mp4" poster="img/video-poster.jpg" muted loop playsinline preload="metadata"
+             aria-label="Tidemark in 27 seconds: the morning overview, Today, Ask, the calendar, travel time, Scan to Event and team schedules"></video>
+    </div>
     <div class="shots" aria-label="Screenshots">
       <img src="img/1-today.jpg" alt="Today: a short brief with the weather, what's next and when to leave" loading="lazy">
       <img src="img/2-ask.jpg" alt="Ask: “What does tomorrow look like?” answered from the calendar" loading="lazy">
@@ -117,5 +129,18 @@
 <footer>
   <div class="wrap">Tidemark · <a href="guides/">Guides</a> · <a href="press.html">Press</a> · <a href="privacy.html">Privacy Policy</a> · <a href="terms.html">Terms of Use</a> · <a href="mailto:raghav_c@kalbhor.com">Contact</a></div>
 </footer>
+<script>
+// Plays the hero video while it's on screen; with Reduce Motion (or if autoplay is blocked) it waits for a tap instead.
+(function () {
+  var v = document.querySelector('.hero-video');
+  if (!v) return;
+  var still = window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches;
+  function play() { var p = v.play(); if (p && p.catch) p.catch(function () { v.controls = true; }); }
+  if (still) { v.controls = true; return; }
+  if ('IntersectionObserver' in window) {
+    new IntersectionObserver(function (es) { es[0].isIntersecting ? play() : v.pause(); }, { threshold: 0.25 }).observe(v);
+  } else { play(); }
+})();
+</script>
 </body>
 </html>
