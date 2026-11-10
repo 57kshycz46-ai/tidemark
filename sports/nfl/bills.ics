@@ -3,195 +3,187 @@ VERSION:2.0
 PRODID:-//Tidemark//NFL schedules from Wikipedia//EN
 CALSCALE:GREGORIAN
 X-WR-CALNAME:Buffalo Bills
-X-WR-CALDESC:Buffalo Bills 2025 schedule\, from Wikipedia (https://en.wiki
- pedia.org/wiki/2025_Buffalo_Bills_season)\, CC BY-SA 4.0.
+X-WR-CALDESC:Buffalo Bills 2026 schedule\, from Wikipedia (https://en.wiki
+ pedia.org/wiki/2026_Buffalo_Bills_season)\, CC BY-SA 4.0.
 X-PUBLISHED-TTL:PT12H
 REFRESH-INTERVAL;VALUE=DURATION:PT12H
 BEGIN:VEVENT
-UID:nfl-2025-bills-reg-1@tidemark
-DTSTAMP:20261110T033535Z
-DTSTART;VALUE=DATE:20250907
-DTEND;VALUE=DATE:20250908
-SUMMARY:Ravens at Bills
-DESCRIPTION:Week 1\nResult: W 41–40\nSchedule from Wikipedia (https://en
- .wikipedia.org/wiki/2025_Buffalo_Bills_season)\, CC BY-SA 4.0. Times can 
- change.
+UID:nfl-2026-bills-reg-1@tidemark
+DTSTAMP:20261110T170433Z
+DTSTART:20260913T170000Z
+DTEND:20260913T201500Z
+SUMMARY:Bills at Texans
+DESCRIPTION:Week 1\nTV: CBS\nResult: W 36–31\nSchedule from Wikipedia (h
+ ttps://en.wikipedia.org/wiki/2026_Buffalo_Bills_season)\, CC BY-SA 4.0. T
+ imes can change.
+LOCATION:Reliant Stadium
+END:VEVENT
+BEGIN:VEVENT
+UID:nfl-2026-bills-reg-2@tidemark
+DTSTAMP:20261110T170433Z
+DTSTART:20260918T001500Z
+DTEND:20260918T033000Z
+SUMMARY:Lions at Bills
+DESCRIPTION:Week 2\nTV: Prime Video\nResult: W 41–31\nSchedule from Wiki
+ pedia (https://en.wikipedia.org/wiki/2026_Buffalo_Bills_season)\, CC BY-S
+ A 4.0. Times can change.
 LOCATION:Highmark Stadium
 END:VEVENT
 BEGIN:VEVENT
-UID:nfl-2025-bills-reg-2@tidemark
-DTSTAMP:20261110T033535Z
-DTSTART;VALUE=DATE:20250914
-DTEND;VALUE=DATE:20250915
+UID:nfl-2026-bills-reg-3@tidemark
+DTSTAMP:20261110T170433Z
+DTSTART:20260927T170000Z
+DTEND:20260927T201500Z
+SUMMARY:Chargers at Bills
+DESCRIPTION:Week 3\nTV: Fox\nResult: W 24–16\nSchedule from Wikipedia (h
+ ttps://en.wikipedia.org/wiki/2026_Buffalo_Bills_season)\, CC BY-SA 4.0. T
+ imes can change.
+LOCATION:Highmark Stadium
+END:VEVENT
+BEGIN:VEVENT
+UID:nfl-2026-bills-reg-4@tidemark
+DTSTAMP:20261110T170433Z
+DTSTART:20261004T170000Z
+DTEND:20261004T201500Z
+SUMMARY:Patriots at Bills
+DESCRIPTION:Week 4\nTV: CBS\nResult: L 26–29\nSchedule from Wikipedia (h
+ ttps://en.wikipedia.org/wiki/2026_Buffalo_Bills_season)\, CC BY-SA 4.0. T
+ imes can change.
+LOCATION:Highmark Stadium
+END:VEVENT
+BEGIN:VEVENT
+UID:nfl-2026-bills-reg-5@tidemark
+DTSTAMP:20261110T170433Z
+DTSTART:20261013T001500Z
+DTEND:20261013T033000Z
+SUMMARY:Bills at Rams
+DESCRIPTION:Week 5\nTV: ESPN/ABC\nResult: W 37–34 (OT)\nSchedule from Wi
+ kipedia (https://en.wikipedia.org/wiki/2026_Buffalo_Bills_season)\, CC BY
+ -SA 4.0. Times can change.
+LOCATION:SoFi Stadium
+END:VEVENT
+BEGIN:VEVENT
+UID:nfl-2026-bills-reg-6@tidemark
+DTSTAMP:20261110T170433Z
+DTSTART:20261018T202500Z
+DTEND:20261018T234000Z
+SUMMARY:Bills at Raiders
+DESCRIPTION:Week 6\nTV: CBS\nResult: W 33–30\nSchedule from Wikipedia (h
+ ttps://en.wikipedia.org/wiki/2026_Buffalo_Bills_season)\, CC BY-SA 4.0. T
+ imes can change.
+LOCATION:Allegiant Stadium
+END:VEVENT
+BEGIN:VEVENT
+UID:nfl-2026-bills-reg-8@tidemark
+DTSTAMP:20261110T170433Z
+DTSTART:20261101T180000Z
+DTEND:20261101T211500Z
+SUMMARY:Ravens at Bills
+DESCRIPTION:Week 8\nTV: CBS\nResult: W 36–10\nSchedule from Wikipedia (h
+ ttps://en.wikipedia.org/wiki/2026_Buffalo_Bills_season)\, CC BY-SA 4.0. T
+ imes can change.
+LOCATION:Highmark Stadium
+END:VEVENT
+BEGIN:VEVENT
+UID:nfl-2026-bills-reg-9@tidemark
+DTSTAMP:20261110T170433Z
+DTSTART:20261110T011500Z
+DTEND:20261110T043000Z
+SUMMARY:Bills at Vikings
+DESCRIPTION:Week 9\nTV: ESPN/ABC\nResult: W 23–6\nSchedule from Wikipedi
+ a (https://en.wikipedia.org/wiki/2026_Buffalo_Bills_season)\, CC BY-SA 4.
+ 0. Times can change.
+LOCATION:U.S. Bank Stadium
+END:VEVENT
+BEGIN:VEVENT
+UID:nfl-2026-bills-reg-10@tidemark
+DTSTAMP:20261110T170433Z
+DTSTART:20261115T180000Z
+DTEND:20261115T211500Z
 SUMMARY:Bills at Jets
-DESCRIPTION:Week 2\nResult: W 30–10\nSchedule from Wikipedia (https://en
- .wikipedia.org/wiki/2025_Buffalo_Bills_season)\, CC BY-SA 4.0. Times can 
- change.
+DESCRIPTION:Week 10\nTV: CBS\nSchedule from Wikipedia (https://en.wikipedi
+ a.org/wiki/2026_Buffalo_Bills_season)\, CC BY-SA 4.0. Times can change.
 LOCATION:MetLife Stadium
 END:VEVENT
 BEGIN:VEVENT
-UID:nfl-2025-bills-reg-3@tidemark
-DTSTAMP:20261110T033535Z
-DTSTART;VALUE=DATE:20250918
-DTEND;VALUE=DATE:20250919
+UID:nfl-2026-bills-reg-11@tidemark
+DTSTAMP:20261110T170433Z
+DTSTART:20261122T180000Z
+DTEND:20261122T211500Z
 SUMMARY:Dolphins at Bills
-DESCRIPTION:Week 3\nResult: W 31–21\nSchedule from Wikipedia (https://en
- .wikipedia.org/wiki/2025_Buffalo_Bills_season)\, CC BY-SA 4.0. Times can 
- change.
+DESCRIPTION:Week 11\nTV: CBS\nSchedule from Wikipedia (https://en.wikipedi
+ a.org/wiki/2026_Buffalo_Bills_season)\, CC BY-SA 4.0. Times can change.
 LOCATION:Highmark Stadium
 END:VEVENT
 BEGIN:VEVENT
-UID:nfl-2025-bills-reg-4@tidemark
-DTSTAMP:20261110T033535Z
-DTSTART;VALUE=DATE:20250928
-DTEND;VALUE=DATE:20250929
-SUMMARY:Saints at Bills
-DESCRIPTION:Week 4\nResult: W 31–19\nSchedule from Wikipedia (https://en
- .wikipedia.org/wiki/2025_Buffalo_Bills_season)\, CC BY-SA 4.0. Times can 
- change.
-LOCATION:Highmark Stadium
-END:VEVENT
-BEGIN:VEVENT
-UID:nfl-2025-bills-reg-5@tidemark
-DTSTAMP:20261110T033535Z
-DTSTART;VALUE=DATE:20251005
-DTEND;VALUE=DATE:20251006
-SUMMARY:Patriots at Bills
-DESCRIPTION:Week 5\nResult: L 20–23\nSchedule from Wikipedia (https://en
- .wikipedia.org/wiki/2025_Buffalo_Bills_season)\, CC BY-SA 4.0. Times can 
- change.
-LOCATION:Highmark Stadium
-END:VEVENT
-BEGIN:VEVENT
-UID:nfl-2025-bills-reg-6@tidemark
-DTSTAMP:20261110T033535Z
-DTSTART;VALUE=DATE:20251013
-DTEND;VALUE=DATE:20251014
-SUMMARY:Bills at Falcons
-DESCRIPTION:Week 6\nResult: L 14–24\nSchedule from Wikipedia (https://en
- .wikipedia.org/wiki/2025_Buffalo_Bills_season)\, CC BY-SA 4.0. Times can 
- change.
-LOCATION:Mercedes-Benz Stadium
-END:VEVENT
-BEGIN:VEVENT
-UID:nfl-2025-bills-reg-8@tidemark
-DTSTAMP:20261110T033535Z
-DTSTART;VALUE=DATE:20251026
-DTEND;VALUE=DATE:20251027
-SUMMARY:Bills at Panthers
-DESCRIPTION:Week 8\nResult: W 40–9\nSchedule from Wikipedia (https://en.
- wikipedia.org/wiki/2025_Buffalo_Bills_season)\, CC BY-SA 4.0. Times can c
- hange.
-LOCATION:Bank of America Stadium
-END:VEVENT
-BEGIN:VEVENT
-UID:nfl-2025-bills-reg-9@tidemark
-DTSTAMP:20261110T033535Z
-DTSTART;VALUE=DATE:20251102
-DTEND;VALUE=DATE:20251103
+UID:nfl-2026-bills-reg-12@tidemark
+DTSTAMP:20261110T170433Z
+DTSTART:20261127T012000Z
+DTEND:20261127T043500Z
 SUMMARY:Chiefs at Bills
-DESCRIPTION:Week 9\nResult: W 28–21\nSchedule from Wikipedia (https://en
- .wikipedia.org/wiki/2025_Buffalo_Bills_season)\, CC BY-SA 4.0. Times can 
- change.
+DESCRIPTION:Week 12\nTV: NBC\nSchedule from Wikipedia (https://en.wikipedi
+ a.org/wiki/2026_Buffalo_Bills_season)\, CC BY-SA 4.0. Times can change.
 LOCATION:Highmark Stadium
 END:VEVENT
 BEGIN:VEVENT
-UID:nfl-2025-bills-reg-10@tidemark
-DTSTAMP:20261110T033535Z
-DTSTART;VALUE=DATE:20251109
-DTEND;VALUE=DATE:20251110
-SUMMARY:Bills at Dolphins
-DESCRIPTION:Week 10\nResult: L 13–30\nSchedule from Wikipedia (https://e
- n.wikipedia.org/wiki/2025_Buffalo_Bills_season)\, CC BY-SA 4.0. Times can
-  change.
-LOCATION:Hard Rock Stadium
-END:VEVENT
-BEGIN:VEVENT
-UID:nfl-2025-bills-reg-11@tidemark
-DTSTAMP:20261110T033535Z
-DTSTART;VALUE=DATE:20251116
-DTEND;VALUE=DATE:20251117
-SUMMARY:Buccaneers at Bills
-DESCRIPTION:Week 11\nResult: W 44–32\nSchedule from Wikipedia (https://e
- n.wikipedia.org/wiki/2025_Buffalo_Bills_season)\, CC BY-SA 4.0. Times can
-  change.
-LOCATION:Highmark Stadium
-END:VEVENT
-BEGIN:VEVENT
-UID:nfl-2025-bills-reg-12@tidemark
-DTSTAMP:20261110T033535Z
-DTSTART;VALUE=DATE:20251120
-DTEND;VALUE=DATE:20251121
-SUMMARY:Bills at Texans
-DESCRIPTION:Week 12\nResult: L 19–23\nSchedule from Wikipedia (https://e
- n.wikipedia.org/wiki/2025_Buffalo_Bills_season)\, CC BY-SA 4.0. Times can
-  change.
-LOCATION:NRG Stadium
-END:VEVENT
-BEGIN:VEVENT
-UID:nfl-2025-bills-reg-13@tidemark
-DTSTAMP:20261110T033535Z
-DTSTART;VALUE=DATE:20251130
-DTEND;VALUE=DATE:20251201
-SUMMARY:Bills at Steelers
-DESCRIPTION:Week 13\nResult: W 26–7\nSchedule from Wikipedia (https://en
- .wikipedia.org/wiki/2025_Buffalo_Bills_season)\, CC BY-SA 4.0. Times can 
- change.
-LOCATION:Acrisure Stadium
-END:VEVENT
-BEGIN:VEVENT
-UID:nfl-2025-bills-reg-14@tidemark
-DTSTAMP:20261110T033535Z
-DTSTART;VALUE=DATE:20251207
-DTEND;VALUE=DATE:20251208
-SUMMARY:Bengals at Bills
-DESCRIPTION:Week 14\nResult: W 39–34\nSchedule from Wikipedia (https://e
- n.wikipedia.org/wiki/2025_Buffalo_Bills_season)\, CC BY-SA 4.0. Times can
-  change.
-LOCATION:Highmark Stadium
-END:VEVENT
-BEGIN:VEVENT
-UID:nfl-2025-bills-reg-15@tidemark
-DTSTAMP:20261110T033535Z
-DTSTART;VALUE=DATE:20251214
-DTEND;VALUE=DATE:20251215
+UID:nfl-2026-bills-reg-13@tidemark
+DTSTAMP:20261110T170433Z
+DTSTART:20261206T212500Z
+DTEND:20261207T004000Z
 SUMMARY:Bills at Patriots
-DESCRIPTION:Week 15\nResult: W 35–31\nSchedule from Wikipedia (https://e
- n.wikipedia.org/wiki/2025_Buffalo_Bills_season)\, CC BY-SA 4.0. Times can
-  change.
+DESCRIPTION:Week 13\nTV: CBS\nSchedule from Wikipedia (https://en.wikipedi
+ a.org/wiki/2026_Buffalo_Bills_season)\, CC BY-SA 4.0. Times can change.
 LOCATION:Gillette Stadium
 END:VEVENT
 BEGIN:VEVENT
-UID:nfl-2025-bills-reg-16@tidemark
-DTSTAMP:20261110T033535Z
-DTSTART;VALUE=DATE:20251221
-DTEND;VALUE=DATE:20251222
-SUMMARY:Bills at Browns
-DESCRIPTION:Week 16\nResult: W 23–20\nSchedule from Wikipedia (https://e
- n.wikipedia.org/wiki/2025_Buffalo_Bills_season)\, CC BY-SA 4.0. Times can
-  change.
-LOCATION:Huntington Bank Field
+UID:nfl-2026-bills-reg-14@tidemark
+DTSTAMP:20261110T170433Z
+DTSTART:20261214T012000Z
+DTEND:20261214T043500Z
+SUMMARY:Bills at Packers
+DESCRIPTION:Week 14\nTV: NBC\nSchedule from Wikipedia (https://en.wikipedi
+ a.org/wiki/2026_Buffalo_Bills_season)\, CC BY-SA 4.0. Times can change.
+LOCATION:Lambeau Field
 END:VEVENT
 BEGIN:VEVENT
-UID:nfl-2025-bills-reg-17@tidemark
-DTSTAMP:20261110T033535Z
-DTSTART;VALUE=DATE:20251228
-DTEND;VALUE=DATE:20251229
-SUMMARY:Eagles at Bills
-DESCRIPTION:Week 17\nResult: L 12–13\nSchedule from Wikipedia (https://e
- n.wikipedia.org/wiki/2025_Buffalo_Bills_season)\, CC BY-SA 4.0. Times can
-  change.
+UID:nfl-2026-bills-reg-15@tidemark
+DTSTAMP:20261110T170433Z
+DTSTART:20261220T012000Z
+DTEND:20261220T043500Z
+SUMMARY:Bears at Bills
+DESCRIPTION:Week 15\nTV: CBS\nSchedule from Wikipedia (https://en.wikipedi
+ a.org/wiki/2026_Buffalo_Bills_season)\, CC BY-SA 4.0. Times can change.
 LOCATION:Highmark Stadium
 END:VEVENT
 BEGIN:VEVENT
-UID:nfl-2025-bills-reg-18@tidemark
-DTSTAMP:20261110T033535Z
-DTSTART;VALUE=DATE:20260104
-DTEND;VALUE=DATE:20260105
-SUMMARY:Jets at Bills
-DESCRIPTION:Week 18\nResult: W 35–8\nSchedule from Wikipedia (https://en
- .wikipedia.org/wiki/2025_Buffalo_Bills_season)\, CC BY-SA 4.0. Times can 
- change.
+UID:nfl-2026-bills-reg-16@tidemark
+DTSTAMP:20261110T170433Z
+DTSTART:20261225T213000Z
+DTEND:20261226T004500Z
+SUMMARY:Bills at Broncos
+DESCRIPTION:Week 16\nTV: Netflix\nSchedule from Wikipedia (https://en.wiki
+ pedia.org/wiki/2026_Buffalo_Bills_season)\, CC BY-SA 4.0. Times can chang
+ e.
+LOCATION:Empower Field at Mile High
+END:VEVENT
+BEGIN:VEVENT
+UID:nfl-2026-bills-reg-17@tidemark
+DTSTAMP:20261110T170433Z
+DTSTART:20270103T180000Z
+DTEND:20270103T211500Z
+SUMMARY:Bills at Dolphins
+DESCRIPTION:Week 17\nTV: CBS\nSchedule from Wikipedia (https://en.wikipedi
+ a.org/wiki/2026_Buffalo_Bills_season)\, CC BY-SA 4.0. Times can change.
+LOCATION:Hard Rock Stadium
+END:VEVENT
+BEGIN:VEVENT
+UID:nfl-2026-bills-reg-18@tidemark
+DTSTAMP:20261110T170433Z
+DTSTART;VALUE=DATE:20270109
+DTEND;VALUE=DATE:20270110
+SUMMARY:Jets at Bills (Jan 9 or 10)
+DESCRIPTION:Week 18\nSchedule from Wikipedia (https://en.wikipedia.org/wik
+ i/2026_Buffalo_Bills_season)\, CC BY-SA 4.0. Times can change.
 LOCATION:Highmark Stadium
 END:VEVENT
 END:VCALENDAR
