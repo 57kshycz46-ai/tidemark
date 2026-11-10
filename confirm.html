@@ -70,6 +70,8 @@
   $('who').textContent = `${guest} would like to meet${req.e ? ' · ' + req.e : ''}`;
   $('when').textContent = start.toLocaleDateString(undefined, { weekday: 'long', month: 'long', day: 'numeric' });
   $('len').textContent = `${t.format(start)} – ${t.format(end)} · ${req.d} min`;
+  if (req.l) { const p = document.createElement('div'); p.className = 'soft'; p.textContent = 'At ' + String(req.l).slice(0, 160); $('note').appendChild(p); }
+  if (req.k === 'edit') document.querySelector('.eyebrow').textContent = 'Booking change';
   if (req.m) { const q = document.createElement('blockquote'); q.textContent = req.m; $('note').appendChild(q); }
   $('open').href = 'tidemark://book?r=' + encodeURIComponent(token);
   document.title = `${guest} · ${req.t || 'Meeting'}`;

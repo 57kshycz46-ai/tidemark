@@ -681,8 +681,12 @@
         if (r && r.b === b && (!latest || m.time >= latest.time)) latest = Object.assign(r, { time: m.time });
       }
       if (!latest) return;
-      const before = currentAnswer(rec);
-      store.save(b, rec.req, { answer: latest });
+      // The booking may have been changed or cancelled while this was loading: work from what's stored now, and
+      // never bring back one that's gone.
+      const fresh = store.get(b);
+      if (!fresh || !current || current.b !== b) return;
+      const before = currentAnswer(fresh);
+      store.save(b, fresh.req, { answer: latest });
       const now = currentAnswer(store.get(b));
       if (now && (!before || before.a !== now.a || before.time !== now.time)) {
         if (before === null || before.a !== now.a) notifyAnswer(now);
@@ -757,7 +761,9 @@
   $('form').addEventListener('submit', async (ev) => {
     ev.preventDefault();
     const name = $('name').value.trim();
-    if (!name) { $('err').style.display = 'block'; $('name').focus(); return; }
+    if (!name) { $('err').textContent = 'Please add your name.'; $('err').style.display = 'block'; $('name').focus(); return; }
+    // A page left open: the time may have come and gone.
+    if (!chosen || chosen <= Date.now()) { $('err').textContent = 'That time has passed. Pick another one above.'; $('err').style.display = 'block'; return; }
     $('err').style.display = 'none';
     const email = $('email').value.trim();
     const msg = $('msg').value.trim();
@@ -829,6 +835,11 @@
       showDone();
       return;
     }
+    // Not delivered (no connection, or an older link): the guest sends it themselves. Clear anything an earlier,
+    // delivered request left on this card.
+    document.querySelector('#done h2').textContent = 'Almost there!';
+    $('done-note').textContent = `Your request goes to ${host}, who adds it to their calendar with one tap.`;
+    $('manage-link').innerHTML = '';
     $('done-text').textContent = `Send your request for ${when} to ${host}.`;
     if (offer.e) {
       add(`Email ${host}`, 'primary', null,
