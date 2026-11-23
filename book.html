@@ -758,6 +758,31 @@
   setTimeout(() => { $('days').style.removeProperty('--base'); $('slots').style.removeProperty('--base'); }, 1500);
   stagger($('form'));
 
+  // A page left open: times that have come and gone drop off quietly (checked each minute and on coming back to the
+  // tab), without replaying the opening cascade. A pick that passed closes the form.
+  function prune() {
+    const grid = document.querySelector('#picker .grid');
+    if (!grid || grid.style.display === 'none') return;
+    const cutoff = Date.now() + 15 * 60000;
+    for (const [k, list] of Array.from(byDay)) {
+      const keep = list.filter(t => t > cutoff);
+      if (keep.length === list.length) continue;
+      const dayBtn = $('days').querySelector(`[data-k="${k}"]`);
+      if (!keep.length) { byDay.delete(k); if (dayBtn) dayBtn.remove(); continue; }
+      byDay.set(k, keep);
+      if (dayBtn) dayBtn.querySelector('.cnt').textContent = `${keep.length} time${keep.length === 1 ? '' : 's'}`;
+    }
+    for (const b of Array.from($('slots').children)) if (Number(b.dataset.t) <= cutoff) b.remove();
+    if (chosen !== null && chosen <= cutoff) { chosen = null; $('form').classList.remove('show'); }
+    if (!byDay.size) {
+      $('picker').innerHTML = `<div class="empty"><h2>No times left</h2>Every time on this link has passed. Ask ${escapeHTML(host)} for a new one.</div>`;
+      return;
+    }
+    if (!byDay.has(shownDay)) selectDay(byDay.keys().next().value);
+  }
+  setInterval(prune, 60000);
+  document.addEventListener('visibilitychange', () => { if (!document.hidden) prune(); });
+
   $('form').addEventListener('submit', async (ev) => {
     ev.preventDefault();
     const name = $('name').value.trim();
@@ -864,7 +889,8 @@
     const start = req.s * 60000;
     const ics = [
       'BEGIN:VCALENDAR', 'VERSION:2.0', 'PRODID:-//Tidemark//Booking//EN', 'BEGIN:VEVENT',
-      `UID:${req.s}-${Math.random().toString(36).slice(2)}@tidemark`, `DTSTAMP:${stamp(Date.now())}`,
+      // One booking keeps one UID, so saving it twice (or after a change) updates the event instead of adding another.
+      `UID:${req.b || (req.s + '-' + Math.random().toString(36).slice(2))}@tidemark`, `DTSTAMP:${stamp(Date.now())}`,
       `DTSTART:${stamp(start)}`, `DTEND:${stamp(start + req.d * 60000)}`,
       ...(req.l ? [`LOCATION:${esc(req.l)}`] : []),
       `SUMMARY:${esc(`${req.t} with ${host}`)}`, 'STATUS:TENTATIVE',
